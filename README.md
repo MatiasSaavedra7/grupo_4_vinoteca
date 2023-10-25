@@ -9,7 +9,8 @@ Almaraz, Santiago:
 Cabezas, Anahi Zalazar:
 Monteros Azurmendi, Luana:
 Saavedra, Matías:
-Luna, Ivana Alejandra:
+Luna, Ivana Alejandra: 
+Gerente de Experiencia al Cliente: Es una de las estrategas de este equipo, se encargará de hacer que la experiencia dentro de tu página web sea sumamente placentera, garantizando que el proceso de compra sea fluido y agradable. Creando, además, una interacción con el cliente manejando consultas y resolviendo problemas que ayude a cumplir con sus exigencias.
 
 
 
