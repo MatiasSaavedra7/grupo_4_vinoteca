@@ -20,17 +20,18 @@ Durante 15 años hemos estado comprometidos con la búsqueda de los vinos más e
 ### Rol en el proyecto:
 
 
+
+## Leguizamon, Lucas: Estudiante avanzado de Tecnicatura Superior en Programación en ITSE. Apasionado del hardware, los autos y las motos, en mis tiempos libres juego al pádel, fútbol y practico ciclismo. Mi objetivo es agregar un stack web a lo que aprendí en la tecnicatura.
+### Rol en el proyecto: A cargo del diseño y mantenimiento del sitio web, asegurándome de que sea fácil de usar y estéticamente atractivo.
+
+## Luna, Ivana Alejandra: 
+### Gerente de Experiencia al Cliente: Es una de las estrategas de este equipo, se encargará de hacer que la experiencia dentro de tu página web sea sumamente placentera, garantizando que el proceso de compra sea fluido y agradable. Creando, además, una interacción con el cliente manejando consultas y resolviendo problemas que ayude a cumplir con sus exigencias.
+
 ## Monteros Azurmendi, Luana: 
 ### Estudiante de Licenciatura en Fisica, 26 años. Me gusta hacer trekking y tomar mates con amigos. Me gusta programar y tabajar con Back-End. Mi idea de este curso es seguir mejorando mis conocimientos para futuramnte aplicarlos. 
 
  ### Rol en el proyecto:
  ### Especialista en adquisiciones: A cargo de la seleccion y obtención de vinos que se alineará con los objetivos y el perfil de la empresa, en terminos de calidad y sabores deseados. Mantener contacto con productores y bodegas, negociar el precio y términos de compra, además de estar al tanto de las tendencias enológicas.
-
-## Leguizamon, Lucas:
-### Rol en el proyecto: 
-
-## Luna, Ivana Alejandra: 
-### Gerente de Experiencia al Cliente: Es una de las estrategas de este equipo, se encargará de hacer que la experiencia dentro de tu página web sea sumamente placentera, garantizando que el proceso de compra sea fluido y agradable. Creando, además, una interacción con el cliente manejando consultas y resolviendo problemas que ayude a cumplir con sus exigencias.
 
 ## Saavedra, Matias:
 ### Estudiante de Ing Electromecanica en UNSE, 28 años de edad, en mis tiempos libres me gusta realizar actividad fisica o practicar algun deporte, aficionado al ciclismo y a la gimnasia, mi objetivo al finalizar el curso es profundizar conceptos en Front-End, me gusta el diseño y desarrollo de las paginas web aplicando conceptos UI/UX, aunque tambien me gusta trabajar sobre datos...
