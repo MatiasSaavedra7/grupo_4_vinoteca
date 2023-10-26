@@ -24,8 +24,8 @@ Durante 15 años hemos estado comprometidos con la búsqueda de los vinos más e
 ## Leguizamon, Lucas: Estudiante avanzado de Tecnicatura Superior en Programación en ITSE. Apasionado del hardware, los autos y las motos, en mis tiempos libres juego al pádel, fútbol y practico ciclismo. Mi objetivo es agregar un stack web a lo que aprendí en la tecnicatura.
 ### Rol en el proyecto: A cargo del diseño y mantenimiento del sitio web, asegurándome de que sea fácil de usar y estéticamente atractivo.
 
-## Luna, Ivana Alejandra: 
-### Gerente de Experiencia al Cliente: Es una de las estrategas de este equipo, se encargará de hacer que la experiencia dentro de tu página web sea sumamente placentera, garantizando que el proceso de compra sea fluido y agradable. Creando, además, una interacción con el cliente manejando consultas y resolviendo problemas que ayude a cumplir con sus exigencias.
+## Luna, Ivana Alejandra: Técnica en Administración y Contabilidad y estudiante de la carrera de Contador Público, 29 años, amante de la música, de los números, los amigos y los viajes. Totalmente nueva en el mundo de la programación con el objetivo al terminar el curso de hacerlo un complemento con mi carrera, sumando conocimientos para una futura fuente de trabajo.
+### Rol en el proyecto: Gerente de Experiencia al Cliente: encargada de hacer que la experiencia dentro de tu página web sea sumamente placentera, garantizando que el proceso de compra sea fluido y agradable. Creando, además, una interacción con el cliente manejando consultas y resolviendo problemas que ayude a cumplir con sus exigencias.
 
 ## Monteros Azurmendi, Luana: 
 ### Estudiante de Licenciatura en Fisica, 26 años. Me gusta hacer trekking y tomar mates con amigos. Me gusta programar y tabajar con Back-End. Mi idea de este curso es seguir mejorando mis conocimientos para futuramnte aplicarlos. 
