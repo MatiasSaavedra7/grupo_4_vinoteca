@@ -6,7 +6,7 @@ Somos una vinoteca apasionada por la cultura del vino y dedicada a brindar a nue
 Durante 15 años hemos estado comprometidos con la búsqueda de los vinos más exquisitos y exclusivos de todas las regiones vinícolas del mundo. Trabajamos estrechamente con bodegas artesanales y productores renombrados para traerte una selección cuidadosamente curada de vinos de alta calidad.
 
 
-#Integrantes del equipo:
+# Integrantes del equipo:
 
 ## Almaraz, Santiago Emanuel: 
 ### Estudiante de Licenciatura en Sistemas de Información, 23 años. Me gusta viajar y compartir momentos con familia y amigos. Creo que esta es una gran oportunidad para complementar lo que veo en la carrea y poder adentrarme en una de las ramas de la programación que me gusta.
@@ -20,15 +20,15 @@ Durante 15 años hemos estado comprometidos con la búsqueda de los vinos más e
 ### Estudiante de Comunicacion social y Marketing, 29 años. En mis tiempos libres disfruto de realizar varias actividades como hacer piezas en cerámica, andar en bicicleta y pasear con mi mascota.
 
  ### Rol en el proyecto: 
- ###Directora de Marketing y Publicidad: a cargo de las campañas publicitarias para atraer a más clientes a la tienda, diseño web, redes sociales y las promociones por correo electrónico.
+ ### Directora de Marketing y Publicidad: a cargo de las campañas publicitarias para atraer a más clientes a la tienda, diseño web, redes sociales y las promociones por correo electrónico.
 
 
 
 ## Leguizamon, Lucas: 
-###Estudiante avanzado de Tecnicatura Superior en Programación en ITSE. Apasionado del hardware, los autos y las motos, en mis tiempos libres juego al pádel, fútbol y practico ciclismo. Mi objetivo es agregar un stack web a lo que aprendí en la tecnicatura.
+### Estudiante avanzado de Tecnicatura Superior en Programación en ITSE. Apasionado del hardware, los autos y las motos, en mis tiempos libres juego al pádel, fútbol y practico ciclismo. Mi objetivo es agregar un stack web a lo que aprendí en la tecnicatura.
 
  ### Rol en el proyecto:
- ###Desarrollador Web: A cargo del diseño y mantenimiento del sitio web, asegurándome de que sea fácil de usar y estéticamente atractivo.
+ ### Desarrollador Web: A cargo del diseño y mantenimiento del sitio web, asegurándome de que sea fácil de usar y estéticamente atractivo.
 
 
 
@@ -36,7 +36,7 @@ Durante 15 años hemos estado comprometidos con la búsqueda de los vinos más e
 ###Técnica en Administración y Contabilidad y estudiante de la carrera de Contador Público, 29 años, amante de la música, de los números, los amigos y los viajes. Totalmente nueva en el mundo de la programación con el objetivo al terminar el curso de hacerlo un complemento con mi carrera, sumando conocimientos para una futura fuente de trabajo.
 
  ### Rol en el proyecto: 
- ###Gerente de Experiencia al Cliente: encargada de hacer que la experiencia dentro de tu página web sea sumamente placentera, garantizando que el proceso de compra sea fluido y agradable. Creando, además, una interacción con el cliente manejando consultas y resolviendo problemas que ayude a cumplir con sus exigencias.
+ ### Gerente de Experiencia al Cliente: encargada de hacer que la experiencia dentro de tu página web sea sumamente placentera, garantizando que el proceso de compra sea fluido y agradable. Creando, además, una interacción con el cliente manejando consultas y resolviendo problemas que ayude a cumplir con sus exigencias.
 
 
 
