@@ -33,7 +33,7 @@ Durante 15 años hemos estado comprometidos con la búsqueda de los vinos más e
 
 
 ## Luna, Ivana Alejandra:
-###Técnica en Administración y Contabilidad y estudiante de la carrera de Contador Público, 29 años, amante de la música, de los números, los amigos y los viajes. Totalmente nueva en el mundo de la programación con el objetivo al terminar el curso de hacerlo un complemento con mi carrera, sumando conocimientos para una futura fuente de trabajo.
+### Técnica en Administración y Contabilidad y estudiante de la carrera de Contador Público, 29 años, amante de la música, de los números, los amigos y los viajes. Totalmente nueva en el mundo de la programación con el objetivo al terminar el curso de hacerlo un complemento con mi carrera, sumando conocimientos para una futura fuente de trabajo.
 
  ### Rol en el proyecto: 
  ### Gerente de Experiencia al Cliente: encargada de hacer que la experiencia dentro de tu página web sea sumamente placentera, garantizando que el proceso de compra sea fluido y agradable. Creando, además, una interacción con el cliente manejando consultas y resolviendo problemas que ayude a cumplir con sus exigencias.
