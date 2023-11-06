@@ -11,6 +11,7 @@
 }
 
 .logo {
+    height: 275px;
     justify-content: center;
 }
 
@@ -41,6 +42,7 @@
     color: #888;
     font-size: 16px;
     padding-left: 30px; /* Centra el marcador de posición en el campo de búsqueda */
+    align-items: center;
 }
 
 .login-form form {
