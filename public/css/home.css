@@ -23,24 +23,24 @@
     padding: 10px;
     width: 25%;
     align-items: center;
-    height: 40px;
+    height: 50px;
 }
 
 .search-bar input {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/55/Magnifying_glass_icon.svg");
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
     width: 70%;
     padding: 5px;
+    height: 40px;
+    border-radius: 15px;
 }
 
-.search-bar button {
-    background-color: #ff00ff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-}
-
-.search-bar button:hover {
-    background-color: #ff33ff;
+.search-bar input[type="search"]::placeholder {
+    color: #888;
+    font-size: 16px;
+    padding-left: 30px; /* Centra el marcador de posición en el campo de búsqueda */
 }
 
 .login-form form {
