@@ -36,6 +36,8 @@
     padding: 5px;
     height: 40px;
     border-radius: 15px;
+    margin-top: 30px;
+    margin-left: 30px;
 }
 
 .search-bar input[type="search"]::placeholder {
@@ -43,6 +45,26 @@
     font-size: 16px;
     padding-left: 30px; /* Centra el marcador de posición en el campo de búsqueda */
     align-items: center;
+}
+
+.bottom-menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ebebeb;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.bottom-menu li {
+    display: inline; /* Hace que los elementos de la lista se muestren en línea */
+    margin: 0 50px; /* Espacio entre los elementos del menú */
+}
+
+.bottom-menu a {
+    text-decoration: none; /* Elimina la decoración de enlace subrayada */
+    color: #b3127c; /* Color del texto de enlace */
+    font-size: 20px; /* Tamaño de fuente de los enlaces */
+    font-weight: bold;
 }
 
 .login-form form {
@@ -63,4 +85,9 @@
 
 .login-form button:hover {
     background-color: #b3127c; /* Cambia el color de fondo al pasar el cursor por encima del botón */
+}
+
+#banner img {
+    width: 100%; /* Ancho del 100% del elemento padre (el banner) */
+    height: auto; /* Mantiene la proporción de aspecto de la imagen */
 }
