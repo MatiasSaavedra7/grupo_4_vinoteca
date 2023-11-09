@@ -93,9 +93,42 @@
 }
 
 .grupo-1 {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 40px;
+    padding-bottom: 40px;
     background-color: #b3127c;
+    color: #fff;
+    text-align: center;
+}
+
+.grupo-1 h2 {
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.grupo-1 a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the default text color of the parent */  
+    font-size: 20px;  
+    text-transform: capitalize;
 }
 
 .grupo-2 {
+    display: flex;
+    justify-content: center;
     background-color: #900066;
+    font-size: medium;
+}
+
+.red-social a {
+    font-size: 36px; /* Ajusta el tamaño de los íconos según sea necesario */
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.email a {
+    text-transform: lowercase;
 }
