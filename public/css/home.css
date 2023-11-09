@@ -65,14 +65,10 @@
     color: #b3127c; /* Color del texto de enlace */
     font-size: 20px; /* Tamaño de fuente de los enlaces */
     font-weight: bold;
+    text-transform: uppercase;
 }
 
-.login-form form {
-    text-align: center; /* Centra el contenido del formulario */
-    margin-top: 20px; /* Espacio superior para separar del logo y la barra de búsqueda */
-}
-
-.login-form button {
+.login button {
     background-color: #b3127c; /* Color de fondo del botón */
     color: #fff; /* Color de texto del botón */
     padding: 10px 20px; /* Espaciado interno del botón */
@@ -83,11 +79,23 @@
     font-size: 24px;
 }
 
-.login-form button:hover {
-    background-color: #b3127c; /* Cambia el color de fondo al pasar el cursor por encima del botón */
+.login-items {
+    margin-top: 30px;
+}
+
+.fas.fa-user {
+    color: #fff;
 }
 
 #banner img {
     width: 100%; /* Ancho del 100% del elemento padre (el banner) */
     height: auto; /* Mantiene la proporción de aspecto de la imagen */
+}
+
+.grupo-1 {
+    background-color: #b3127c;
+}
+
+.grupo-2 {
+    background-color: #900066;
 }
