@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venner Wine Store y amigos</title>
+    <link rel="icon" href="../wireframe/desktop/logo_venner.ico" type="image/icon">
+    <link rel="stylesheet" type="text/css" href="css/register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mohave&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="search-bar">
+            <input type="search" placeholder="Buscar">
+        </div>
+        <div class="logo">
+          <img src="images/logo_venner.png" alt="Logo">
+        </div>
+        <div class="login">
+            <div class="login-items">
+                <i class="fas fa-user fa-2x"></i>
+                <button>Crear Cuenta/Iniciar sesión</button>
+            </div>
+        </div>
+    </nav>
+    <menu class="bottom-menu">
+        <ul>
+            <li><a href="#">Vinos Argentinos</a></li>
+            <li><a href="#">Vinos Importados</a></li>
+            <li><a href="#">Sucursales</a></li>
+            <li><a href="#">Promociones Web</a></li>
+            <li><a href="#">Acerca Nuestro</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </menu>
+    <main id="main-register">
+      <section >
+        <form action="/register" method="post" id="formulario">
+          <legend>REGISTRATE</legend>
+
+          <div class="div-form">
+            <label for="name">NOMBRE</label>
+            <input type="text" name="name" id="name" placeholder="Nombre" />
+          </div>
+
+          <div class="div-form">
+            <label for="surname" >APELLIDO</label>
+            <input
+              type="text"
+              name="surname"
+              id="surname"
+              placeholder="Apellido"
+            />
+          </div>
+
+          <div class="div-form">
+            <label for="email">CORREO</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="correo@.."
+            />
+          </div>
+
+          <div class="div-form">
+            <label for="tel">TELÉFONO</label>
+            <input type="tel" ame="tel" id="tel" placeholder="+549..." />
+          </div>
+
+          <div class="div-form">
+            <label for="pass">CONSTRASEÑA</label>
+            <input type="password" name="pass" id="pass" />
+            <img src="" alt="" />
+          </div>
+
+          <div class="div-form">
+            <label for="reppass">CONFIRMAR CONTRASEÑA</label>
+            <input type="password" name="reppass" id="reppass" />
+            <img src="" alt="" />
+          </div>
+
+          <button type="submit" id="button-form">CREAR CUENTA</button>
+        </form>
+      </section>
+
+      <p id="p-register">¿Ya tenes cuenta? <a href="#"><strong>Incia Sesión</strong></a></p>
+    </main>
+    
+    <footer> 
+      <div class="grupo-1">
+        <div class="tienda">
+          <h2>Tienda</h2>
+          <a href="#"><p>Sucursales</p></a>
+          <a href="#"><p>Vinos argentinos</p></a>
+          <a href="#"><p>Vinos importados</p></a>
+          <a href="#"><p>Promociones web</p></a>
+        </div>
+        <div class="box">
+          <h2>Acerca Nuestro</h2>
+          <a href="#"><p>Quiénes somos</p></a>
+          <a href="#"><p>Trabajá con nosotros</p></a>
+          <a href="#"><p>Medios de pago</p></a>
+        </div>
+        <div>
+          <h2>Servicio al cliente</h2>
+          <a href="#"><p>Login/Registrarse</p></a>
+          <a href="#"><p>Términos y condiciones</p></a>
+          <a href="#"><p>Política de privacidad</p></a>
+          <a href="#"><p>Botón de arrepentimiento</p></a>
+        </div>
+        <div class="box">
+          <h2>Contactanos</h2>
+            <div class="red-social">
+              <a href="#" class="fab fa-facebook"></a>
+              <a href="#" class="fab fa-instagram"></a>
+              <a href="#" class="fab fa-whatsapp"></a>
+              <a href="#" class="fab fa-x-twitter"></a>
+              <a href="#" class="fab fa-linkedin"></a>
+            </div>
+            <div class="email">
+              <a href="mailto:empresa@vinotecavenner.com.ar">empresa@vinotecavenner.com.ar</a>
+            </div>
+        </div>
+      </div>
+      <div class="grupo-2">
+        <p>&copy; 2023 <b>Wine Fans</b> - Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  </body>
+</html>
