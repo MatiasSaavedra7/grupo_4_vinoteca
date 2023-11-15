@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Mohave', sans-serif;
+}
+@media (min-width:0) {
+    
+    .logo{
+        display: none;
+}
+footer{
+    display: none;
+}
+header{
+    background-color: #b3127c;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+section{
+    margin: 5%;
+    padding: 5%;
+}
+section img{
+    width: 80%;
+}
+.description-product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.description-product div{
+    display: flex;
+    align-items: center;
+}
+.description-product h3{
+    margin: 3%;
+}
+#buy-now {
+    border: none;
+    border-radius: 20px;
+    color: #FFFFFF;
+    letter-spacing: 2px;
+    background-color: #b3127c;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 15px;
+}
+
+#add-cart {
+    border: none;
+    border-radius: 20px;
+    color: #b3127c;
+    letter-spacing: 2px;
+    background-color: D9D9D9;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 15px;
+    
+}
+}
+@media (min-width: 768px){
+    
+}
+@media (min-width:1024px) {
+    
+    .navbar {
+        display: flex;
+        background-color: #b3127c;
+        justify-content: space-between;
+    }
+    
+    .logo {
+        height: 275px;
+        justify-content: center;
+    }
+    
+    .search-bar {
+        display: flex;
+        text-align: left;
+        background-color: #b3127c;
+        border: 1px solid #b3127c;
+        border-radius: 5px;
+        padding: 10px;
+        width: 25%;
+        align-items: center;
+        height: 50px;
+    }
+    
+    .search-bar input {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/55/Magnifying_glass_icon.svg");
+        background-size: 18px;
+        background-repeat: no-repeat;
+        background-position: 10px center;
+        width: 70%;
+        padding: 5px;
+        height: 40px;
+        border-radius: 15px;
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+    
+    .search-bar input[type="search"]::placeholder {
+        color: #888;
+        font-size: 16px;
+        padding-left: 30px; /* Centra el marcador de posición en el campo de búsqueda */
+        align-items: center;
+    }
+    
+    .bottom-menu {
+        display: flex;
+        justify-content: space-around;
+        background-color: #ebebeb;
+        text-align: center;
+        padding: 10px 0;
+    }
+    
+    .bottom-menu li {
+        display: inline; /* Hace que los elementos de la lista se muestren en línea */
+        margin: 0 50px; /* Espacio entre los elementos del menú */
+    }
+    
+    .bottom-menu a {
+        text-decoration: none; /* Elimina la decoración de enlace subrayada */
+        color: #b3127c; /* Color del texto de enlace */
+        font-size: 20px; /* Tamaño de fuente de los enlaces */
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    
+    .login button {
+        background-color: #b3127c; /* Color de fondo del botón */
+        color: #fff; /* Color de texto del botón */
+        padding: 10px 20px; /* Espaciado interno del botón */
+        border: none; /* Sin borde */
+        cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
+        font-weight: bold;
+        margin-right: 100px;
+        font-size: 24px;
+    }
+    
+    .login-items {
+        margin-top: 30px;
+    }
+    
+    .fas.fa-user {
+        color: #fff;
+    }
+
+    /* ----------------------------------------------------------------------------------------------------------- */
+    /* MAIN-PRODUCTDETAIL */
+    /* ----------------------------------------------------------------------------------------------------------- */
+    
+    main{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    section{
+        width: 45%;
+        border: 1px solid black;
+        border-radius: 10px;
+        
+    }
+    
+    .description-product h3{
+        margin: 3%;
+    }
+
+    /* ----------------------------------------------------------------------------------------------------------- */
+    /* FOOTER */
+    /* ----------------------------------------------------------------------------------------------------------- */
+    .logo{
+        display: block;
+    }
+    footer{
+        display: block;
+    }
+    .grupo-1 {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #b3127c;
+        color: #fff;
+        text-align: center;
+    }
+    
+    .grupo-1 h2 {
+        font-size: 36px;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+    
+    .grupo-1 a {
+        text-decoration: none; /* Remove underline */
+        color: inherit; /* Use the default text color of the parent */  
+        font-size: 20px;  
+        text-transform: capitalize;
+    }
+    
+    .grupo-2 {
+        display: flex;
+        justify-content: center;
+        background-color: #900066;
+        font-size: medium;
+    }
+    
+    .red-social a {
+        font-size: 36px; /* Ajusta el tamaño de los íconos según sea necesario */
+        margin-right: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .email a {
+        text-transform: lowercase;
+    }
+}

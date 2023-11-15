@@ -4,7 +4,7 @@ const app = express();
 app.use(express.static('./public'));
 
 app.get('/', function(req, res) {
-    let htmlPath = path.resolve(__dirname, './views/home.html')
+    let htmlPath = path.resolve(__dirname, './views/productDetail.html')
     res.sendFile(htmlPath)
 });
 
