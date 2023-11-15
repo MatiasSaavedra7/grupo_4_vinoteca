@@ -16,16 +16,11 @@ Durante 15 años hemos estado comprometidos con la búsqueda de los vinos más e
 
 
 
-<<<<<<< HEAD
-## Cabezas, Anahi Zalazar: Estudiante de Comunicacion social y Marketing, 29 años. Actualmente trabajo como community manager de manera independiente para comercios locales. En mis tiempos libres disfruto de realizar varias actividades, como hacer piezas en cerámica, andar en bicicleta y pasear con mi perrita. 
-### Rol en el proyecto: Director de Marketing y Publicidad, a cargo de las campañas publicitarias para atraer a más clientes a la tienda, así como de las redes sociales y las promociones por correo electrónico.
-=======
 ## Cabezas, Anahi Zalazar:
 ### Estudiante de Comunicacion social y Marketing, 29 años. En mis tiempos libres disfruto de realizar varias actividades como hacer piezas en cerámica, andar en bicicleta y pasear con mi mascota.
 
  ### Rol en el proyecto: 
  ### Directora de Marketing y Publicidad: a cargo de las campañas publicitarias para atraer a más clientes a la tienda, diseño web, redes sociales y las promociones por correo electrónico.
->>>>>>> cf0e92dd9e0eab91c754835b5eeb5f3e698eeaeb
 
 
 
