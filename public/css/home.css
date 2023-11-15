@@ -8,6 +8,7 @@
     display: flex;
     background-color: #b3127c;
     justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
@@ -75,11 +76,12 @@
     border: none; /* Sin borde */
     cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
     font-weight: bold;
-    margin-right: 100px;
+    margin-right: 50px;
     font-size: 24px;
 }
 
 .login-items {
+    display: flex;
     margin-top: 30px;
 }
 
@@ -131,4 +133,55 @@
 
 .email a {
     text-transform: lowercase;
+}
+
+@media (max-width: 768px) {
+    .grupo-1 {
+        font-size: 14px;
+    }
+    .grupo-1 h2 {
+        font-size: 24px;
+    }
+    .red-social a {
+        font-size: 24px;
+    }
+    .login button {
+        margin-right: 0;
+    }
+    .search-bar, .logo, .login button {
+        width: 33%;
+    }
+    .logo {
+        display: flex;
+    }
+    .logo img {
+        width: 100%;
+        align-self: center;
+    }
+    .fas.fa-user.fa-2x {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .search-bar, .logo {
+        width: 45%;
+    }
+    .login-items {
+        margin: 0;
+    }
+    .login-items button{
+        width: 100%;
+    }
+    .grupo-1 {
+        display: flex;
+        flex-direction: column;
+    }
+    .grupo-1 h2 {
+        margin-top: 20px;
+    }
 }
