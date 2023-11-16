@@ -34,7 +34,6 @@
     background-repeat: no-repeat;
     background-position: 10px center;
     width: 70%;
-    padding: 5px;
     height: 40px;
     border-radius: 15px;
     margin-top: 30px;
@@ -44,7 +43,6 @@
 .search-bar input[type="search"]::placeholder {
     color: #888;
     font-size: 16px;
-    padding-left: 30px; /* Centra el marcador de posición en el campo de búsqueda */
     align-items: center;
 }
 
