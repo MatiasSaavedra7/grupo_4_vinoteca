@@ -20,6 +20,11 @@ app.get('/products', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/products.html'))
 });
 
+app.get('/carrito', (req,res)=>{
+    let htmlPath = path.resolve(__dirname, './views/productCart.html')
+    res.sendFile(htmlPath)
+})
+
 app.listen(3000, () => {
     console.log('Servidor corriendo en http://localhost:3000/')
 });
