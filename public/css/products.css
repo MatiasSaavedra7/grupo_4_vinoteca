@@ -10,11 +10,104 @@ body {
     /* background-color: #FAF7EE; */
 }
 
-header, footer {
-    background-color: #5E0D26;
-    color: #FAF7EE;
+/* ESTILOS AL HEADER */
+
+.navbar {
+    display: flex;
+    background-color: #b3127c;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.logo {
+    height: 275px;
+    justify-content: center;
+}
+
+.search-bar {
+    display: flex;
+    text-align: left;
+    background-color: #b3127c;
+    border: 1px solid #b3127c;
+    border-radius: 5px;
+    padding: 10px;
+    width: 25%;
+    align-items: center;
+    height: 50px;
+}
+
+.search-bar input {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/55/Magnifying_glass_icon.svg");
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    width: 70%;
+    padding-left: 40px;
+    padding-right: 10px;
+    height: 40px;
+    border-radius: 15px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.search-bar input[type="search"]::placeholder {
+    color: #888;
+    font-size: 16px;
+    align-items: center;
+}
+
+.bottom-menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ebebeb;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.bottom-menu li {
+    display: inline; /* Hace que los elementos de la lista se muestren en línea */
+    margin: 0 50px; /* Espacio entre los elementos del menú */
+}
+
+.bottom-menu a {
+    text-decoration: none; /* Elimina la decoración de enlace subrayada */
+    color: #b3127c; /* Color del texto de enlace */
+    font-size: 20px; /* Tamaño de fuente de los enlaces */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.login button {
+    background-color: #b3127c; /* Color de fondo del botón */
+    color: #fff; /* Color de texto del botón */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
+    font-weight: bold;
+    margin-right: 50px;
+    font-size: 24px;
+}
+
+.login-items {
+    display: flex;
+    margin-top: 30px;
+}
+
+.fas.fa-user {
+    color: #fff;
+}
+
+#banner img {
+    width: 100%; /* Ancho del 100% del elemento padre (el banner) */
+    height: auto; /* Mantiene la proporción de aspecto de la imagen */
+}
+
+/* header, footer {
+    background-color: #5E0D26;
+    color: #FAF7EE;
+} */
+
+/* ESTILOS A LA SECCION DE PRODUCTOS */
 main {
     width: 90%;
     margin: 0 auto;
@@ -50,6 +143,49 @@ main section article img {
     font-size: 18px;
     padding: 5px;
     color: #5E0D26;
+}
+
+/* ESTILOS AL FOOTER */
+.grupo-1 {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #b3127c;
+    color: #fff;
+    text-align: center;
+}
+
+.grupo-1 h2 {
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.grupo-1 a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the default text color of the parent */  
+    font-size: 20px;  
+    text-transform: capitalize;
+}
+
+.grupo-2 {
+    display: flex;
+    justify-content: center;
+    background-color: #900066;
+    font-size: medium;
+}
+
+.red-social a {
+    font-size: 36px; /* Ajusta el tamaño de los íconos según sea necesario */
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.email a {
+    text-transform: lowercase;
 }
 
 /* CONFIGURACION DE ESTILOS PARA TABLETS */
@@ -92,5 +228,57 @@ main section article img {
         font-size: 24px;
         cursor: pointer;
         transition-duration: 0.3s;
+    }
+}
+
+/* MEDIA QUERY PARA EL HEADER Y FOOTER */
+@media (max-width: 768px) {
+    .grupo-1 {
+        font-size: 14px;
+    }
+    .grupo-1 h2 {
+        font-size: 24px;
+    }
+    .red-social a {
+        font-size: 24px;
+    }
+    .login button {
+        margin-right: 0;
+    }
+    .search-bar, .logo, .login button {
+        width: 33%;
+    }
+    .logo {
+        display: flex;
+    }
+    .logo img {
+        width: 100%;
+        align-self: center;
+    }
+    .fas.fa-user.fa-2x {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .search-bar, .logo {
+        width: 45%;
+    }
+    .login-items {
+        margin: 0;
+    }
+    .login-items button{
+        width: 100%;
+    }
+    .grupo-1 {
+        display: flex;
+        flex-direction: column;
+    }
+    .grupo-1 h2 {
+        margin-top: 20px;
     }
 }
