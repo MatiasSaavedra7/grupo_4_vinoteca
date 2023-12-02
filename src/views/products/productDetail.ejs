@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venner Wine Store y amigos</title>
+  <link rel="icon" href="../wireframe/desktop/logo_venner.ico" type="image/icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mohave&family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="/css/productDetail.css">
+</head>
+
+<body>
+  <%- include('../partials/header.ejs') %>
+
+  <main>
+    <section class="show-img-product">
+      <div>
+        <div class="img-product">
+          <img src="images/img-logo.jpg" alt="" />
+        </div>
+        <div>
+
+        </div>
+    </section>
+    <section class="description-product">
+      <div>
+        <h3>VINO MALBEC 750CC</h3>
+        <i class="fa-regular fa-heart"></i>
+      </div>
+      <p>
+        <strong>Tipo de Vino:</strong> <br>
+        El vino puede clasificarse en distintos tipos, como
+        tinto, blanco, rosado, espumoso, etc. Describe el tipo específico de
+        vino que estás evaluando. <br>
+        <strong>Origen:</strong> <br>
+        Menciona la región o país donde se
+        produjo el vino. Cada región tiene condiciones climáticas y
+        geográficas únicas que influyen en el carácter del vino. <br>
+        <strong>Variedad de Uva:</strong><br>
+        Identifica la(s) variedad(es) de uva utilizada(s) en la
+        elaboración del vino. Diferentes uvas aportan diferentes sabores y
+        aromas.
+      </p>
+
+      <button type="submit" id="buy-now">Comprar ahora!</button>
+      <button type="" id="add-cart">Agregar al carro!</button>
+    </section>
+    <!-- <section class="product-interest">
+
+      </section> -->
+  </main>
+
+  <%- include('../partials/footer.ejs') %>
+
+</body>
+
+</html>
