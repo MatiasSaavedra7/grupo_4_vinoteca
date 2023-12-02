@@ -33,3 +33,15 @@ app.get('/register', (req,res)=>{
     let htmlPath = path.resolve(__dirname, './views/register.html')
     res.sendFile(htmlPath)
 })
+
+app.get('/homev2', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/homev2.html'))
+})
+
+app.get('/contact', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/contacto.html'))
+})
+
+app.get('/nosotros', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/nosotros.html'))
+})
