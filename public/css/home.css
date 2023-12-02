@@ -1,101 +1,27 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Mohave', sans-serif;
 }
 
-#banner img {
-    width: 100%; /* Ancho del 100% del elemento padre (el banner) */
-    height: auto; /* Mantiene la proporción de aspecto de la imagen */
+body {
+    font-family: Mohave, sans-serif;
 }
 
-/*Productos*/
-h1 {
-    text-align: center;
-    font-size: 36px;
-    margin-top: 20px;
+/* =============== */
+/* ESTILOS AL MAIN */
+/* =============== */
+main {
+    width: 80%;
+    margin: 0 auto;
 }
 
-.products-sold {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+.banner {
+    width: 100%;
+
 }
 
-.main-article:hover {
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-}
-
-.details-article h4, .price {
-    font-size: 20px;
-    text-align: center;
-    padding-bottom: 5px;
-}
-
-.details-article .type, .uva, .origin {
-    font-size: 16px;
-    padding: 0px 10px;
-}
-
-.details-article i {
-    font-size: 18px;
-    padding: 5px;
-    color: #5E0D26;
-}
-
-.details-article i:hover {
-    font-size: 24px;
-    cursor: pointer;
-    transition-duration: 0.3s;
-}
-
-@media (max-width: 768px) {
-    .grupo-1 {
-        font-size: 14px;
-    }
-    .grupo-1 h2 {
-        font-size: 24px;
-    }
-    .red-social a {
-        font-size: 24px;
-    }
-    .login button {
-        margin-right: 0;
-    }
-    .search-bar, .logo, .login button {
-        width: 33%;
-    }
-    .logo {
-        display: flex;
-    }
-    .logo img {
-        width: 100%;
-        align-self: center;
-    }
-    .fas.fa-user.fa-2x {
-        display: none;
-    }
-}
-
-@media (max-width: 500px) {
-    .navbar {
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-    .search-bar, .logo {
-        width: 45%;
-    }
-    .login-items {
-        margin: 0;
-    }
-    .login-items button{
-        width: 100%;
-    }
-    .grupo-1 {
-        display: flex;
-        flex-direction: column;
-    }
-    .grupo-1 h2 {
-        margin-top: 20px;
-    }
+.banner img {
+    width: 100%;
+    padding: 20px 0px;
 }

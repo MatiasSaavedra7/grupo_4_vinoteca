@@ -1,132 +1,65 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Mohave", sans-serif;
 }
+
+body {
+  font-family: Mohave, sans-serif;
+}
+
+/* ================= */
+/* ESTILOS AL FOOTER */
+/* ================= */
 
 footer {
-  border: solid 2px #f5debf;
-  display: flex;
-  flex-direction: column;
-  background-color: #5e0d26;
-  color: #f5debf;
+  background-color: #5E0D26;
+  color: #FAF7EE;
 }
 
-a {
-  text-decoration: none;
-  color: #f5debf;
-  /* color: black; */
-}
-
-.grupo-1 {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
+.container {
   text-align: center;
-  line-height: 40px;
-  gap: 10px;
-}
-
-.contacto {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.red-social {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
+  flex-wrap: wrap;
   justify-content: space-around;
+  padding: 20px 0px;
 }
 
-.red-social a {
-  font-size: 40px;
+.container div {
+  margin-top: 20px;
+  width: 200px;
 }
 
-.barra-sup {
-  border-top: 5px solid #f5debf;
+.container div ul {
+  list-style-type: none;
 }
 
-.qr {
+.container div ul li {
+  padding: 5px;
+}
+
+.social-networks {
   display: flex;
-  align-items: center;
   justify-content: center;
+  padding: 10px;
 }
 
-.qr img {
-  width: 50%;
-  height: auto;
-}
-
-.grupo-1 div {
-  flex: 1;
-}
-
-.grupo-2 {
-  padding: 20px;
+.social-networks a {
+  font-size: 22px;
+  text-decoration: none;
+  color: #F5DEBF;
+  padding: 5px;
   text-align: center;
 }
+
+.copyright {
+  text-align: center;
+}
+
+/* ============= */
+/* MEDIA QUERIES */
+/* ============= */
 
 @media (min-width: 768px) {
-  h2 {
-    font-size: 30px;
-  }
-
-  .grupo-1 {
-    gap: 20px;
-  }
-
-  .red-social {
-    justify-content: center;
-    gap: 70px;
-  }
-
-  .red-social a {
-    font-size: 45px;
-  }
-
-  a,
-  .grupo-2 p {
-    font-size: 20px;
-  }
-}
-
-@media (min-width: 1024px) {
-  footer {
-    font-size: 12px;
-  }
-
-  .barra-sup {
-    border: none;
-  }
-
-  .red-social {
-    justify-content: space-around;
-    gap: 0;
-  }
-
-  .grupo-1 {
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
-    text-align: center;
-    line-height: 40px;
-    gap: 0px;
-  }
-
-  .red-social a {
-    font-size: 32px;
-  }
-
-  h2 {
-    font-size: 16px;
-  }
-
-  a,
-  .grupo-2 p {
-    font-size: 14px;
-  }
+  
 }

@@ -6,35 +6,29 @@
 
 body {
     font-family: Mohave, sans-serif;
-    /* color: #FAF7EE; */
 }
 
+/* ================= */
 /* ESTILOS AL HEADER */
+/* ================= */
 
 header {
     background-color: #5E0D26;
 }
 
 .header-content {
-    /* border: 2px red dashed; */
     display: flex;
-    justify-content: space-around;
-}
-
-.burger {
-    padding: 10px;
-    margin: auto 0px;
-    font-size: 22px;
-    text-align: center;
-    width: 40px;
-    color: #FAF7EE;
+    justify-content: space-between;
+    padding: 0px 20px;
 }
 
 .icons {
-    /* border: 1px red dashed; */
-    padding: 10px;
+    display: flex;
+}
+
+.cart, .user, .burger {
     margin: auto 0px;
-    font-size: 22px;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -57,36 +51,64 @@ header {
     display: none;
 }
 
+/* ====================== */
+/* ESTILOS AL BURGER MENU */
+/* ====================== */
+
+.open-menu, .close-menu {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 .nav-bar {
     list-style: none;
-    background-color: #F5DEBF;
+    background-color: #FAF7EE;
     color: #5E0D26;
+    opacity: 0.9;
     font-weight: bold;
     letter-spacing: 2px;
-    padding: 10px;
-    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 60%;
+    top: 0;
+    right: -100%;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease-in-out;
+}
+
+.nav-bar li {
+    padding: 30px 0px;
 }
 
 .nav-bar a {
     text-decoration: none;
     color: #5E0D26;
+    font-size: 24px;
+    font-weight: bold;
 }
 
+#check {
+    display: none;
+}
+
+#check:checked ~ nav .nav-bar {
+    right: 0;
+}
+
+/* ============= */
+/* MEDIA QUERIES */
+/* ============= */
+
 @media (min-width: 768px) {
-    .burger {
-        display: none;
-    }
-
-    .nav-bar {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .search-bar {
-        display: block;
+    .cart, .user {
+        padding: 10px;
         margin: auto 0px;
-        background-color: #F5DEBF;
-        border-radius: 10px;
+        font-size: 28px;
+        text-align: center;
     }
 
     .search-bar input {
@@ -95,6 +117,8 @@ header {
         border: none;
         border-radius: 10px;
         background-color: #F5DEBF;
+        width: 80%;
+        max-width: 300px;
     }
 
     .search-bar button {
@@ -104,5 +128,45 @@ header {
         border: none;
         border-radius: 10px;
         background-color: #F5DEBF;
+        float: right;
+    }
+
+    /* ====================== */
+    /* ESTILOS AL BURGER MENU */
+    /* ====================== */
+    .burger {
+        display: none;
+    }
+
+    .nav-bar {
+        list-style: none;
+        background-color: #F5DEBF;
+        color: #5E0D26;
+        font-weight: bold;
+        letter-spacing: 2px;
+        position: static;
+        height: 48px;
+        width: 100%;
+        top: 0;
+        right: 0;
+        z-index: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .nav-bar a {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .nav-bar .close-menu{display: none}
+
+    .search-bar {
+        display: block;
+        margin: auto 0px;
+        background-color: #F5DEBF;
+        border-radius: 10px;
+        width: 30%;
     }
 }

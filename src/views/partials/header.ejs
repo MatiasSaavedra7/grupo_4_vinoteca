@@ -8,30 +8,39 @@
 </head>
 <header>
     <div class="header-content">
-        <div class="burger">
-            <i class="fa-solid fa-bars"></i>
+        <div class="logo">
+            <a href="/"><img src="images/venner-logo3.png" alt="Logo de Venner"></a>
         </div>
 
         <form action="" method="" class="search-bar">
             <input type="search" name="" id="" placeholder="   Buscar producto">
             <button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
-        
-        <div class="logo">
-            <a href="/"><img src="/images/venner-logo3.png" alt="Logo de Venner"></a>
-        </div>
-        
+
+
         <div class="icons">
-            <a href="/products/productsCart"><i  class="fa-solid fa-cart-shopping cart"></i></a>
-            <a href="/users/login"><i class="fa-solid fa-circle-user user"></i></a>
+            <div class="cart">
+                <a href="/products/productsCart"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+
+            <div class="user">
+                <a href="/users/login"><i class="fa-solid fa-circle-user"></i></a>
+            </div>
+
+            <div class="burger">
+                <label for="check" class="open-menu"><i class="fa-solid fa-bars"></i></label>
+            </div>
         </div>
     </div>
 
+    <input type="checkbox" id="check">
+
     <nav>
         <ul class="nav-bar">
+            <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
             <li><a href="/products">VINOS ARGENTINOS</a></li>
             <li><a href="/products">VINOS IMPORTADOS</a></li>
-            <li><a href="#">PROMOCIONES</a></li>
+            <li><a href="/products">PROMOCIONES</a></li>
             <li><a href="/us">NOSOTROS</a></li>
             <li><a href="/contact">CONTACTO</a></li>
         </ul>
