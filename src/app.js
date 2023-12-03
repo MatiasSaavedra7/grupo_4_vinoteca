@@ -21,6 +21,10 @@ app.use('/', mainRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
 
+app.use((req, res, next) => {
+    res.status(404).render("not-found");
+} )
+
 
 //Sección de levantar el Server
 app.listen(3000, () => {
