@@ -42,9 +42,9 @@ select{
     margin: 0 30%;
     padding: 2px;
     align-items: center;
-    border-radius: 4px;
-    background-color: #b312688a;
-    color: #B31269;
+    border-radius: 10px;
+    background-color: #5E0D26;
+    color: #FAF7EE;
 }
 
 h3{
@@ -60,12 +60,12 @@ h3{
     margin: 0 7% 1%;
 }
 
-button{
+.botones button{
     border-radius: 10px;
     padding: 10px 5px;
     margin: 5px;
-    color: #B31269;
-    box-shadow: 0px 0px 10px #B31269;
+    color: #5E0D26;
+    box-shadow: 0px 0px 10px #5E0D26;
 }
 
 @media (min-width: 768px){

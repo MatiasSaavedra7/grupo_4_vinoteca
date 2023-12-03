@@ -28,6 +28,11 @@ body {
     margin-top: 30px;
 }
 
+.txt1 a {
+    color: #5E0D26;
+    text-decoration: none;
+}
+
 .txt2 {
     font-size: 18px;
     margin-top: -10px;
@@ -128,7 +133,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #B3147D;
+    background-color: #5E0D26;
 }
 
 .redes h2 {

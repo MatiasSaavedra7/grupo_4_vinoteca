@@ -52,7 +52,7 @@ legend{
     background-color: #5E0D26;
     padding: 0.5em;
     color: #ebebeb;
-    border: #b3127c;
+    border: #5E0D26;
     border-radius: 7px;
     font-size: large;
     font-weight: 500;
@@ -61,13 +61,14 @@ legend{
     
 }
 #p-register{
-    color:#b3127c;
+    color:#5E0D26;
     font-size: 1.5em;
     text-align: center;
     margin-top: 2em;
 }
 #p-register a{
     text-decoration: none;
+    color: #5E0D26;
 }
 
 @media (min-width: 460px){
@@ -89,7 +90,7 @@ legend{
 
 .bottom-menu a {
     text-decoration: none; /* Elimina la decoración de enlace subrayada */
-    color: #b3127c; /* Color del texto de enlace */
+    color: #5E0D26; /* Color del texto de enlace */
     font-size: 20px; /* Tamaño de fuente de los enlaces */
     font-weight: bold;
     text-transform: uppercase;
