@@ -8,8 +8,9 @@ body {
     display: flex;
     width: 100vw;
     height: 100vh;
-    background-color: #F7E5F0;
-    color: #B3147D;
+    /* background-color: #FAF7EE; */
+    background-color: #F5DEBF;
+    color: #5E0D26;
     font-family: 'Mohave', sans-serif;
 }
 
@@ -63,9 +64,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: solid 2px #B3147D;
+    border: solid 2px #5E0D26;
     border-radius: 10px;
-    background-color: #ffffff;
+    background-color: #FAF7EE;
 }
 
 .campo-container div i {
@@ -92,7 +93,7 @@ body {
     font-size: 20px;
     text-decoration: none;
     text-align: right;
-    color:#B3147D;
+    color: #5E0D26;;
     font-weight: bold;
 }
 
@@ -101,7 +102,7 @@ body {
     font-size: 20px;
     padding: 12px 8px;
     color: #ffffff;
-    background-color: #B3147D;
+    background-color: #5E0D26;
     border-radius: 8px;
 }
 
@@ -114,7 +115,7 @@ body {
 
 .tienes-cuenta a{
     text-decoration: none;
-    color: #B3147D;
+    color: #5E0D26;
     font-weight: bold;
     margin-left: 4px;
 }
@@ -195,7 +196,7 @@ body {
     .right-section {
         display: flex;
         width: 55%;
-        background-color: #B3147D;
+        background-color: #5E0D26;
         flex-direction: column;
         align-items: center;
         justify-content: center;

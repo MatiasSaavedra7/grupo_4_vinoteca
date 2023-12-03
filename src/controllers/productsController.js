@@ -1,18 +1,18 @@
 const productsController = {
     productsController: (req, res) => {
-        res.render(('./products/products'));
+        res.render(('products/products'));
     },
     productsCartController: (req, res) => {
-        res.render(('./products/productCart'));
+        res.render(('products/productCart'));
     },
     productsDetailController: (req, res) => {
-        res.render(('./products/productDetail'));
+        res.render(('products/productDetail'));
     },
     addProductController: (req, res) => {
-        res.render('./products/addProduct');
+        res.render('products/addProduct');
     },
     editProductController: (req, res) => {
-        res.render('./products/editProduct');
+        res.render('products/editProduct');
     }
 };
 
