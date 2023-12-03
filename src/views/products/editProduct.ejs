@@ -3,17 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Product</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mohave&family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/editProduct.css">
+    <title>VENNER - Editar informacion del Producto</title>
 </head>
 <body>
+
     <%- include('../partials/header.ejs') %>
 
     <main>
-        <h1>editar productos</h1>
+        <div class="edit-product">
+            <h1>EDITAR INFORMACION</h1>
+            <form action="" method="">
+                
+                <div class="edit-product-field">
+                    <label for="category">CATEGORIA: </label>
+                    <input type="text" name="category" id="category" required>
+                </div>
+                
+                <div class="edit-product-field">
+                    <label for="name">NOMBRE: </label>
+                    <input type="text" name="name" id="name" required>
+                </div>
+                
+                <div class="edit-product-field">
+                    <label for="varieties">VARIEDAD: </label>
+                    <input type="text" name="varieties" id="varieties" placeholder="Variedades de uva, cepas...">
+                </div>
+                
+                <div class="edit-product-field">
+                    <label for="origin">ORIGEN: </label>
+                    <input type="text" name="origin" id="origin" placeholder="Region, provincia, pais...">
+                </div>
+    
+                <div class="edit-product-field">
+                    <label for="description">DESCRIPCION: </label>
+                    <input type="text" name="description" id="description" required>
+                </div>
+                
+                <div class="edit-product-field">
+                    <label for="price">PRECIO (ARS): </label>
+                    <input type="number" name="price" id="price" placeholder="$" required>
+                </div>
+                
+                <div class="edit-product-field">
+                    <label for="image">IMAGEN: </label>
+                    <input type="file" name="image" id="image" accept="image/png, image/jpeg" multiple required>
+                </div>
+                
+                <div class="edit-product-field">
+                    <label for="tall">TAMAÑO (cm<sup>3</sup>, mL): </label>
+                    <input type="number" name="tall" id="tall">
+                </div>
+
+                <div class="buttons">
+                    <button type="submit" class="edit">GUARDAR CAMBIOS</button>
+                </div>
+            </form>
+        </div>
     </main>
 
     <%- include('../partials/footer.ejs') %>
 
-    
 </body>
 </html>
