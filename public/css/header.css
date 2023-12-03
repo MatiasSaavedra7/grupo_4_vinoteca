@@ -119,6 +119,8 @@ header {
         background-color: #F5DEBF;
         width: 80%;
         max-width: 300px;
+        outline: none;
+        padding-left: 12px;
     }
 
     .search-bar button {
