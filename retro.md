@@ -19,3 +19,23 @@ Por el momento no encontramos algo que debamos realizar menos.
 Por lo pronto no hay algo que se haya decidido dejar de hacer. 
 
 Analizando el panorama en conjunto concluimos que el equipo funcionó de manera eficaz, al concluir con las tareas de manera exitosa, en tiempo y forma, respetando las exigencias del cliente. Por otro lado, consideramos que al utilizar los recursos mencionados en el informe mejoraría la eficiencia del equipo, contribuyendo aún más a la buena comunicación existente, a la organización de los tiempos y al desarrollo de las tareas.
+
+# Retrospectiva Sprint 2
+En la reunión realizada llevamos a cabo un análisis retrospectivo del trabajo realizado en el Sprint 2, utilizamos la dinámica de estrella de mar y llegamos a las siguientes conclusiones:
+
++ **Comenzar a hacer:**
+Nuevamente en el desarrollo de este sprint hubo poca utilización del tablero de trabajo, debemos comenzar a utilizarlo de manera más frecuente, realizando un mayor detalle de las tareas a realizar, moviendo las tarjetas a medida que cada integrante avance con alguna tarea hasta finalizarla. Para que todos tengamos pleno conocimiento de lo que está en ejecución, lo que está terminado y sobre todo lo que queda por hacer.
+
++ **Hacer más:**
+Durante el desarrollo de las tareas se empleó la utilización de ramas para subir el trabajo realizado por cada uno al GitHub, consideramos que debemos profundizar mas en el tema para poder hacer un mejor uso de las mismas, ya que son muy útiles para evitar conflictos.
+
++ **Continuar haciendo:**
+Como equipo tenemos muy buena comunicación, resolución de conflictos, predisposición y acompañamiento entre nosotros para el desarrollo de las tareas. Realizamos reuniones con frecuencia y permanecemos siempre en contacto. Es importante que continuemos trabajando de esa manera para seguir obteniendo buenos resultados.
+
++ **Hacer menos:**
+No encontramos nada que debamos hacer menos.
+
++ **Dejar hacer:**
+En el desarrollo de este sprint, hemos dejado pasar un poco el tiempo, haciendo que lleguemos un poco tarde a la entrega del mismo, faltando algunos puntos y detalles por concluir. No debemos relajarnos en ese aspecto para las próximas entregas. 
+
+Como conclusión general, el equipo trabaja muy bien, con algunas cuestiones por pulir y mejorar, para obtener mejores resultados.
