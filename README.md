@@ -65,3 +65,6 @@ https://www.vinoteca.com/
 https://www.debarricas.com.ar/
 
 
+# Link del Tablero de Trabajo en Trello:
+
+https://trello.com/b/fwMFP7vM/venner
