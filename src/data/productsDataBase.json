@@ -8,7 +8,7 @@
     "varieties": "Pinot Noir",
     "tall": 8,
     "description": "Tinto",
-    "image": "UtMassaQuis.tiff"
+    "image": "arcangel.png"
   },
   {
     "id": 2,
@@ -19,7 +19,7 @@
     "varieties": "Malbec",
     "tall": 234,
     "description": "Blanco",
-    "image": "Luctus.jpeg"
+    "image": "catena.png"
   },
   {
     "id": 3,
@@ -30,7 +30,7 @@
     "varieties": "Merlot",
     "tall": 594,
     "description": "Tinto",
-    "image": "CubiliaCuraeNulla.pdf"
+    "image": "colome.png"
   },
   {
     "id": 4,
@@ -41,7 +41,7 @@
     "varieties": "Malbec",
     "tall": 731,
     "description": "Rosado",
-    "image": "NullaPedeUllamcorper.mov"
+    "image": "don.png"
   },
   {
     "id": 5,
@@ -52,7 +52,7 @@
     "varieties": "Merlot",
     "tall": 600,
     "description": "Tinto",
-    "image": "LiberoConvallisEget.avi"
+    "image": "estancia.webp"
   },
   {
     "id": 6,
@@ -63,7 +63,7 @@
     "varieties": "Cabernet Sauvignon",
     "tall": 838,
     "description": "Tinto",
-    "image": "NecDui.png"
+    "image": "linterna.png"
   },
   {
     "id": 7,
@@ -74,7 +74,7 @@
     "varieties": "Malbec",
     "tall": 736,
     "description": "Tinto",
-    "image": "UtTellusNulla.mpeg"
+    "image": "paraiso.png"
   },
   {
     "id": 8,
@@ -85,7 +85,7 @@
     "varieties": "Cabernet Sauvignon",
     "tall": 852,
     "description": "Tinto",
-    "image": "AmetSem.jpeg"
+    "image": "yacochuya.png"
   },
   {
     "id": 9,
@@ -96,7 +96,7 @@
     "varieties": "Cabernet Sauvignon",
     "tall": 960,
     "description": "Tinto",
-    "image": "Sagittis.avi"
+    "image": "zuccardi.png"
   },
   {
     "id": 10,
@@ -107,6 +107,6 @@
     "varieties": "Malbec",
     "tall": 157,
     "description": "Rosado",
-    "image": "DuisAcNibh.mov"
+    "image": "zuccardi.png"
   }
 ]
