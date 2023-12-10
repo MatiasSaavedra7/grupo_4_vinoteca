@@ -69,7 +69,7 @@ main section a img {
 /* CONFIGURACION DE ESTILOS PARA DESKTOP */
 @media (min-width: 1024px) {
     main .products {
-        justify-content: space-between;
+        justify-content: start;
     }
     main a {
         width: 30%;

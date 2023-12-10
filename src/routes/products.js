@@ -18,29 +18,37 @@ const upload = multer({ storage: storage });
 
 
 const routes = {
-    productsRoute: '/',
-    productsNationalRoute: '/national',
-    productsImportedRoute: '/imported',
-    productsCartRoute: '/cart',
-    productsDetailRoute: '/detail/:idProduct',
-    addProductRoute: '/addProduct',
-    editProductRoute: '/editProduct'
+    home: '/',
+    national: '/national',
+    imported: '/imported',
+    cart: '/cart',
+    detail: '/detail/:idProduct',
+    add: '/addProduct',
+    edit: '/editProduct/:id',
+    delete: '/delete/:id',
 };
 
-router.get(routes.productsRoute, controller.productsController);
+// GET PRODUCTS
+router.get(routes.home, controller.products);
 
-router.get(routes.productsNationalRoute, controller.productsNationalController);
+router.get(routes.national, controller.national);
 
-router.get(routes.productsImportedRoute, controller.productsImportedController);
+router.get(routes.imported, controller.imported);
 
-router.get(routes.productsCartRoute, controller.productsCartController);
+router.get(routes.cart, controller.cart);
 
-router.get(routes.productsDetailRoute, controller.productsDetailController);
+router.get(routes.detail, controller.detail);
 
-router.get(routes.addProductRoute, controller.addProductController);
+// ADD PRODUCTS
+router.get(routes.add, controller.addProduct);
 
-router.post(routes.addProductRoute, upload.single('image'), controller.create);
+router.post(routes.add, upload.single('image'), controller.create);
 
-router.get(routes.editProductRoute, controller.editProductController);
+//EDIT PRODUCTS
+router.get(routes.edit, controller.editProduct);
+router.put(routes.edit, upload.single('image'), controller.updateProduct);
+
+// DELETE PRODUCT
+router.delete(routes.delete, controller.delete);
 
 module.exports = router;
