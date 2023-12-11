@@ -141,5 +141,16 @@
     "tall": "123123",
     "description": "1234",
     "image": "1702237303567-1701905463375-img-camara-nikon.jpg"
+  },
+  {
+    "id": 15,
+    "name": "vino importado",
+    "category": "international",
+    "price": "1599",
+    "origin": "cordoba",
+    "varieties": "malbec",
+    "tall": "750",
+    "description": "cordobes 123",
+    "image": "1702336577188-img-mouse-logitech.jpg"
   }
 ]
