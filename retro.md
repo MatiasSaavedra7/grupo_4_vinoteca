@@ -39,3 +39,29 @@ No encontramos nada que debamos hacer menos.
 En el desarrollo de este sprint, hemos dejado pasar un poco el tiempo, haciendo que lleguemos un poco tarde a la entrega del mismo, faltando algunos puntos y detalles por concluir. No debemos relajarnos en ese aspecto para las próximas entregas. 
 
 Como conclusión general, el equipo trabaja muy bien, con algunas cuestiones por pulir y mejorar, para obtener mejores resultados.
+
+# Retrospectiva: Sprint 3
+
+Nuevamente realizamos una reunión utilizando la dinámica de estrella de mar para el análisis retrospectivo del trabajo realizado en el Sprint 3. Las conclusiones fueron las siguientes:
+
++ **Comenzar a hacer:** 
+
+En el desarrollo del sprint trabajamos mucho en equipo por lo que no utilizamos ramas. Consideramos que debemos volver a utilizarlas para generar una buena práctica para los momentos en los cuales no trabajemos en equipo y de esa manera evitar conflictos al subir los cambios en el repositorio.
+
++ **Hacer más:**
+
+Incrementar el uso de las ramas y eliminarlas una vez finalizada su utilidad. Para mantener el orden de nuestro proyecto.
+
++ **Continuar haciendo:**
+
+Continuar utilizando el tablero de trabajo, mantener la buena comunicación del equipo, la resolución de conflictos, la predisposición de ayudarnos y pedir ayuda cuando sea necesario. Mantener la frecuencia de las reuniones. 
+
++ **Hacer menos:**
+
+No encontramos nada que debamos hacer menos.
+
++ **Dejar hacer:**
+
+Por ahora no encontramos algo que debamos dejar de realizar.
+
+Como conclusión general el equipo está trabajando muy bien, corrigiendo los errores u omisiones de los sprint anteriores. 
