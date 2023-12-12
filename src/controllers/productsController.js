@@ -22,25 +22,21 @@ const productsController = {
         res.render('products/imported', {title: 'Importados', css: 'products.css', imported});
     },
 
-    cart: (req, res) => {
-        res.render('products/productCart', {title: 'Carrito', css: 'productcart.css'});
-    },
-
     detail: (req, res) => {
-        const id = req.params.idProduct;
+        const id = req.params.id;
 
         const product = products.find((product) => product.id == id);
 
         res.render('products/productDetail', {title: 'Detalle de Producto', css: 'productDetail.css', product});
     },
 
-    addProduct: (req, res) => {
+    add: (req, res) => {
         res.render('products/addProduct', {title: 'Agregar Productos', css: 'addProduct.css'});
     },
     
     create: (req, res) => {
         const image = req.file ? req.file.filename : "default-image.png";
-
+        
         const newProduct = {
             id: products[products.length - 1].id + 1,
             name: req.body.name,
@@ -60,7 +56,7 @@ const productsController = {
         res.redirect("/products");
     },
     
-    editProduct: (req, res) => {
+    edit: (req, res) => {
         let id = req.params.id;
 
         let productToEdit = products.find(p => p.id == id);
@@ -68,7 +64,7 @@ const productsController = {
         res.render('products/editProduct', {title: 'Editar Productos', css: 'editProduct.css', productToEdit});
     },
     
-    updateProduct: (req, res) => {
+    update: (req, res) => {
         let indice = products.findIndex(p => p.id == req.params.id);
         
         products[indice].name = req.body.name

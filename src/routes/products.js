@@ -21,10 +21,9 @@ const routes = {
     home: '/',
     national: '/national',
     imported: '/imported',
-    cart: '/cart',
-    detail: '/detail/:idProduct',
-    add: '/addProduct',
-    edit: '/editProduct/:id',
+    detail: '/detail/:id',
+    add: '/add',
+    edit: '/edit/:id',
     delete: '/delete/:id',
 };
 
@@ -35,18 +34,16 @@ router.get(routes.national, controller.national);
 
 router.get(routes.imported, controller.imported);
 
-router.get(routes.cart, controller.cart);
-
 router.get(routes.detail, controller.detail);
 
 // ADD PRODUCTS
-router.get(routes.add, controller.addProduct);
+router.get(routes.add, controller.add);
 
 router.post(routes.add, upload.single('image'), controller.create);
 
 //EDIT PRODUCTS
-router.get(routes.edit, controller.editProduct);
-router.put(routes.edit, upload.single('image'), controller.updateProduct);
+router.get(routes.edit, controller.edit);
+router.put(routes.edit, upload.single('image'), controller.update);
 
 // DELETE PRODUCT
 router.delete(routes.delete, controller.delete);

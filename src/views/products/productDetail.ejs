@@ -45,7 +45,7 @@
 
         <button type="submit" id="buy-now">Comprar ahora!</button>
         <button type="" id="add-cart">Agregar al carro!</button>
-        <a href="/products/editProduct/<%= product.id %>">Editar</a>
+        <a href="/products/edit/<%= product.id %>">Editar</a>
         <form action="/products/delete/<%= product.id %>?_method=delete" method="post">
           <button type="submit">Eliminar</button> 
         </form>
