@@ -15,56 +15,61 @@
 
 <%- include('../partials/head.ejs') %>
 
-<body>
-  <%- include('../partials/header.ejs') %>
+  <body>
+    <%- include('../partials/header.ejs') %>
 
-    <main id="main-register">
-      <section>
-        <form action="/register" method="post" id="formulario">
-          <legend>REGISTRATE</legend>
+      <main id="main-register">
+        <section>
+          <form action="/users/register" method="post" id="formulario" enctype="multipart/form-data">
+            <legend>REGISTRATE</legend>
 
-          <div class="div-form">
-            <label for="name">NOMBRE</label>
-            <input type="text" name="name" id="name" placeholder="Nombre" />
-          </div>
+            <div class="div-form">
+              <label for="name">NOMBRE</label>
+              <input type="text" name="name" id="name" placeholder="Nombre" />
+            </div>
 
-          <div class="div-form">
-            <label for="surname">APELLIDO</label>
-            <input type="text" name="surname" id="surname" placeholder="Apellido" />
-          </div>
+            <div class="div-form">
+              <label for="surname">APELLIDO</label>
+              <input type="text" name="surname" id="surname" placeholder="Apellido" />
+            </div>
 
-          <div class="div-form">
-            <label for="email">CORREO</label>
-            <input type="email" name="email" id="email" placeholder="correo@.." />
-          </div>
+            <div class="div-form">
+              <label for="email">CORREO</label>
+              <input type="email" name="email" id="email" placeholder="correo@.." />
+            </div>
 
-          <div class="div-form">
-            <label for="tel">TELÉFONO</label>
-            <input type="tel" ame="tel" id="tel" placeholder="+549..." />
-          </div>
+            <div class="div-form">
+              <label for="tel">TELÉFONO</label>
+              <input type="tel" name="tel" id="tel" placeholder="+549..." />
+            </div>
 
-          <div class="div-form">
-            <label for="pass">CONSTRASEÑA</label>
-            <input type="password" name="pass" id="pass" />
-            <img src="" alt="" />
-          </div>
+            <div class="div-form">
+              <label for="image">IMAGEN: </label>
+              <input type="file" name="image" id="image" accept="image/png, image/jpeg">
+            </div>
 
-          <div class="div-form">
-            <label for="reppass">CONFIRMAR CONTRASEÑA</label>
-            <input type="password" name="reppass" id="reppass" />
-            <img src="" alt="" />
-          </div>
+            <div class="div-form">
+              <label for="pass">CONSTRASEÑA</label>
+              <input type="password" name="password" id="pass" />
+              <img src="" alt="" />
+            </div>
 
-          <button type="submit" id="button-form">CREAR CUENTA</button>
-        </form>
-      </section>
+            <div class="div-form">
+              <label for="reppass">CONFIRMAR CONTRASEÑA</label>
+              <input type="password" name="confirmpassword" id="reppass" />
+              <img src="" alt="" />
+            </div>
 
-      <p id="p-register">
-        ¿Ya tenes cuenta? <a href="/users/login"><strong>Inicia Sesión</strong></a>
-      </p>
-    </main>
+            <button type="submit" id="button-form">CREAR CUENTA</button>
+          </form>
+        </section>
 
-    <%- include('../partials/footer.ejs') %>
-</body>
+        <p id="p-register">
+          ¿Ya tenes cuenta? <a href="/users/login"><strong>Inicia Sesión</strong></a>
+        </p>
+      </main>
+
+      <%- include('../partials/footer.ejs') %>
+  </body>
 
 </html>

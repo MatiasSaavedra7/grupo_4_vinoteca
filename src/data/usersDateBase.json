@@ -1,93 +1,70 @@
 [
-    {
-      "id": 1,
-      "firstName": "pellentesque quisque",
-      "lastName": "vel",
-      "email": "bnussgen0@businesswire.com",
-      "password": "bW4\"rIe6#vX!",
-      "type": "Customer",
-      "image": "/images/avatars/pretzel.jpg"
-    },
-    {
-      "id": 2,
-      "firstName": "eu",
-      "lastName": "sagittis dui",
-      "email": "frainville1@guardian.co.uk",
-      "password": "lV9=S0ih>j6X?%",
-      "type": "Admin",
-      "image": "/images/avatars/polloCorazon.jpg"
-    },
-    {
-      "id": 3,
-      "firstName": "sit amet",
-      "lastName": "ac",
-      "email": "mbalm2@home.pl",
-      "password": "qS1|Em!m'kC/Qh",
-      "type": "Admin",
-      "image": "/images/avatars/pretzel.jpg"
-    },
-    {
-      "id": 4,
-      "firstName": "nam tristique",
-      "lastName": "sapien",
-      "email": "fclewley3@gmpg.org",
-      "password": "iM7{pyWvF+YV\"",
-      "type": "Admin",
-      "image": "/images/avatars/jala.jpg"
-    },
-    {
-      "id": 5,
-      "firstName": "justo",
-      "lastName": "ipsum",
-      "email": "dcalvey4@cisco.com",
-      "password": "vY6/~.O~3''",
-      "type": "Admin",
-      "image": "/images/avatars/tostada.jpg"
-    },
-    {
-      "id": 6,
-      "firstName": "quis turpis",
-      "lastName": "mi nulla",
-      "email": "glugsdin5@ox.ac.uk",
-      "password": "lD4!*Jt\"M{00!nQe",
-      "type": "Customer",
-      "image": "/images/avatars/pletzale.jpg"
-    },
-    {
-      "id": 7,
-      "firstName": "ultrices",
-      "lastName": "vitae nisl",
-      "email": "kdrain6@yahoo.co.jp",
-      "password": "dK3#V7h.,h@b4",
-      "type": "Admin",
-      "image": "/images/avatars/polloCorazon.jpg"
-    },
-    {
-      "id": 8,
-      "firstName": "vivamus",
-      "lastName": "lacinia eget",
-      "email": "rsatford7@hibu.com",
-      "password": "nG0}6Oi//N1<vv#",
-      "type": "Customer",
-      "image": "/images/avatars/polloCorazon.jpg"
-    },
-    {
-      "id": 9,
-      "firstName": "nibh",
-      "lastName": "augue vestibulum",
-      "email": "dorae8@addtoany.com",
-      "password": "yV7?~ex(.0",
-      "type": "Admin",
-      "image": "/images/avatars/pletzale.jpg"
-    },
-    {
-      "id": 10,
-      "firstName": "id",
-      "lastName": "ultrices enim",
-      "email": "tnewlin9@163.com",
-      "password": "kK0>L$<uv0y",
-      "type": "Customer",
-      "image": "/images/avatars/tostada.jpg"
-    }
-  ]
-  
+ {
+  "id": 1,
+  "name": "Matias quisque",
+  "surname": "vel",
+  "email": "bnussgen0@businesswire.com",
+  "tel": "+54 123123123",
+  "image": "default-image.png",
+  "password": "bW4\"rIe6#vX!",
+  "confirmpassword": "bW4\"rIe6#vX!"
+ },
+ {
+  "id": 2,
+  "name": "luana ",
+  "surname": "la linda ",
+  "email": "sdfsdf@gsjdng",
+  "tel": "11915615115",
+  "password": "$2b$10$g2qKSBphRd.6bZ.HbQvpr.uEeHvQmiYgFZ48x6wrylXXw0lM/Bzlm",
+  "confirmpassword": "vinoteca",
+  "image": "default-image.png"
+ },
+ {
+  "id": 3,
+  "name": "Luana",
+  "surname": "la linda ",
+  "email": "lindalaluna@sdjbfsd.com",
+  "tel": "11915615115",
+  "password": "$2b$10$nNOZWekq4Z4I6t2fcIZdue0xpuCGJLXmujBv3rh5abnfrWlpkEjyS",
+  "confirmpassword": "$2b$10$VLwCJfu45Mppi/sGvsvKH.Mv5Fx3HEu4JxclX/1vxg8h6.Gu.3QoG",
+  "image": "default-image.png"
+ },
+ {
+  "id": 4,
+  "name": "luana ",
+  "surname": "la linda ",
+  "email": "sandraturismo17@gmail.com",
+  "tel": "11915615115",
+  "password": "$2b$10$P6EMWCukcaYO3xUnOlA.KOGs0j6rxOAzJgJ0T3bzy0Xp24hT19qUq",
+  "confirmpassword": "$2b$10$7NnYn61hRZ4Gd23/9Wq1COVV.cAPUWlCb3Y4ZO.LfQmntKKybU85W",
+  "image": "default-image.png"
+ },
+ {
+  "id": 5,
+  "name": "matias",
+  "surname": "matias",
+  "email": "matias@matias.com",
+  "tel": "123123",
+  "password": "$2b$10$.nQiWLnQuhohy/AzqySS4u5NQAM1MZu.AtwTEF60IDfyuqlmwSCwa",
+  "confirmpassword": "$2b$10$jHg9dYAZmdTewoLY6QVERe1/VFBq.jshAxFEZmvPEc4xOcUKWui1K",
+  "image": "default-image.png"
+ },
+ {
+  "id": 6,
+  "name": "luana ",
+  "surname": "la linda ",
+  "email": "lindalaluna@sdjbfsd.com",
+  "tel": "11915615115",
+  "password": "$2b$10$EgdTitRw4BSQsAmp.QQMAukjkP.1AmPHJ8dGLBWtSBtbHdVkJl3K.",
+  "image": "default-image.png"
+ },
+ {
+  "id": 7,
+  "name": "luana ",
+  "surname": "la linda ",
+  "email": "sandraturismo17@gmail.com",
+  "tel": "11915615115",
+  "password": "$2b$10$YYFP0un2fsroFSMaEZKssOAaTzWolfd61FBFkkZY/gRf1uhk3.NLW",
+  "image": "1705011894303-imagen_2023-12-03_084649086-removebg-preview-removebg-preview.png"
+ }
+]
