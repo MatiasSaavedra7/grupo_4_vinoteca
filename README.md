@@ -16,16 +16,8 @@ Durante 15 años hemos estado comprometidos con la búsqueda de los vinos más e
 
 
 
-## Cabezas, Anahi Zalazar:
-### Estudiante de Comunicacion social y Marketing, 29 años. En mis tiempos libres disfruto de realizar varias actividades como hacer piezas en cerámica, andar en bicicleta y pasear con mi mascota.
-
- ### Rol en el proyecto: 
- ### Directora de Marketing y Publicidad: a cargo de las campañas publicitarias para atraer a más clientes a la tienda, diseño web, redes sociales y las promociones por correo electrónico.
-
-
-
-## Leguizamon, Lucas: 
-### Estudiante avanzado de Tecnicatura Superior en Programación en ITSE. Apasionado del hardware, los autos y las motos, en mis tiempos libres juego al pádel, fútbol y practico ciclismo. Mi objetivo es agregar un stack web a lo que aprendí en la tecnicatura.
+## Leguizamón, Lucas Alfonso: 
+### Programador recibido en ITSE (Instituto Tecnológico de Santiago del Estero), 30 años. Apasionado del hardware, los autos y las motos, en mis tiempos libres juego al pádel, fútbol y practico ciclismo. Mi objetivo es agregar un stack web a lo que aprendí en la Tecnicatura.
 
  ### Rol en el proyecto:
  ### Desarrollador Web: A cargo del diseño y mantenimiento del sitio web, asegurándome de que sea fácil de usar y estéticamente atractivo.
