@@ -1,20 +1,7 @@
 const controller = require('../controllers/productsController');
 const { Router } = require('express');
 const router = Router();
-const multer = require('multer');
-const path = require('path');
-
-// MULTER - Manejo del almacenamiento
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-      cb(null, path.resolve(__dirname, "../../public/images/products"));
-    },
-    filename: (req, file, cb) => {
-      cb(null, Date.now() + "-" + file.originalname);
-    },
-});
-
-const upload = multer({ storage: storage });
+const {upload} = require("../middlewares/multer");
 
 
 const routes = {

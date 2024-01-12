@@ -51,7 +51,7 @@ const productsController = {
 
         products.push(newProduct);
 
-        fs.writeFileSync(productsFilePath, JSON.stringify(products));
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
 
         res.redirect("/products");
     },

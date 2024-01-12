@@ -66,5 +66,14 @@
   "tel": "11915615115",
   "password": "$2b$10$YYFP0un2fsroFSMaEZKssOAaTzWolfd61FBFkkZY/gRf1uhk3.NLW",
   "image": "1705011894303-imagen_2023-12-03_084649086-removebg-preview-removebg-preview.png"
+ },
+ {
+  "id": 8,
+  "name": "SANTI",
+  "surname": "dadasdas",
+  "email": "dasdasdsa@gmail.com",
+  "tel": "5345345435",
+  "password": "$2b$10$QfiVxS8fzxSdJ6zY70XsiOARKOrS5BC9ngkk.v0N2ZPktSZp4yt1m",
+  "image": "1705088611407-images.jpeg"
  }
 ]
