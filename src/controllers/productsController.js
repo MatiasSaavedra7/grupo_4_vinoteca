@@ -7,19 +7,19 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const productsController = {
 
     products: (req, res) => {
-        res.render('products/products', {title: 'Productos', css: 'products.css', products});
+        res.render('products/products', {products});
     },
 
     national: (req, res) => {
         let national = products.filter( product => product.category == 'national')
 
-        res.render('products/national', {title: 'Nacionales', css: 'products.css', national});
+        res.render('products/national', {national});
     },
 
     imported: (req, res) => {
         let imported = products.filter( product => product.category == 'international')
 
-        res.render('products/imported', {title: 'Importados', css: 'products.css', imported});
+        res.render('products/imported', {imported});
     },
 
     detail: (req, res) => {
@@ -27,11 +27,11 @@ const productsController = {
 
         const product = products.find((product) => product.id == id);
 
-        res.render('products/productDetail', {title: 'Detalle de Producto', css: 'productDetail.css', product});
+        res.render('products/productDetail', {product});
     },
 
     add: (req, res) => {
-        res.render('products/addProduct', {title: 'Agregar Productos', css: 'addProduct.css'});
+        res.render('products/addProduct');
     },
     
     create: (req, res) => {
@@ -61,7 +61,7 @@ const productsController = {
 
         let productToEdit = products.find(p => p.id == id);
 
-        res.render('products/editProduct', {title: 'Editar Productos', css: 'editProduct.css', productToEdit});
+        res.render('products/editProduct', {productToEdit});
     },
     
     update: (req, res) => {

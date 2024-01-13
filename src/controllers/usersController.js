@@ -16,17 +16,11 @@ const usersController = {
   },
 
   addUser: (req, res) => {
-    //Faltar validar la contraseña (entre otras cosas...)
+    //Validamos los datos
     const errors = validationResult(req);
 
     if(!errors.isEmpty()){
-      // return res.send(errors.mapped())
-      return res.render('users/register', {
-        title: 'Registrate',
-        css: 'register.css',
-        errors: errors.mapped(),
-        old: req.body
-      });
+      return res.render('users/register', {errors: errors.mapped(), old: req.body});
     }
 
     delete req.body.confirmpassword;
@@ -70,12 +64,7 @@ const usersController = {
 
     const userFind = users2.find((u) => u.email == req.body.email);
 
-    console.log(userFind)
-
-
     if (userFind) {
-
-      console.log(req.session.userLogged)
 
       //Si existe el usuario verificamos la contraseña
       if (bcrypt.compareSync(req.body.password, userFind.password)) {
@@ -85,8 +74,6 @@ const usersController = {
 
         //Guardamos al usuario en session
         req.session.userLogged = userFind;
-
-        console.log(req.session.userLogged)
 
         //Retornamos a la home una vez validados el email y password
         return res.redirect("/");
@@ -100,7 +87,9 @@ const usersController = {
             },
           },
         });
+
       }
+      
     }
 
     //En caso de que el correo se no encuentre mostramos este mensaje

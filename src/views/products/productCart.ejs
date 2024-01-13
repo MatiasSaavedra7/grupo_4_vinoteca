@@ -1,23 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
+  
+  <%- include('../partials/head.ejs', {title: 'Carrito', css:
+  'productcart.css'}) %>
 
-<!-- <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Venner Wine | Tienda</title>
-
-  <!-- <link rel="icon" href="../wireframe/desktop/logo_venner.ico" type="image/icon" /> -->
-  <link rel="stylesheet" href="/css/productCart.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Mohave&family=Roboto&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-</head>
-
-<%- include('../partials/head.ejs') %>
-
-<body>
-  <%- include('../partials/header.ejs') %>
+  <body>
+    <%- include('../partials/header.ejs') %>
 
     <main>
       <h2>Tu Carrito de Compras</h2>
@@ -61,7 +49,5 @@
     </main>
 
     <%- include('../partials/footer.ejs') %>
-
-</body>
-
+  </body>
 </html>

@@ -52,5 +52,14 @@
   "tel": "",
   "password": "$2b$10$VQZIMBwad/TpRQLChDNYyOzDA8GMh.hJ4IM2kIsXx9sw1Aa6S9KqK",
   "image": "default-image.png"
+ },
+ {
+  "id": 7,
+  "name": "sdfds",
+  "surname": "fsdfsdf",
+  "email": "falso123@gmail.com",
+  "tel": "fdsfsdfsdff",
+  "password": "$2b$10$ny4B92eTkt5YhZwmbxV.ceqMDj1IpNY3/FRJK6GvmOEwn0zXWgpUW",
+  "image": "default-image.png"
  }
 ]

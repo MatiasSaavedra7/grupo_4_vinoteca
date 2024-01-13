@@ -6,15 +6,15 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 const controller = {
     home: (req, res) => {
-        res.render('home', {title: 'VENNER Vinoteca', css: 'home.css'});
+        res.render('home');
     },
 
     about: (req, res) => {
-        res.render('nosotros', {title: 'Sobre Nosotros', css:'nosotros.css'});
+        res.render('nosotros');
     },
 
     contact: (req, res) => {
-        res.render('contacto', {title: 'Contacto', css: 'contacto.css'});
+        res.render('contacto');
     },
 
     search: (req, res) => {
@@ -22,7 +22,7 @@ const controller = {
 
         let search = products.filter(p => p.name.toLowerCase().includes(words.toLowerCase()))
 
-        res.render('search', {title: 'Resultados de la busqueda', css:'products.css', products: search})
+        res.render('search', {products: search})
     }
 };
 
