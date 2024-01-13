@@ -1,6 +1,6 @@
 const session = require("express-session");
 
-function authMiddleware(req, res, next){
+function guestMiddleware(req, res, next){
 
     if(req.session.userLogged){
         return res.redirect("/")
@@ -9,4 +9,4 @@ function authMiddleware(req, res, next){
     next();
 }
 
-module.exports = authMiddleware;
+module.exports = guestMiddleware;

@@ -43,7 +43,7 @@ const usersController = {
     fs.writeFileSync(userFilePath, JSON.stringify(users, null, " "));
 
     //Redireccionamos al home
-    res.redirect("/");
+    res.redirect("/users/login");
   },
 
   loginProcess: (req, res) => {
