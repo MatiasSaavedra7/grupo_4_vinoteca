@@ -17,6 +17,17 @@ const usersController = {
 
   addUser: (req, res) => {
     //Faltar validar la contraseña (entre otras cosas...)
+    const errors = validationResult(req);
+
+    if(!errors.isEmpty()){
+      // return res.send(errors.mapped())
+      return res.render('users/register', {
+        title: 'Registrate',
+        css: 'register.css',
+        errors: errors.mapped(),
+        old: req.body
+      });
+    }
 
     delete req.body.confirmpassword;
 

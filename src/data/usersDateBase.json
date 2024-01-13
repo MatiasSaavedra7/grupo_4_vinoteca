@@ -1,124 +1,56 @@
 [
  {
   "id": 1,
-  "name": "Matias quisque",
-  "surname": "vel",
-  "email": "bnussgen0@businesswire.com",
-  "tel": "+54 123123123",
-  "image": "default-image.png",
-  "password": "bW4\"rIe6#vX!",
-  "confirmpassword": "bW4\"rIe6#vX!"
- },
- {
-  "id": 2,
-  "name": "luana ",
-  "surname": "la linda ",
-  "email": "sdfsdf@gsjdng",
-  "tel": "11915615115",
-  "password": "$2b$10$g2qKSBphRd.6bZ.HbQvpr.uEeHvQmiYgFZ48x6wrylXXw0lM/Bzlm",
-  "confirmpassword": "vinoteca",
-  "image": "default-image.png"
- },
- {
-  "id": 3,
-  "name": "Luana",
-  "surname": "la linda ",
-  "email": "lindalaluna@sdjbfsd.com",
-  "tel": "11915615115",
-  "password": "$2b$10$nNOZWekq4Z4I6t2fcIZdue0xpuCGJLXmujBv3rh5abnfrWlpkEjyS",
-  "confirmpassword": "$2b$10$VLwCJfu45Mppi/sGvsvKH.Mv5Fx3HEu4JxclX/1vxg8h6.Gu.3QoG",
-  "image": "default-image.png"
- },
- {
-  "id": 4,
-  "name": "luana ",
-  "surname": "la linda ",
-  "email": "sandraturismo17@gmail.com",
-  "tel": "11915615115",
-  "password": "$2b$10$P6EMWCukcaYO3xUnOlA.KOGs0j6rxOAzJgJ0T3bzy0Xp24hT19qUq",
-  "confirmpassword": "$2b$10$7NnYn61hRZ4Gd23/9Wq1COVV.cAPUWlCb3Y4ZO.LfQmntKKybU85W",
-  "image": "default-image.png"
- },
- {
-  "id": 5,
-  "name": "matias",
-  "surname": "matias",
-  "email": "matias@matias.com",
-  "tel": "123123",
-  "password": "$2b$10$.nQiWLnQuhohy/AzqySS4u5NQAM1MZu.AtwTEF60IDfyuqlmwSCwa",
-  "confirmpassword": "$2b$10$jHg9dYAZmdTewoLY6QVERe1/VFBq.jshAxFEZmvPEc4xOcUKWui1K",
-  "image": "default-image.png"
- },
- {
-  "id": 6,
-  "name": "luana ",
-  "surname": "la linda ",
-  "email": "lindalaluna@sdjbfsd.com",
-  "tel": "11915615115",
-  "password": "$2b$10$EgdTitRw4BSQsAmp.QQMAukjkP.1AmPHJ8dGLBWtSBtbHdVkJl3K.",
-  "image": "default-image.png"
- },
- {
-  "id": 7,
-  "name": "luana ",
-  "surname": "la linda ",
-  "email": "sandraturismo17@gmail.com",
-  "tel": "11915615115",
-  "password": "$2b$10$YYFP0un2fsroFSMaEZKssOAaTzWolfd61FBFkkZY/gRf1uhk3.NLW",
-  "image": "1705011894303-imagen_2023-12-03_084649086-removebg-preview-removebg-preview.png"
- },
- {
-  "id": 8,
-  "name": "SANTI",
-  "surname": "dadasdas",
-  "email": "dasdasdsa@gmail.com",
-  "tel": "5345345435",
-  "password": "$2b$10$QfiVxS8fzxSdJ6zY70XsiOARKOrS5BC9ngkk.v0N2ZPktSZp4yt1m",
-  "image": "1705088611407-images.jpeg"
- },
- {
-  "id": 9,
-  "name": "ssda",
-  "surname": "dasd",
-  "email": "asfa@dgndg",
-  "tel": "11915615115",
-  "password": "$2b$10$W/0y5t0fb.iwPwRFgNbm2eNaDnjHK4RiYctH1.bzp6DMf5XO90EsO",
-  "image": "default-image.png"
- },
- {
-  "id": 10,
-  "name": "luana ",
-  "surname": "monteros",
-  "email": "luamonteros08@gmail.com",
-  "tel": "15151651",
-  "password": "$2b$10$q6FAPRJONKa2PcCb5c5Oy.wixFjT7oQYRlTZ8AdIKLnO/5poMHgzq",
-  "image": "default-image.png"
- },
- {
-  "id": 11,
-  "name": "luana ",
-  "surname": "monteros",
-  "email": "luamonteros08@gmail.com",
-  "tel": "",
-  "password": "$2b$10$t.8YrB.OgCpDcAw/tpPLueXR0H70OUxG/0cBKEKOPIkkceGQVrgF.",
-  "image": "default-image.png"
- },
- {
-  "id": 12,
-  "name": "luana ",
-  "surname": "la linda ",
-  "email": "luamonteros08@gmail.com",
-  "tel": "11915615115",
-  "password": "$2b$10$YU.0NNj/HEqMi.omIYH/kO9DLSj5Iyla8rhwy9/7ls4IXGOSitOJ6",
-  "image": "default-image.png"
- },
- {
-  "id": 13,
   "name": "luana ",
   "surname": "la linda ",
   "email": "falso@gmail.com",
   "tel": "",
   "password": "$2b$10$uMk93rYzE1sRESqXGJ509OICQ1K63I8OyXZ4YLWsvZxEEbt2UVWXu",
+  "image": "default-image.png"
+ },
+ {
+  "id": 2,
+  "name": "Matias",
+  "surname": "Matias",
+  "email": "matias@email.com",
+  "tel": "",
+  "password": "$2b$10$4hiQ2rkX1sUJX7.EDUTk4.YGidErZJKNbjExIXgTzqNpEPz7wjulO",
+  "image": "default-image.png"
+ },
+ {
+  "id": 3,
+  "name": "",
+  "surname": "Matias",
+  "email": "123@123.com",
+  "tel": "",
+  "password": "$2b$10$m0xd1sY5xw5FgYm/U8iThegutWIIHxv0j4eZEfgKVo0C2SOtNk2Wu",
+  "image": "default-image.png"
+ },
+ {
+  "id": 4,
+  "name": "",
+  "surname": "",
+  "email": "",
+  "tel": "",
+  "password": "$2b$10$SHswwoiFrqFyVZBY1AzF1.l9wKX/QT.eKMF2Dy0EMXuChIjid1wKe",
+  "image": "default-image.png"
+ },
+ {
+  "id": 5,
+  "name": "matias",
+  "surname": "sv",
+  "email": "matias@email.com",
+  "tel": "",
+  "password": "$2b$10$yStRYua0HDhvMnI.r4OScuot5HaO/MLdd7gNlp3by0Jx1VFsuqO1W",
+  "image": "default-image.png"
+ },
+ {
+  "id": 6,
+  "name": "matias",
+  "surname": "matias",
+  "email": "matias@matias.com",
+  "tel": "",
+  "password": "$2b$10$VQZIMBwad/TpRQLChDNYyOzDA8GMh.hJ4IM2kIsXx9sw1Aa6S9KqK",
   "image": "default-image.png"
  }
 ]
