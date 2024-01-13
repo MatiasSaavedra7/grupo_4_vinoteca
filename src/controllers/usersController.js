@@ -3,7 +3,7 @@ const path = require("path");
 const bcrypt = require("bcrypt");
 const { validationResult } = require("express-validator");
 
-const userFilePath = path.join(__dirname, "../data/usersDateBase.json");
+const userFilePath = path.join(__dirname, "../data/usersDataBase.json");
 const users = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
 
 const usersController = {
@@ -59,7 +59,7 @@ const usersController = {
     }
 
     //Buscamos al usuario a traves de su email
-    const userFilePath = path.join(__dirname, "../data/usersDateBase.json");
+    const userFilePath = path.join(__dirname, "../data/usersDataBase.json");
     const users2 = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
 
     const userFind = users2.find((u) => u.email == req.body.email);
