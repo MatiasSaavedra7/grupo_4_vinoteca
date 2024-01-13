@@ -23,7 +23,7 @@
 
         <p class="iniciar-sesion">INICIA SESIÓN</p>
 
-        <form action="" class="form">
+        <form action="/users/login" method="post" class="form">
 
             <div class="campo-container">
                 <label for="email">CORREO</label>
@@ -31,6 +31,9 @@
                     <i class="fa-regular fa-envelope"></i>
                     <input type="email" placeholder="ejemplo@email.com" name="email" id="email">
                 </div>
+               
+                <span><%= locals.errors && errors.email? errors.email.msg : "" %></span>
+              
             </div>
 
             <div class="campo-container">
@@ -42,9 +45,12 @@
                 </div>
                 <a href="#">¿Olvidaste tu contraseña?</a>
             </div>
+
+            <span><%= locals.errors && errors.password? errors.password.msg : "" %> </span>
+
+            <button type="submit" class="btn">INICIAR SESIÓN</button>
         </form>
 
-        <button type="submit" class="btn">INICIAR SESIÓN</button>
 
         <p class="tienes-cuenta">¿No tienes una cuenta? <a href="/users/register">Registrate</a></p>
 

@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override');
 const app = express();
+const session = require("express-session");
+const cookieParser = require("cookie-parser");
 
 //Sección de Configuración de Carpeta de Archivos Estáticos
 app.use(express.static(path.join(__dirname, '..', 'public')));
@@ -16,6 +18,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use(methodOverride('_method'));
+
+app.use(session({
+    secret: "Venner secret",
+    resave: false, 
+    saveUninitialized: false,
+ }));
+
+app.use(cookieParser());
 
 //Sección de Requerimiento de Rutas
 const mainRouter = require('./routes/main');

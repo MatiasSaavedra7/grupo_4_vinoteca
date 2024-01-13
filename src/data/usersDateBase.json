@@ -75,5 +75,50 @@
   "tel": "5345345435",
   "password": "$2b$10$QfiVxS8fzxSdJ6zY70XsiOARKOrS5BC9ngkk.v0N2ZPktSZp4yt1m",
   "image": "1705088611407-images.jpeg"
+ },
+ {
+  "id": 9,
+  "name": "ssda",
+  "surname": "dasd",
+  "email": "asfa@dgndg",
+  "tel": "11915615115",
+  "password": "$2b$10$W/0y5t0fb.iwPwRFgNbm2eNaDnjHK4RiYctH1.bzp6DMf5XO90EsO",
+  "image": "default-image.png"
+ },
+ {
+  "id": 10,
+  "name": "luana ",
+  "surname": "monteros",
+  "email": "luamonteros08@gmail.com",
+  "tel": "15151651",
+  "password": "$2b$10$q6FAPRJONKa2PcCb5c5Oy.wixFjT7oQYRlTZ8AdIKLnO/5poMHgzq",
+  "image": "default-image.png"
+ },
+ {
+  "id": 11,
+  "name": "luana ",
+  "surname": "monteros",
+  "email": "luamonteros08@gmail.com",
+  "tel": "",
+  "password": "$2b$10$t.8YrB.OgCpDcAw/tpPLueXR0H70OUxG/0cBKEKOPIkkceGQVrgF.",
+  "image": "default-image.png"
+ },
+ {
+  "id": 12,
+  "name": "luana ",
+  "surname": "la linda ",
+  "email": "luamonteros08@gmail.com",
+  "tel": "11915615115",
+  "password": "$2b$10$YU.0NNj/HEqMi.omIYH/kO9DLSj5Iyla8rhwy9/7ls4IXGOSitOJ6",
+  "image": "default-image.png"
+ },
+ {
+  "id": 13,
+  "name": "luana ",
+  "surname": "la linda ",
+  "email": "falso@gmail.com",
+  "tel": "",
+  "password": "$2b$10$uMk93rYzE1sRESqXGJ509OICQ1K63I8OyXZ4YLWsvZxEEbt2UVWXu",
+  "image": "default-image.png"
  }
 ]
