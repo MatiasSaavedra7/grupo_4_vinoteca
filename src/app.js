@@ -9,11 +9,11 @@ const cookieParser = require("cookie-parser");
 //Sección de Configuración de Carpeta de Archivos Estáticos
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
-
 //Sección de Configuración de Motor de Plantillas
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+//Seccion de Middlewares
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 

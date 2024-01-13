@@ -8,11 +8,11 @@ const users = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
 
 const usersController = {
   register: (req, res) => {
-    res.render("users/register", { title: "Registrate", css: "register.css" });
+    res.render("users/register");
   },
 
   login: (req, res) => {
-    res.render("users/login", { title: "Ingresá", css: "login.css" });
+    res.render("users/login");
   },
 
   addUser: (req, res) => {
@@ -42,32 +42,47 @@ const usersController = {
   },
 
   loginProcess: (req, res) => {
+
+    //Asignamos a errors los resultados de las validaciones.
     const errors = validationResult(req);
 
+    //Verificamos si errors no esta vacia
     if (!errors.isEmpty()) {
-      return res.render("users/login", {
-        title: "Inicia sesion",
-        css: "login.css",
-        errors: errors.mapped(),
-      });
+
+      //Retornamos a la vista login los errores
+      return res.render("users/login", { errors: errors.mapped() });
     }
 
-    const userFind = users.find((u) => u.email == req.body.email);
+    //Buscamos al usuario a traves de su email
+    const userFilePath = path.join(__dirname, "../data/usersDateBase.json");
+    const users2 = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
+
+    const userFind = users2.find((u) => u.email == req.body.email);
+
+    console.log(userFind)
+
 
     if (userFind) {
+
+      console.log(req.session.userLogged)
+
+      //Si existe el usuario verificamos la contraseña
       if (bcrypt.compareSync(req.body.password, userFind.password)) {
 
+        //En caso afirmativo borramos la contraseña del usuario
         delete userFind.password;
 
+        //Guardamos al usuario en session
         req.session.userLogged = userFind;
 
+        console.log(req.session.userLogged)
+
+        //Retornamos a la home una vez validados el email y password
         return res.redirect("/");
-        // return res.send("fgdfgdfgfdgfd")
       } else {
 
+        //En caso de que la contraseña sea incorrecta mostramos un mensaje
         return res.render("users/login", {
-          title: "Inicia sesion",
-          css: "login.css",
           errors: {
             email: {
               msg: "Las credenciales no coinciden",
@@ -77,16 +92,15 @@ const usersController = {
       }
     }
 
+    //En caso de que el correo se no encuentre mostramos este mensaje
     return res.render("users/login", {
-      title: "Inicia sesion",
-      css: "login.css",
       errors: {
         email: {
           msg: "Correo no encontrado :(",
         },
       },
     });
-    
+
   },
 };
 

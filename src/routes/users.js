@@ -3,6 +3,7 @@ const { Router } = require('express');
 const router = Router();
 const {upload2} = require("../middlewares/multer");
 const validateLogin = require('../middlewares/validateFormLoginMiddleware');
+const authMiddleware = require("../middlewares/authMiddleware");
 
 const routes = {
     registerRoute: '/register',
@@ -10,11 +11,11 @@ const routes = {
 };
 
 //ADD USER
-router.get(routes.registerRoute, controller.register);
+router.get(routes.registerRoute, authMiddleware, controller.register);
 router.post(routes.registerRoute, upload2.single('image'), controller.addUser);
 
 //LOGIN USER
-router.get(routes.loginRoute, controller.login);
+router.get(routes.loginRoute, authMiddleware, controller.login);
 router.post(routes.loginRoute, validateLogin, controller.loginProcess)
 
 module.exports = router;
