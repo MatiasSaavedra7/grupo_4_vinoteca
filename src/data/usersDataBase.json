@@ -61,5 +61,32 @@
   "tel": "fdsfsdfsdff",
   "password": "$2b$10$ny4B92eTkt5YhZwmbxV.ceqMDj1IpNY3/FRJK6GvmOEwn0zXWgpUW",
   "image": "default-image.png"
+ },
+ {
+  "id": 8,
+  "name": "lucas",
+  "surname": "leguizamon",
+  "email": "lucas@legui.com",
+  "tel": "+3511234567",
+  "password": "$2b$10$RJmwJNnvTRNwwueGPsR58OlU.za1QnHUQtoabyzBAGmcLb9A4kFTC",
+  "image": "1705186634067-girando ban.png"
+ },
+ {
+  "id": 9,
+  "name": "sdffsd",
+  "surname": "sdfsdf",
+  "email": "lucas2@legui.com",
+  "tel": "412423",
+  "password": "$2b$10$FZPtUunrLj6Kg6ffSweequydA5IMz74.HQee8ACeAXef7HMo1xcyy",
+  "image": "default-image.png"
+ },
+ {
+  "id": 10,
+  "name": "fdsaf",
+  "surname": "fdsaf",
+  "email": "lucas3@legui.com",
+  "tel": "4123412423",
+  "password": "$2b$10$nYcf80saLxVqBu0/ihfhRueo1qZjlJUrej4D4LKnPsKxEMuNNuTiO",
+  "image": "default-image.png"
  }
 ]
