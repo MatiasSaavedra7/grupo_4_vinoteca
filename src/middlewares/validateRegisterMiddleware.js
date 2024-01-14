@@ -22,7 +22,7 @@ const validateRegister = [
                 }),
         body('password')
                 .notEmpty().withMessage('Debes ingresar una contraseña').bail()
-                .isLength({ min: 6 }).withMessage('Debe tener al menos 6 caracteres'),
+                .isStrongPassword().withMessage('La contraseña debe tener un mínimo de 8 caracteres, una mayúscula, una minúscula, un número y un símbolo'), 
         body('confirmpassword')
                 .custom((value, { req }) => {
                         let { confirmpassword, password } = req.body;
