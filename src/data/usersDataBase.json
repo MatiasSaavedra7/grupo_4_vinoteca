@@ -61,5 +61,14 @@
   "tel": "fdsfsdfsdff",
   "password": "$2b$10$ny4B92eTkt5YhZwmbxV.ceqMDj1IpNY3/FRJK6GvmOEwn0zXWgpUW",
   "image": "default-image.png"
+ },
+ {
+  "id": 8,
+  "name": "matias",
+  "surname": "mat",
+  "email": "mat@email.com",
+  "tel": "",
+  "password": "$2a$10$eTyd5T2Bpxvvdh1chtryr.X38lh4Nge0Onk4hF.j.qI0dkkt0Fmhm",
+  "image": "default-image.png"
  }
 ]
