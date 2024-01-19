@@ -1,3 +1,4 @@
+const { log } = require("console");
 const fs = require("fs");
 const path = require("path");
 
@@ -10,8 +11,8 @@ function userLoggedMiddleware(req, res, next) {
 	let userFromCookie = users.find(user => user.email == req.cookies.userEmail)
     
 	if (userFromCookie) {
-        req.session.userLogged = userFromCookie;
         delete userFromCookie.password;
+        req.session.userLogged = userFromCookie;
 	}
 
 	if (req.session.userLogged) {
