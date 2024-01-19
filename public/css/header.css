@@ -51,6 +51,25 @@ header {
     display: none;
 }
 
+.dropdown-menu{
+    display: inline-block;
+    border: 1px red dashed;
+}
+
+.dropdown-content {
+    background-color: grey;
+    display: none;
+}
+
+.dropdown-content a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
+.dropdown-menu:hover .dropdown-content {display: block;}
+
 /* ====================== */
 /* ESTILOS AL BURGER MENU */
 /* ====================== */
