@@ -15,6 +15,10 @@ const usersController = {
     res.render("users/login");
   },
 
+  profile: (req, res) => {
+    res.render("users/profile", {user:req.session.userLogged});
+  },
+
   addUser: (req, res) => {
     //Validamos los datos
     const errors = validationResult(req);

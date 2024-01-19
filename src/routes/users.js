@@ -12,6 +12,9 @@ router.post('/register', upload2.single('image'), validateRegister, controller.a
 
 //LOGIN USER
 router.get('/login', guestMiddleware, controller.login);
-router.post('/login', validateLogin, controller.loginProcess)
+router.post('/login', validateLogin, controller.loginProcess);
+
+//PROFILE USER
+router.get('/profile', controller.profile);
 
 module.exports = router;
