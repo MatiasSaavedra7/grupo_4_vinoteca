@@ -74,6 +74,10 @@ const usersController = {
 				//Guardamos al usuario en session
 				req.session.userLogged = userFind;
 
+				if (req.body.remember) {
+					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 30) });
+				}
+
 				//Retornamos a la home una vez validados el email y password
 				return res.redirect("/");
 			} else {
