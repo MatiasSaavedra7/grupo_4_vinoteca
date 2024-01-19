@@ -51,10 +51,13 @@ header {
     display: none;
 }
 
-.dropdown-menu{
+.dropdown-menu, .welcome{
     position: relative;
     display: inline-block;
     margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #FAF7EE;
     /* border: 1px red dashed; */
 }
 
