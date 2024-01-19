@@ -7,19 +7,19 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const productsController = {
 
     products: (req, res) => {
-        res.render('products/products', {products});
+        res.render('products/products', {products, title: 'Todos los productos'});
     },
 
     national: (req, res) => {
         let national = products.filter( product => product.category == 'national')
 
-        res.render('products/national', {national});
+        res.render('products/products', {products: national, title: 'National'});
     },
 
     imported: (req, res) => {
         let imported = products.filter( product => product.category == 'international')
 
-        res.render('products/imported', {imported});
+        res.render('products/products', {products: imported, title: 'Imported'});
     },
 
     detail: (req, res) => {
