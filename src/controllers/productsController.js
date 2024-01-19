@@ -77,7 +77,7 @@ const productsController = {
 
         if(req.file)  products[indice].image = req.file.filename;
 
-        fs.writeFileSync(productsFilePath, JSON.stringify(products));
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
 
         res.redirect("/products");
     },
@@ -87,7 +87,7 @@ const productsController = {
 
         products.splice(indice, 1);
 
-        fs.writeFileSync(productsFilePath, JSON.stringify(products));
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
 
         res.redirect("/products");
     }

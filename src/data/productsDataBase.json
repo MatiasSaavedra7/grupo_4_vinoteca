@@ -110,47 +110,14 @@
   "image": "zuccardi.png"
  },
  {
-  "id": 12,
-  "name": "vino importado",
+  "id": 11,
+  "name": "Vino Malbec Raza Argentina",
   "category": "national",
-  "price": "874512",
-  "origin": "uruguay",
-  "varieties": "importad",
-  "tall": "845",
-  "description": "uruguayp",
-  "image": "1702237282274-1701905333800-img-aire-acondicionado.jpg"
- },
- {
-  "id": 15,
-  "name": "vino importado",
-  "category": "international",
-  "price": "1599",
-  "origin": "cordoba",
-  "varieties": "malbec",
+  "price": "7800",
+  "origin": "nacional",
+  "varieties": "Malbec",
   "tall": "750",
-  "description": "cordobes 123",
-  "image": "1702336577188-img-mouse-logitech.jpg"
- },
- {
-  "id": 16,
-  "name": "vino",
-  "category": "international",
-  "price": "1500",
-  "origin": "mendoza",
-  "varieties": "malbec",
-  "tall": "6999",
-  "description": "tinto",
-  "image": "1702338008287-1702061894469-img-samsung-galaxy-s10.jpg"
- },
- {
-  "id": 17,
-  "name": "Camion 3",
-  "category": "national",
-  "price": "5534554",
-  "origin": "sdfsdfsd",
-  "varieties": "fdsfdsfsd",
-  "tall": "543534",
-  "description": "fsdfsf",
-  "image": "1705088492824-cam1).jpeg"
+  "description": "Malbec Riojano - El terroir y el clima permiten elaborar este malbec de un color rojo profundo con reflejos violáceos. En nariz presenta gran intensidad y complejidad aromática donde se destacan los frutos rojos, frutos secos, tabaco, vainilla y chocolate.",
+  "image": "1705708033889-D_NQ_NP_976708-MLU73203400257_12.png"
  }
 ]

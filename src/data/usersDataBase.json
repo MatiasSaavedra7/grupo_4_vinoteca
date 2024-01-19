@@ -1,69 +1,6 @@
 [
  {
   "id": 1,
-  "name": "luana ",
-  "surname": "la linda ",
-  "email": "falso@gmail.com",
-  "tel": "",
-  "password": "$2b$10$uMk93rYzE1sRESqXGJ509OICQ1K63I8OyXZ4YLWsvZxEEbt2UVWXu",
-  "image": "default-image.png"
- },
- {
-  "id": 2,
-  "name": "Matias",
-  "surname": "Matias",
-  "email": "matias@email.com",
-  "tel": "",
-  "password": "$2b$10$4hiQ2rkX1sUJX7.EDUTk4.YGidErZJKNbjExIXgTzqNpEPz7wjulO",
-  "image": "default-image.png"
- },
- {
-  "id": 3,
-  "name": "",
-  "surname": "Matias",
-  "email": "123@123.com",
-  "tel": "",
-  "password": "$2b$10$m0xd1sY5xw5FgYm/U8iThegutWIIHxv0j4eZEfgKVo0C2SOtNk2Wu",
-  "image": "default-image.png"
- },
- {
-  "id": 4,
-  "name": "",
-  "surname": "",
-  "email": "",
-  "tel": "",
-  "password": "$2b$10$SHswwoiFrqFyVZBY1AzF1.l9wKX/QT.eKMF2Dy0EMXuChIjid1wKe",
-  "image": "default-image.png"
- },
- {
-  "id": 5,
-  "name": "matias",
-  "surname": "sv",
-  "email": "matias@email.com",
-  "tel": "",
-  "password": "$2b$10$yStRYua0HDhvMnI.r4OScuot5HaO/MLdd7gNlp3by0Jx1VFsuqO1W",
-  "image": "default-image.png"
- },
- {
-  "id": 6,
-  "name": "matias",
-  "surname": "matias",
-  "email": "matias@matias.com",
-  "tel": "",
-  "password": "$2b$10$VQZIMBwad/TpRQLChDNYyOzDA8GMh.hJ4IM2kIsXx9sw1Aa6S9KqK",
-  "image": "default-image.png"
- },
- {
-  "id": 7,
-  "name": "sdfds",
-  "surname": "fsdfsdf",
-  "email": "falso123@gmail.com",
-  "tel": "fdsfsdfsdff",
-  "password": "$2b$10$ny4B92eTkt5YhZwmbxV.ceqMDj1IpNY3/FRJK6GvmOEwn0zXWgpUW",
-  "image": "default-image.png"
- },
- {
-  "id": 8,
   "name": "lucas",
   "surname": "leguizamon",
   "email": "lucas@legui.com",
@@ -72,39 +9,21 @@
   "image": "1705186634067-girando ban.png"
  },
  {
-  "id": 9,
-  "name": "sdffsd",
-  "surname": "sdfsdf",
-  "email": "lucas2@legui.com",
-  "tel": "412423",
-  "password": "$2b$10$FZPtUunrLj6Kg6ffSweequydA5IMz74.HQee8ACeAXef7HMo1xcyy",
-  "image": "default-image.png"
+  "id": 2,
+  "name": "Como Tan Muchachos",
+  "surname": "dadasdas",
+  "email": "falso124@gmail.com",
+  "tel": "5345345435",
+  "password": "$2a$10$HWZlEZeMLbhXPEJEYnaBCuln1wrWkw/pUFqc2EVxNCeOEqcvz2N1m",
+  "image": "1705704628539-descarga (1).jpeg"
  },
  {
-  "id": 10,
-  "name": "fdsaf",
-  "surname": "fdsaf",
-  "email": "lucas3@legui.com",
-  "tel": "4123412423",
-  "password": "$2b$10$nYcf80saLxVqBu0/ihfhRueo1qZjlJUrej4D4LKnPsKxEMuNNuTiO",
-  "image": "default-image.png"
- },
- {
-  "id": 11,
-  "name": "matias",
-  "surname": "matias",
-  "email": "matias@gmail.com",
-  "tel": "",
-  "password": "$2a$10$JY8ZKYmsrThMVgkYCmS13.AJPwCIUGKXM4xSm3o207JrWNU/ZHo1u",
-  "image": "default-image.png"
- },
- {
-  "id": 12,
-  "name": "mati",
-  "surname": "mati",
-  "email": "mati@gmail.com",
-  "tel": "",
-  "password": "$2a$10$J7y5CNXlBsLnVe5.yxUiU.KZ1I5pdlZLpMJJGQuobLfIrx9kCQMoi",
-  "image": "1705698151828-1702061894469-img-samsung-galaxy-s10.jpg"
+  "id": 3,
+  "name": "Messi",
+  "surname": "Messi",
+  "email": "falso123@gmail.com",
+  "tel": "5345345435",
+  "password": "$2a$10$r32GhWq06pYQgo0ibdy8XOMvj1jETU5cscmtGceNpnwlw7MCU3bw6",
+  "image": "1705704966441-messi.jpg"
  }
 ]
