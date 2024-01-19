@@ -83,7 +83,7 @@ const usersController = {
 				}
 
 				//Retornamos a la home una vez validados el email y password
-				return res.redirect("/");
+				return res.redirect("/users/profile");
 			} else {
 				//En caso de que la contraseña sea incorrecta mostramos un mensaje
 				return res.render("users/login", {
