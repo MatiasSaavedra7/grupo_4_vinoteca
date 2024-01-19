@@ -68,11 +68,12 @@ legend{
     color: #ffffff;
     background-color: #5E0D26;
     border-radius: 8px;
-    width: 150px;
     text-align: center;
 }
 
-
+h4 {
+    padding-top: 15px;
+}
 
 #dato{
     font-size: 15px;
