@@ -14,4 +14,7 @@ router.post('/register', upload2.single('image'), validateRegister, controller.a
 router.get('/login', guestMiddleware, controller.login);
 router.post('/login', validateLogin, controller.loginProcess)
 
+//LOGOUT
+router.get('/logout', controller.logout);
+
 module.exports = router;
