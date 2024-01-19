@@ -23,21 +23,24 @@
             <div class="cart">
                 <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
             </div>
-
-            <div class="user">
-                <a href="/users/login"><i class="fa-solid fa-circle-user"></i></a>
-            </div>
+            <% if (locals.isLogged) { %>
+                <div class="dropdown-menu">
+                    <figure>
+                        <img src="/images/qrcode-generado.png" alt="">
+                    </figure>
+                    <div class="dropdown-content">
+                        <a href="#">Profile</a>
+                        <a href="#">Logout</a>
+                    </div>
+                </div>
+            <% } else { %>
+                <div class="user">
+                    <a href="/users/login"><i class="fa-solid fa-circle-user"></i></a>
+                </div>
+            <% } %>
 
             <div class="burger">
                 <label for="check" class="open-menu"><i class="fa-solid fa-bars"></i></label>
-            </div>
-            <div class="dropdown-menu">
-                <img src="/images/users/default-image.png" alt="">
-                <button class="dropdown-button">Dropdown</button>
-                <div class="dropdown-content">
-                    <a href="#">Profile</a>
-                    <a href="/users/logout">Logout</a>
-                </div>
             </div>
         </div>
     </div>
