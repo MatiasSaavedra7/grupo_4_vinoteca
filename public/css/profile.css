@@ -61,14 +61,18 @@ legend{
     text-align: center;
 }
 
-.btn {
+.btn, .edit-user {
     margin-top: 8px;
-    font-size: 10px;
+    font-size: 14px;
     padding: 8px 4px;
     color: #ffffff;
     background-color: #5E0D26;
     border-radius: 8px;
-    width: 150px;
+    text-align: center;
+}
+
+h4 {
+    padding-top: 15px;
 }
 
 #dato{
