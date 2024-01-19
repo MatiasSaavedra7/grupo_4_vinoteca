@@ -25,12 +25,13 @@
             </div>
             <% if (locals.isLogged) { %>
                 <div class="dropdown-menu">
+                    <span>Bienvenido <%= locals.userLogged.name %></span>
                     <figure>
-                        <img src="/images/qrcode-generado.png" alt="">
+                        <img src="/images/users/<%= locals.userLogged.image %>" alt="">
                     </figure>
                     <div class="dropdown-content">
-                        <a href="#">Profile</a>
-                        <a href="#">Logout</a>
+                        <a href="/users/profile">Profile</a>
+                        <a href="/users/logout">Logout</a>
                     </div>
                 </div>
             <% } else { %>

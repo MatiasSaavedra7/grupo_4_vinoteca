@@ -15,13 +15,9 @@ const usersController = {
 		res.render("users/login");
 	},
 
-  profile: (req, res) => {
-    res.render("users/profile", {user:req.session.userLogged});
-  },
-
-  addUser: (req, res) => {
-    //Validamos los datos
-    const errors = validationResult(req);
+	addUser: (req, res) => {
+		//Validamos los datos
+		const errors = validationResult(req);
 
 		if (!errors.isEmpty()) {
 			return res.render("users/register", {
@@ -79,7 +75,9 @@ const usersController = {
 				req.session.userLogged = userFind;
 
 				if (req.body.remember) {
-					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 30) });
+					res.cookie("userEmail", req.body.email, {
+						maxAge: 1000 * 30,
+					});
 				}
 
 				//Retornamos a la home una vez validados el email y password
@@ -106,12 +104,16 @@ const usersController = {
 		});
 	},
 
+	profile: (req, res) => {
+		res.render("users/profile", { user: req.session.userLogged });
+	},
+
 	logout: (req, res) => {
-		res.clearCookie('userEmail');
+		res.clearCookie("userEmail");
 		req.session.destroy();
 
-		res.redirect("/")
-	}
+		res.redirect("/");
+	},
 };
 
 module.exports = usersController;

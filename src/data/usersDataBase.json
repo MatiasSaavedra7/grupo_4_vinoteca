@@ -88,5 +88,23 @@
   "tel": "4123412423",
   "password": "$2b$10$nYcf80saLxVqBu0/ihfhRueo1qZjlJUrej4D4LKnPsKxEMuNNuTiO",
   "image": "default-image.png"
+ },
+ {
+  "id": 11,
+  "name": "matias",
+  "surname": "matias",
+  "email": "matias@gmail.com",
+  "tel": "",
+  "password": "$2a$10$JY8ZKYmsrThMVgkYCmS13.AJPwCIUGKXM4xSm3o207JrWNU/ZHo1u",
+  "image": "default-image.png"
+ },
+ {
+  "id": 12,
+  "name": "mati",
+  "surname": "mati",
+  "email": "mati@gmail.com",
+  "tel": "",
+  "password": "$2a$10$J7y5CNXlBsLnVe5.yxUiU.KZ1I5pdlZLpMJJGQuobLfIrx9kCQMoi",
+  "image": "1705698151828-1702061894469-img-samsung-galaxy-s10.jpg"
  }
 ]
