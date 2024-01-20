@@ -26,7 +26,9 @@ header {
     display: flex;
 }
 
-.cart, .user, .burger {
+.cart,
+.user,
+.burger {
     margin: auto 0px;
     font-size: 20px;
     text-align: center;
@@ -51,14 +53,21 @@ header {
     display: none;
 }
 
-.dropdown-menu, .welcome{
+
+.welcome {
     position: relative;
     display: inline-block;
     margin: auto;
     padding-left: 10px;
     padding-right: 10px;
     color: #FAF7EE;
+    text-align: center;
     /* border: 1px red dashed; */
+}
+
+
+.dropdown-menu {
+    display: none;
 }
 
 .dropdown-menu figure img {
@@ -84,22 +93,34 @@ header {
     padding: 10px;
 }
 
-.dropdown-menu:hover .dropdown-content {display: block;}
+.dropdown-menu:hover .dropdown-content {
+    display: block;
+}
 
 /* ====================== */
 /* ESTILOS AL BURGER MENU */
 /* ====================== */
 
-.open-menu, .close-menu {
+.open-menu,
+.close-menu {
     font-size: 1.5rem;
     cursor: pointer;
 }
+
+.close-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 20px 0;
+    font-size: 2rem;
+}
+
 
 .nav-bar {
     list-style: none;
     background-color: #FAF7EE;
     color: #5E0D26;
-    opacity: 0.9;
+    opacity: 95%;
     font-weight: bold;
     letter-spacing: 2px;
     position: fixed;
@@ -126,11 +147,18 @@ header {
     font-weight: bold;
 }
 
+.nav-bar img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    opacity: 100%;
+}
+
 #check {
     display: none;
 }
 
-#check:checked ~ nav .nav-bar {
+#check:checked~nav .nav-bar {
     right: 0;
 }
 
@@ -139,7 +167,20 @@ header {
 /* ============= */
 
 @media (min-width: 768px) {
-    .cart, .user {
+
+    .dropdown-menu,
+    .welcome {
+        position: relative;
+        display: inline-block;
+        margin: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: #FAF7EE;
+        /* border: 1px red dashed; */
+    }
+
+    .cart,
+    .user {
         padding: 10px;
         margin: auto 0px;
         font-size: 28px;
@@ -158,10 +199,14 @@ header {
         padding-left: 12px;
     }
 
+    .search-bar input:focus {
+        background-color: #F5DEBF;
+    }
+
     .search-bar button {
         font-size: 16px;
         width: 40px;
-        height: 40px;    
+        height: 40px;
         border: none;
         border-radius: 10px;
         background-color: #F5DEBF;
@@ -197,7 +242,19 @@ header {
         font-weight: bold;
     }
 
-    .nav-bar .close-menu{display: none}
+    .nav-bar .close-menu {
+        display: none
+    }
+
+    .nav-bar li:nth-last-child(1),
+    .nav-bar li:nth-last-child(2) {
+        display: none;
+    }
+
+    .nav-bar img {
+        display: none;
+    }
+
 
     .search-bar {
         display: block;
