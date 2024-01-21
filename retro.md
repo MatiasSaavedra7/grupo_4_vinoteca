@@ -65,3 +65,30 @@ No encontramos nada que debamos hacer menos.
 Por ahora no encontramos algo que debamos dejar de realizar.
 
 Como conclusión general el equipo está trabajando muy bien, corrigiendo los errores u omisiones de los sprint anteriores. 
+
+# Retrospectiva: Sprint 4
+
+Luego de realizar una reunión para el análisis retrospectivo del Sprint 4, utilizando la dinámica de estrella de mar, las conclusiones fueron las siguientes:
+
++ **Comenzar a hacer:** 
+
+Durante el desarrollo del sprint continuamos trabajando en equipo por lo que nuevamente no utilizamos ramas. Por lo tanto, para los sprint siguientes volveremos a utilizarlas para subir los cambios al repositorio y evitar posibles conflictos.
+
++ **Hacer más:**
+
+Incrementar el uso de las ramas y eliminarlas una vez finalizada su utilidad, manteniendo el orden en el proyecto. 
+Distribuir mejor las tareas entre los miembros del equipo, asignando a cada uno una tarea por hacer para garantizar que quede registrada la participación de todos en el proyecto.
+
++ **Continuar haciendo:**
+
+Continuar utilizando el tablero de trabajo, mantener la buena comunicación del equipo, la resolución de conflictos, la predisposición de ayudarnos y pedir ayuda cuando sea necesario. Mantener la frecuencia de las reuniones.  
+
++ **Hacer menos:**
+
+No encontramos nada que debamos hacer menos.
+
++ **Dejar hacer:**
+
+Creemos que debemos dejar de hacer todo el trabajo en conjunto y subir todo desde una única cuenta.
+
+Como conclusión general el equipo, a pesar de haber obtenido buenos resultados y de trabajar bien en equipo, creemos que es bueno delimitar las tareas para que cada uno pueda desempeñarse por sí mismo, acudiendo a ayudar el resto del equipo cuando sea necesario.
