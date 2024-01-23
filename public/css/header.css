@@ -131,15 +131,12 @@ header {
     justify-content: center;
     align-items: center;
     transition: all 0.4s ease-in-out;
-}
-
-.nav-bar li {
-    padding: 30px 0px;
+    justify-content: space-evenly;
 }
 
 .nav-bar li img {
-    width: 200px;
-    height: 200px;
+    
+    height: 20vh;
     border-radius: 50%;
     opacity: 100%;
 }
