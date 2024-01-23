@@ -135,7 +135,7 @@ header {
 }
 
 .nav-bar li img {
-    
+
     height: 20vh;
     border-radius: 50%;
     opacity: 100%;
@@ -237,8 +237,7 @@ header {
         display: none;
     }
 
-    .nav-bar li:nth-last-child(1),
-    .nav-bar li:nth-last-child(2) {
+    .ocultar {
         display: none;
     }
 
