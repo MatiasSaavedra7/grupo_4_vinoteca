@@ -10,4 +10,6 @@ router.get('/contact', controller.contact);
 
 router.get('/search', controller.search);
 
+router.get('/test', controller.test);
+
 module.exports = router;
