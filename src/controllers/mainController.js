@@ -29,14 +29,18 @@ const controller = {
 	},
 
 	test: async (req, res) => {
-		db.User.findAll()
+		db.User.findAll({include: [
+			{association: "products"}
+			]})
 			.then((users) => {
 				res.render("test", { users });
+				console.log(users);
 			})
 			.catch((error) => {
 				res.send(error.message);
 			});
 	},
+
 };
 
 module.exports = controller;
