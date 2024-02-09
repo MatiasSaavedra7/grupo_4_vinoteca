@@ -29,7 +29,7 @@ const controller = {
 	},
 
 	test: async (req, res) => {
-		db.Users.findAll()
+		db.User.findAll()
 			.then((users) => {
 				res.render("test", { users });
 			})
