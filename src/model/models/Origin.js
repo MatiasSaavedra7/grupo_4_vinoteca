@@ -1,26 +1,31 @@
 module.exports = (sequelize, DataTypes) => {
-    let alias = 'Origin';
+  let alias = "Origin";
 
-    let columns = {
-        id: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            allowNull: false,
-            unique: true,
-            autoIncrement: true
-        },
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false
-        }
-    };
+  let columns = {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      unique: true,
+      autoIncrement: true,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  };
 
-    let config = {
-        tableName: 'origins',
-        timestamps: false
-    };
+  let config = {
+    tableName: "origins",
+    timestamps: false,
+  };
 
-    let Origin = sequelize.define(alias, columns, config);
-
-    return Origin;
+  let Origin = sequelize.define(alias, columns, config);
+  Origin.associate = function (models) {
+    Origin.hasMany(models.Product, {
+      as: "origin",
+      foreignKey: "origin_id",
+    });
+  };
+  return Origin;
 };
