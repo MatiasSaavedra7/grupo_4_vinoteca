@@ -22,10 +22,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       unsigned: true,
     },
-    description: {
+    descripcion: {
       type: DataTypes.TEXT,
     },
-    origin_id: {
+    origen_id: {
       type: DataTypes.INTEGER,
     },
     color_id: {
@@ -48,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
       models.Origin,
       {
         as: "origin",
-        foreignKey: "origin_id",
+        foreignKey: "origen_id",
       },
       Product.belongsTo(models.Color, {
         as: "color",

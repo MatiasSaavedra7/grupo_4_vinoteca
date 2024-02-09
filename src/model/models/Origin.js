@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
   Origin.associate = function (models) {
     Origin.hasMany(models.Product, {
       as: "origin",
-      foreignKey: "origin_id",
+      foreignKey: "origen_id",
     });
   };
   return Origin;

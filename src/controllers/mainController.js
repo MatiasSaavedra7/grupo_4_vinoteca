@@ -2,8 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const db = require('../model/models');
 
-const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+// const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
+// const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 const controller = {
 	home: (req, res) => {
@@ -33,11 +33,10 @@ const controller = {
 			{association: "products"}
 			]})
 			.then((users) => {
-				res.render("test", { users });
-				console.log(users);
+				return res.render("test", { users });
 			})
 			.catch((error) => {
-				res.send(error.message);
+				return res.send(error.message);
 			});
 	},
 

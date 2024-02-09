@@ -46,7 +46,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'users_id',
         otherKey: 'products_id',
         timestamps: false
-    })   
+    })
   };
   return User;
 };

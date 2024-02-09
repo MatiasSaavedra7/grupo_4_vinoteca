@@ -10,7 +10,11 @@
     <ul>
         <% users.forEach(user => { %>
             <li><%= user.name %> <%= user.surname %></li>   
-            <span>Email: <%= user.email %></span>
+            <span>Email: <%= user.email %></span> <br>
+            <% for( let i = 0; i < user.products.length; i++ ) { %>
+                <span>Productos comprados: <%= user.products[i].name %> - $ <%= user.products[i].price %></span> <br>
+                <span>Descripcion: <%= user.products[i].descripcion %></span>
+            <% } %>
         <% }) %>
     </ul>
 </body>
