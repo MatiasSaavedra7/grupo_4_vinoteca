@@ -1,8 +1,17 @@
 "use strict";
+
 const { DataTypes } = require("sequelize");
+
 module.exports = {
   async up(queryInterface, Sequelize) {
+
+    //Ejemplo para agregar columnas
+    // await queryInterface.addColumn('Users', 'dni', { type: Sequelize.STRING});
+
+    //Primer valor: nombre de la tabla.
+    //Segundo valor: objeto con la definicion de cada tabla y sus valores.
     await queryInterface.createTable("users_products", {
+
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -10,6 +19,7 @@ module.exports = {
         unique: true,
         autoIncrement: true,
       },
+
       user_id: {
         type: DataTypes.INTEGER,
         references: {
@@ -19,6 +29,7 @@ module.exports = {
           key: "id",
         }
       },
+
       product_id: {
         type: DataTypes.INTEGER,
         references: {
@@ -28,17 +39,19 @@ module.exports = {
           key: "id",
         }
       },
+
       quantity: {
         type: DataTypes.INTEGER,
       }
+
     });
-    
-    await queryInterface.createTable('users_products', { id: Sequelize.INTEGER });
-    
   },
 
   async down(queryInterface, Sequelize) {
-      await queryInterface.dropTable("users_products");
-    },
+    /**Ejemplo para eliminar columnas
+    *await queryInterface.removeColumn('Users', 'dni');
+    */
+    await queryInterface.dropTable("users_products");
+  },
 };
 

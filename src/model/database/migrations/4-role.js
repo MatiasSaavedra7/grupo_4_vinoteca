@@ -1,8 +1,13 @@
 "use strict";
+
 const { DataTypes } = require("sequelize");
+
 module.exports = {
+
   async up(queryInterface, Sequelize) {
+
     await queryInterface.createTable("roles", {
+
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -10,14 +15,12 @@ module.exports = {
         unique: true,
         autoIncrement: true,
       },
+
       name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
     });
-    
-    await queryInterface.createTable('roles', { id: Sequelize.INTEGER });
-    
   },
 
   async down(queryInterface, Sequelize) {

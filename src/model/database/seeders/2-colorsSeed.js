@@ -4,8 +4,8 @@ const db = require("../../models");
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    
-    await queryInterface.bulkInsert("colors", [
+
+    const colors = [
       {
         name: "tinto"
       },
@@ -18,7 +18,9 @@ module.exports = {
       {
         name: "espumante"
       }
-    ]);
+    ]
+    
+    await queryInterface.bulkInsert("colors", colors);
   },
 
   async down(queryInterface, Sequelize) {

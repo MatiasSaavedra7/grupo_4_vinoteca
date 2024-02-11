@@ -1,7 +1,11 @@
 "use strict";
+
 const { DataTypes } = require("sequelize");
+
 module.exports = {
+
   async up(queryInterface, Sequelize) {
+
     await queryInterface.createTable("colors", {
       id: {
         type: DataTypes.INTEGER,
@@ -10,14 +14,14 @@ module.exports = {
         unique: true,
         autoIncrement: true,
       },
+
       name: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true
       },
-    });
 
-    await queryInterface.createTable("colors", { id: Sequelize.INTEGER });
+    });
   },
 
   async down(queryInterface, Sequelize) {

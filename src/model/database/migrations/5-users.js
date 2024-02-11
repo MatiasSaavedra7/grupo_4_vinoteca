@@ -1,8 +1,13 @@
 "use strict";
+
 const { DataTypes } = require("sequelize");
+
 module.exports = {
+
   async up(queryInterface, Sequelize) {
+
     await queryInterface.createTable("users", {
+
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -10,30 +15,34 @@ module.exports = {
         unique: true,
         autoIncrement: true,
       },
+
       name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
+
       surname: {
         type: DataTypes.STRING,
         allowNull: false,
       },
+
       email: {
         type: DataTypes.STRING,
         unique: true,
         allowNull: false,
       },
+
       role_id: {
         type: DataTypes.INTEGER,
         references: {
           model: {
-            tableName: 'rol'
+            tableName: 'roles'
           },
           key: "id"
         }
       },
+
     });
-    await queryInterface.createTable("users", { id: Sequelize.INTEGER });
   },
 
   async down(queryInterface, Sequelize) {
