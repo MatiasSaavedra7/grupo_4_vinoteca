@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     descripcion: {
       type: DataTypes.TEXT,
     },
-    origen_id: {
+    origin_id: {
       type: DataTypes.INTEGER,
     },
     color_id: {
@@ -48,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
       models.Origin,
       {
         as: "origin",
-        foreignKey: "origen_id",
+        foreignKey: "origin_id",
       },
       Product.belongsTo(models.Color, {
         as: "color",
@@ -57,8 +57,8 @@ module.exports = (sequelize, DataTypes) => {
       Product.belongsToMany(models.User, {
         as: "users",
         through: 'users_products',
-        foreignKey: 'products_id',
-        otherKey: 'users_id',
+        foreignKey: 'product_id',
+        otherKey: 'user_id',
         timestamps: false
     })  ;
   };
