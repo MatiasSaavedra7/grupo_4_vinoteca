@@ -1,13 +1,20 @@
 const fs = require("fs");
 const path = require("path");
+const productService = require("../model/services/productService")
 
-const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+// const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
+// const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 const productsController = {
 
-    products: (req, res) => {
+    products: async (req, res) => {
         res.render('products/products', {products, title: 'Todos los productos'});
+
+        try {
+            res.render('products/products', {products: await productService.getAll(), title: 'Todos los productos'})
+        } catch (error) {
+            res.send(e);
+        }
     },
 
     national: (req, res) => {
