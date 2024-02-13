@@ -6,15 +6,24 @@
     <title>Pagina de pruebas</title>
 </head>
 <body>
-    <h1>USUARIOS</h1>
+    <h1>PRODUCTOS</h1>
     <ul>
-        <% users.forEach(user => { %>
-            <li><%= user.name %> <%= user.surname %></li>   
-            <span>Email: <%= user.email %></span> <br>
-            <% for( let i = 0; i < user.products.length; i++ ) { %>
-                <span>Productos comprados: <%= user.products[i].name %> - $ <%= user.products[i].price %></span> <br>
-                <span>Descripcion: <%= user.products[i].descripcion %></span>
-            <% } %>
+        <% products.forEach(product => { %>
+            <li>
+                <h5><%= product.name %> - Precio: $<%= product.price %></h1>
+                <figure>
+                    <img src="/images/products/<%= product.images.name %>"/>
+                </figure>
+                <% if (product.country != undefined) { %>
+                    <p>Pais de origen: <%= product.country.name %></p>
+                <% } %>
+                <% if (product.grapes != undefined) { %>
+                    <p>Uva: <%= product.grapes.name %></p>
+                <% } %>
+                <p>
+                    <%= product.description %>
+                </p>
+            </li>   
         <% }) %>
     </ul>
 </body>

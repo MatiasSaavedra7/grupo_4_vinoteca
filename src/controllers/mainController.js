@@ -29,11 +29,13 @@ const controller = {
 	},
 
 	test: async (req, res) => {
-		db.User.findAll({include: [
-			{association: "products"}
+		db.Product.findAll({include: [
+			{association: 'country'},
+			{association: 'grapes'},
+			{association: 'images'}
 			]})
-			.then((users) => {
-				return res.render("test", { users });
+			.then((products) => {
+				return res.render("test", { products });
 			})
 			.catch((error) => {
 				return res.send(error.message);

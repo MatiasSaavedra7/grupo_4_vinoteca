@@ -1,66 +1,70 @@
 module.exports = (sequelize, DataTypes) => {
-  let alias = "Product";
+	let alias = "Product";
 
-  let columns = {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      allowNull: false,
-      unique: true,
-      autoIncrement: true,
-    },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    price: {
-      type: DataTypes.DECIMAL,
-      allowNull: false,
-      unsigned: true,
-    },
-    discount: {
-      type: DataTypes.INTEGER,
-      unsigned: true,
-    },
-    descripcion: {
-      type: DataTypes.TEXT,
-    },
-    origin_id: {
-      type: DataTypes.INTEGER,
-    },
-    color_id: {
-      type: DataTypes.INTEGER,
-    },
-    stock: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-  };
+	let columns = {
+		id: {
+			type: DataTypes.INTEGER,
+			primaryKey: true,
+			allowNull: false,
+			unique: true,
+			autoIncrement: true,
+		},
+		name: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		},
+		country_id: {
+			type: DataTypes.INTEGER,
+			unsigned: true,
+		},
+		grapes_id: {
+			type: DataTypes.INTEGER,
+			unsigned: true,
+		},
+		price: {
+			type: DataTypes.FLOAT,
+			allowNull: false,
+			unsigned: true,
+		},
+		discount: {
+			type: DataTypes.INTEGER,
+		},
+		description: {
+			type: DataTypes.TEXT,
+		},
+		stock_id: {
+			type: DataTypes.INTEGER,
+			unsigned: true,
+		},
+		id_image: {
+			type: DataTypes.INTEGER,
+			unsigned: true,
+		},
+	};
 
-  let config = {
-    tableName: "products",
-    timestamps: false,
-  };
+	let config = {
+		tableName: "products",
+		timestamps: false,
+	};
 
-  let Product = sequelize.define(alias, columns, config);
-  Product.associate = function (models) {
-    Product.belongsTo(
-      models.Origin,
-      {
-        as: "origin",
-        foreignKey: "origin_id",
-      },
-      Product.belongsTo(models.Color, {
-        as: "color",
-        foreignKey: "color_id",
-      })   )
-      Product.belongsToMany(models.User, {
-        as: "users",
-        through: 'users_products',
-        foreignKey: 'product_id',
-        otherKey: 'user_id',
-        timestamps: false
-    })  ;
-  };
-  return Product;
+	let Product = sequelize.define(alias, columns, config);
+
+	Product.associate = function (models) {
+		Product.belongsTo(models.Grape, {
+			as: "grapes",
+			foreignKey: "grapes_id",
+		});
+
+		Product.belongsTo(models.Country, {
+			as: "country",
+			foreignKey: "country_id",
+		});
+
+		Product.belongsTo(models.Image, {
+			as: "images",
+			foreignKey: "id_image",
+		});
+	};
+
+	return Product;
 };

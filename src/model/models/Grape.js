@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  let alias = "Origin";
+  let alias = "Grape";
 
   let columns = {
     id: {
@@ -16,16 +16,18 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   let config = {
-    tableName: "origins",
+    tableName: "grapes",
     timestamps: false,
   };
 
-  let Origin = sequelize.define(alias, columns, config);
-  Origin.associate = function (models) {
-    Origin.hasMany(models.Product, {
-      as: "origin",
-      foreignKey: "origin_id",
+  let Grape = sequelize.define(alias, columns, config);
+  
+  Grape.associate = function (models) {
+    Grape.hasMany(models.Product, {
+      as: "grapes",
+      foreignKey: "grapes_id",
     });
   };
-  return Origin;
+
+  return Grape;
 };
