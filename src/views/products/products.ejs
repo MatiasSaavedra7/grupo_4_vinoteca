@@ -1,49 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head.ejs', {css: 'products.css'})
-  %>
-  <body>
-    <%- include('../partials/header.ejs') %>
+<%- include('../partials/head.ejs', {css: 'products.css' }) %>
 
-    <main>
+	<body>
+		<%- include('../partials/header.ejs') %>
+			<main>
+				<section class="products">
+					<article class="box-product">
+						<figure class="product-image">
+							<a href="">
+								<img src="/images/products/catena.png" alt="">
+								<figcaption class="product-name">
+									<h3>Catena Zapata Malbec</h3>
+								</figcaption>
+								<p><i class="fa-regular fa-heart"></i></p>
+							</a>
+						</figure>
+						<div class="product-details">
+							<p class="old-price"><strike>$10.000</strike></p>
+							<p class="price">$7.000</p>
+							<p class="discount"><strong>30% OFF!</strong></p>
+						</div>
+						<form action="">
+							<button class="add-to-cart">
+								<i class="fa-solid fa-cart-shopping"></i>
+							</button>
+						</form>
+					</article>
 
-      <section>
-        <div class="products">
+					<article class="box-product">
+						<figure class="product-image">
+							<a href="">
+								<img src="/images/products/catena.png" alt="">
+								<figcaption class="product-name">
+									<h3>Catena Zapata Malbec</h3>
+								</figcaption>
+								<p><i class="fa-regular fa-heart"></i></p>
+							</a>
+						</figure>
+						<div class="product-details">
+							<p class="old-price"><strike>$10.000</strike></p>
+							<p class="price">$7.000</p>
+							<p class="discount"><strong>30% OFF!</strong></p>
+						</div>
+						<form action="">
+							<button class="add-to-cart">
+								<i class="fa-solid fa-cart-shopping"></i>
+							</button>
+						</form>
+					</article>
 
-          <% products.forEach((product) => { %>
+					<article class="box-product">
+						<figure class="product-image">
+							<a href="">
+								<img src="/images/products/catena.png" alt="">
+								<figcaption class="product-name">
+									<h3>Catena Zapata Malbec</h3>
+								</figcaption>
+								<p><i class="fa-regular fa-heart"></i></p>
+							</a>
+						</figure>
+						<div class="product-details">
+							<p class="old-price"><strike>$10.000</strike></p>
+							<p class="price">$7.000</p>
+							<p class="discount"><strong>30% OFF!</strong></p>
+						</div>
+						<form action="">
+							<button class="add-to-cart">
+								<i class="fa-solid fa-cart-shopping"></i>
+							</button>
+						</form>
+					</article>
 
-          <a href="/products/detail/<%=product.id %>" class="main-article">
-            <div class="image-article">
-              <img src="/images/products/<%= product.image %>" alt="" />
-            </div>
+					<article class="box-product">
+						<figure class="product-image">
+							<a href="">
+								<img src="/images/products/catena.png" alt="">
+								<figcaption class="product-name">
+									<h3>Catena Zapata Malbec</h3>
+								</figcaption>
+								<p><i class="fa-regular fa-heart"></i></p>
+							</a>
+						</figure>
+						<div class="product-details">
+							<p class="old-price"><strike>$10.000</strike></p>
+							<p class="price">$7.000</p>
+							<p class="discount"><strong>30% OFF!</strong></p>
+						</div>
+						<form action="">
+							<button class="add-to-cart">
+								<i class="fa-solid fa-cart-shopping"></i>
+							</button>
+						</form>
+					</article>
+				</section>
+			</main>
+			<%- include('../partials/footer.ejs') %>
+	</body>
 
-            <div class="details-article">
-              <h4><%= product.name %></h4>
-              <p class="price">$<%= product.price %></p>
-              <p class="type">
-                <strong>Tipo de vino:</strong> <%= product.varities %>
-              </p>
-              <p class="uva">
-                <strong>Uva:</strong> <%= product.description %>
-              </p>
-              <p class="origin">
-                <strong>Origen:</strong> <%= product.origin %>
-              </p>
-              <i class="fa-solid fa-cart-shopping"></i>
-              <i class="fa-regular fa-heart"></i>
-            </div>
-            
-          </a>
-
-          <% }) %>
-
-        </div>
-
-      </section>
-
-    </main>
-
-    <%- include('../partials/footer.ejs') %>
-
-  </body>
 </html>
