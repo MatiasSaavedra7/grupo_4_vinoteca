@@ -1,4 +1,4 @@
-const db = require("../database/models/Product");
+const db = require("../database/models");
 
 function Product(data) {
     this.origin_id = data.origin_id;
@@ -13,41 +13,63 @@ function Product(data) {
 const productService = {
     getAll: async () => {
         try {
-            return await db.Product.findAll();
+            const data = await db.Product.findAll();
+            return data;
         } catch (e) {
             console.error(e);
             return [];
         }
     },
 
-    getBy: async (id) => {
+    getAllNational: async () => {
         try {
-            return await db.Product.findByPk(id);
+            const data = await db.Product.findAll({include: ['country']});
+            return data.filter(w => w && w.country && typeof w.country.name === 'string' && w.country.name.toLowerCase() == 'argentina');
         } catch (e) {
-            console.e(e);
+            console.error('Error al obtener los productos:', e);
+            return [];
         }
     },
 
-    updateBy: async (id, data) => {
+    getAllImpoted: async () => {
         try {
-            return await db.Product.update(new Product(body), { where: { id: id } });
+            const data = await db.Product.findAll({include: ['country']});
+            return data.filter(w => w && w.country && typeof w.country.name === 'string' && w.country.name.toLowerCase() !== 'argentina');
         } catch (e) {
-            console.e(e);
+            console.error('Error al obtener los productos:', e);
+            return [];
         }
-    },
+    }
     
-    deleteBy: async (id) => {
-        //Opcion 1:
-        //Falta buscar las relaciones de este producto en las tablas intermedias y borrarlas antes de hacer 
-        //el destroy
 
-        //Opcion 2: borrarla logicamente
-        try {
-            return await db.Product.destroy({ where: { id: id } });
-        } catch (e) {
-            console.e(e);
-        }
-    },
+    // getBy: async (id) => {
+    //     try {
+    //         return await db.Product.findByPk(id);
+    //     } catch (e) {
+    //         console.e(e);
+    //     }
+    // },
+
+    // updateBy: async (id, data) => {
+    //     try {
+    //         return await db.Product.update(new Product(body), { where: { id: id } });
+    //     } catch (e) {
+    //         console.e(e);
+    //     }
+    // },
+    
+    // deleteBy: async (id) => {
+    //     //Opcion 1:
+    //     //Falta buscar las relaciones de este producto en las tablas intermedias y borrarlas antes de hacer 
+    //     //el destroy
+
+    //     //Opcion 2: borrarla logicamente
+    //     try {
+    //         return await db.Product.destroy({ where: { id: id } });
+    //     } catch (e) {
+    //         console.e(e);
+    //     }
+    // },
 }
 
 module.exports = productService;

@@ -8,25 +8,26 @@ const productService = require("../model/services/productService")
 const productsController = {
 
     products: async (req, res) => {
-        res.render('products/products', {products, title: 'Todos los productos'});
+        // res.render('products/products', {products, title: 'Todos los productos'});
 
         try {
+            // return res.send(await productService.getAllNational());
             res.render('products/products', {products: await productService.getAll(), title: 'Todos los productos'})
         } catch (error) {
             res.send(e);
         }
     },
 
-    national: (req, res) => {
-        let national = products.filter( product => product.category == 'national')
+    national: async (req, res) => {
+        // let national = products.filter( product => product.category == 'national')
 
-        res.render('products/products', {products: national, title: 'National'});
+        res.render('products/products', {products: await productService.getAllNational(), title: 'National'});
     },
 
-    imported: (req, res) => {
-        let imported = products.filter( product => product.category == 'international')
+    imported: async (req, res) => {
+        // let imported = products.filter( product => product.category == 'international')
 
-        res.render('products/products', {products: imported, title: 'Imported'});
+        res.render('products/products', {products: await productService.getAllImpoted(), title: 'Imported'});
     },
 
     detail: (req, res) => {
