@@ -48,6 +48,12 @@ main {
     width: 100%;
 }
 
+.edit-product-field select {
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
 .buttons .edit {
     display: block;
     margin: 20px auto;
@@ -75,5 +81,11 @@ main {
 
     .edit-product h1 {
         font-size: 32px;
+    }
+
+    .edit-product-field select {
+        font-size: 16px;
+        border-radius: 10px;
+        border-style: solid;
     }
 }
