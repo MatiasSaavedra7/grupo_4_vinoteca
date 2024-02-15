@@ -1,94 +1,127 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-    font-family: 'Mohave', sans-serif;
-    /* background-color: #F5DEBF; */
-    /* background-color: #FAF7EE; */
+	font-family: "Mohave", Arial, Helvetica, sans-serif;
 }
 
 /* ESTILOS A LA SECCION DE PRODUCTOS */
 main {
-    width: 90%;
-    margin: 0 auto;
+	width: 90%;
+	margin: 0 auto;
 }
 
-main a {
-    margin: 20px 0px;
-    text-decoration: none;
-    color: #000000;
-    display: flex;
-    flex-wrap: wrap;
+/* ¡¡¡¡¡¡¡¡¡¡¡ NUEVO DISEÑO !!!!!!!!!!*/
+.products {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	gap: 25px;
 }
 
-main a div {
-    width: 50%;
-    text-align: center;
-    margin: auto;
+.box-product {
+	width: 45%;
+	max-width: 150px;
+	margin: 20px auto;
+	border-radius: 20px;
+	box-shadow: 0px 0px 10px rgb(100, 100, 100);
+	position: relative;
 }
 
-main section a img {
-    width: 100%;
+.product-image a {
+	text-decoration: none;
+	color: black;
+	text-align: center;
 }
 
-.details-article h4, .price {
-    text-align: center;
-    padding-bottom: 5px;
+.product-image img {
+	width: 80%;
+	display: block;
+	margin: auto;
 }
 
-.details-article .type, .uva, .origin {
-    font-size: 14px;
-    padding: 0px 10px;
+.product-image i {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	font-size: 20px;
+	color: red;
 }
 
-.details-article i {
-    font-size: 18px;
-    padding: 5px;
-    color: #5E0D26;
+.product-name {
+	padding: 10px 5px;
+}
+
+.product-name h3 {
+	padding-bottom: 10px;
+	font-size: 16px;
+}
+
+.product-details {
+	text-align: center;
+	position: relative;
+	border-top: 1px solid #ebebeb;
+	padding: 20px 10px;
+}
+
+.discount {
+	position: absolute;
+	background-color: green;
+	font-family: "Segoe UI";
+	font-size: 14px;
+	color: white;
+	padding: 5px;
+	border-radius: 10px;
+	top: -15px;
+	right: 5px;
+}
+
+.old-price {
+	font-size: 14px;
+	color: rgb(106, 101, 101);
+}
+
+.price {
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.add-to-cart {
+	width: 100%;
+	background-color: #f5debf;
+	color: #5e0d26;
+	cursor: pointer;
+	border: none;
+	border-radius: 0 0 20px 20px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bolder;
+	padding: 10px 0px;
+}
+
+.add-to-cart .fa-cart-shopping {
+	transition: all ease 400ms;
+}
+
+.add-to-cart:hover .fa-cart-shopping {
+	scale: 1.3;
+	rotate: 360deg;
 }
 
 /* CONFIGURACION DE ESTILOS PARA TABLETS */
 @media (min-width: 768px) {
-    main .products {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
-    main a {
-        margin: 20px 10px;
-        width: 40%;
-        display: flex;
-        flex-wrap: wrap;
-    }
+	.box-product {
+		width: 30%;
+	}
 }
 
 /* CONFIGURACION DE ESTILOS PARA DESKTOP */
 @media (min-width: 1024px) {
-    main .products {
-        justify-content: start;
-    }
-    main a {
-        width: 30%;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-
-    .details-article .type, .uva, .origin {
-        display: none;
-    }
-
-    main a:hover {
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    }
-
-    .details-article i:hover {
-        font-size: 24px;
-        cursor: pointer;
-        transition-duration: 0.3s;
-    }
+	.box-product {
+		width: 50%;
+		max-width: 200px;
+	}
 }
