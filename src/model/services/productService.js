@@ -43,7 +43,7 @@ const productService = {
 		}
 	},
 
-	getAllImpoted: async () => {
+	getAllImported: async () => {
 		try {
 			const data = await db.Product.findAll({ include: ["country"] });
 			return data.filter(

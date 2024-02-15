@@ -15,14 +15,6 @@
           method="post"
           enctype="multipart/form-data"
         >
-          <div class="add-product-field">
-            <label for="category">CATEGORIA: </label>
-            <select name="category" id="">
-              <option value="national">Vino Argentino</option>
-              <option value="international">Vino Importado</option>
-            </select>
-            <!-- <input type="text" name="category" id="category" required> -->
-          </div>
 
           <div class="add-product-field">
             <label for="name">NOMBRE: </label>
@@ -31,22 +23,20 @@
 
           <div class="add-product-field">
             <label for="varieties">VARIEDAD: </label>
-            <input
-              type="text"
-              name="varieties"
-              id="varieties"
-              placeholder="Variedades de uva, cepas..."
-            />
+            <select name="" id="">
+              <% grapes.forEach(grape => { %>
+                <option value="grape.id"><%= grape.name %></option>
+              <% }) %>
+            </select>
           </div>
 
           <div class="add-product-field">
             <label for="origin">ORIGEN: </label>
-            <input
-              type="text"
-              name="origin"
-              id="origin"
-              placeholder="Region, provincia, pais..."
-            />
+            <select name="" id="">
+              <% country.forEach(country => { %>
+                <option value="contry.id"><%= country.name %></option>
+              <% }) %>
+            </select>
           </div>
 
           <div class="add-product-field">
@@ -75,10 +65,6 @@
             />
           </div>
 
-          <div class="add-product-field">
-            <label for="tall">TAMAÑO (cm<sup>3</sup>, mL): </label>
-            <input type="number" name="tall" id="tall" />
-          </div>
 
           <div class="buttons">
             <button type="submit" class="add">AGREGAR</button>
