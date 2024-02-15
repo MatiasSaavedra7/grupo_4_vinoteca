@@ -20,18 +20,18 @@
         <section class="description-product">
           <div>
             <h3>
-              <%= product.name%>CC.
+              <%= product.name%>
             </h3>
             <i class="fa-regular fa-heart"></i>
           </div>
           <div class="details">
             <p>
               <strong>Tipo de Vino:</strong>
-              <%= product.grapes.name %>
+              <%= product.grapes && product.grapes.name ? product.grapes.name : " " %> 
             </p>
             <p>
               <strong>Origen:</strong>
-              <%= product.country.name %>
+              <%= product.country && product.country.name ? product.country.name : " " %> 
             </p>
             <p>
               <strong>Descripcion:</strong>
