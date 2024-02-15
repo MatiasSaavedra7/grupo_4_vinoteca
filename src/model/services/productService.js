@@ -1,16 +1,21 @@
 const db = require("../database/models");
 
 function Product(data) {
-	this.origin_id = data.origin_id;
-	this.color_id = data.color_id;
+	this.grapes_id = data.grapes_id;
+	this.country_id = data.country_id;
 	this.name = data.name;
 	this.price = data.price;
 	this.discount = data.discount;
 	this.descripcion = data.descripcion;
-	this.stock = data.stock;
+	// this.stock = data.stock;
 }
 
 const productService = {
+	//!COMPLETAR
+	create: async (data) => {
+
+	},
+
 	getAll: async () => {
 		try {
 			const data = await db.Product.findAll({
@@ -29,7 +34,7 @@ const productService = {
 
 	getAllNational: async () => {
 		try {
-			const data = await db.Product.findAll({ include: ["country"] });
+			const data = await db.Product.findAll({ include: ["country", "images"] });
 			return data.filter(
 				(w) =>
 					w &&
@@ -45,7 +50,7 @@ const productService = {
 
 	getAllImpoted: async () => {
 		try {
-			const data = await db.Product.findAll({ include: ["country"] });
+			const data = await db.Product.findAll({ include: ["country", "images"] });
 			return data.filter(
 				(w) =>
 					w &&
@@ -59,13 +64,14 @@ const productService = {
 		}
 	},
 
-	// getBy: async (id) => {
-	//     try {
-	//         return await db.Product.findByPk(id);
-	//     } catch (e) {
-	//         console.e(e);
-	//     }
-	// },
+	getBy: async (id) => {
+		try {
+			return await db.Product.findByPk(id, {include: ["country", "images", "grapes"]});
+		} catch (e) {
+			console.e(e);
+			return [];
+		}
+	},
 
 	// updateBy: async (id, data) => {
 	//     try {

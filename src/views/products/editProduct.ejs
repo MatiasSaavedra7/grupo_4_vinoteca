@@ -10,7 +10,7 @@
       <div class="edit-product">
         <h1>EDITAR INFORMACION</h1>
         <form
-          action="/products/edit/<%= productToEdit.id %>?_method=put"
+          action="/products/edit/<%= product.id %>?_method=put"
           method="POST"
           enctype="multipart/form-data"
         >
@@ -29,7 +29,7 @@
               name="name"
               id="name"
               required
-              value="<%= productToEdit.name %>"
+              value="<%= product.name %>"
             />
           </div>
 
@@ -40,7 +40,7 @@
               name="varieties"
               id="varieties"
               placeholder="Variedades de uva, cepas..."
-              value="<%= productToEdit.varieties %>"
+              value="<%= product.grapes.name %>"
             />
           </div>
 
@@ -51,7 +51,7 @@
               name="origin"
               id="origin"
               placeholder="Region, provincia, pais..."
-              value="<%= productToEdit.origin %>"
+              value="<%= product.country.name %>"
             />
           </div>
 
@@ -62,7 +62,7 @@
               name="description"
               id="description"
               required
-              value="<%=productToEdit.description%>"
+              value="<%=product.description%>"
             />
           </div>
 
@@ -74,7 +74,7 @@
               id="price"
               placeholder="$"
               required
-              value="<%=productToEdit.price%>"
+              value="<%=product.price%>"
             />
           </div>
 
@@ -95,7 +95,7 @@
               type="number"
               name="tall"
               id="tall"
-              value="<%=productToEdit.tall%>"
+              value="<%=product.price%>"
             />
           </div>
 

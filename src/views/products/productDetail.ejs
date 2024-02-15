@@ -11,7 +11,7 @@
         <section class="show-img-product">
           <div>
             <div class="img-product">
-              <img src="/images/products/<%= product.image %>" alt="" />
+              <img src="/images/products/<%= product.images.name %>" alt="" />
             </div>
             <div>
 
@@ -20,18 +20,18 @@
         <section class="description-product">
           <div>
             <h3>
-              <%= product.name + ' ' + product.tall%>CC.
+              <%= product.name%>CC.
             </h3>
             <i class="fa-regular fa-heart"></i>
           </div>
           <div class="details">
             <p>
               <strong>Tipo de Vino:</strong>
-              <%= product.varieties %>
+              <%= product.grapes.name %>
             </p>
             <p>
               <strong>Origen:</strong>
-              <%= product.origin %>
+              <%= product.country.name %>
             </p>
             <p>
               <strong>Descripcion:</strong>
