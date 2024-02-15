@@ -30,12 +30,12 @@ const productsController = {
         res.render('products/products', {products: await productService.getAllImpoted(), title: 'Imported'});
     },
 
-    detail: (req, res) => {
-        const id = req.params.id;
+    detail: async (req, res) => {
+        // const id = req.params.id;
 
-        const product = products.find((product) => product.id == id);
+        // const product = products.find((product) => product.id == id);
 
-        res.render('products/productDetail', {product});
+        res.render('products/productDetail', {product: await productService.getBy(req.params.id)});
     },
 
     add: (req, res) => {
@@ -64,12 +64,9 @@ const productsController = {
         res.redirect("/products");
     },
     
-    edit: (req, res) => {
-        let id = req.params.id;
-
-        let productToEdit = products.find(p => p.id == id);
-
-        res.render('products/editProduct', {productToEdit});
+    //!FALTAN CORREGIR COSITAS/////////////////////////////////////
+    edit: async (req, res) => {
+        res.render('products/editProduct', {product: await productService.getBy(req.params.id)});
     },
     
     update: (req, res) => {
