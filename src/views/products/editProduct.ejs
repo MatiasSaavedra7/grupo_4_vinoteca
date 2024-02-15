@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head.ejs', {title: 'Editar Productos', css:
-  'editProduct.css'}) %>
+  <%- include('../partials/head.ejs', {title: 'Editar Productos' , css:
+  'editProduct.css' }) %>
 
   <body>
     <%- include('../partials/header.ejs') %>
@@ -15,14 +15,6 @@
           enctype="multipart/form-data"
         >
           <div class="edit-product-field">
-            <label for="category">CATEGORIA: </label>
-            <select name="category" id="">
-              <option value="national">Vino Argentino</option>
-              <option value="imported">Vino Importado</option>
-            </select>
-          </div>
-
-          <div class="edit-product-field">
             <label for="name">NOMBRE: </label>
             <input
               type="text"
@@ -33,26 +25,33 @@
             />
           </div>
 
-          <div class="edit-product-field">
+          <!-- <div class="edit-product-field">
             <label for="varieties">VARIEDAD: </label>
             <input
               type="text"
               name="varieties"
               id="varieties"
               placeholder="Variedades de uva, cepas..."
-              value="<%= product.grapes.name %>"
+              value="
             />
+          </div> -->
+
+          <div class="edit-product-field">
+            <label for="varieties">VARIEDAD: </label>
+            <select name="" id="">
+              <% grapes.forEach(grape => { %>
+                <option value=<%=grape.id%> <%= product.grapes_id === grape.id? 'selected': " "  %> ><%= grape.name  %></option>
+              <% }) %>
+            </select>
           </div>
 
           <div class="edit-product-field">
             <label for="origin">ORIGEN: </label>
-            <input
-              type="text"
-              name="origin"
-              id="origin"
-              placeholder="Region, provincia, pais..."
-              value="<%= product.country.name %>"
-            />
+            <select name="" id="">
+              <% country.forEach(country => { %>
+                <option value=<%=country.id%> <%= product.country_id === country.id? 'selected': " "  %> ><%= country.name  %></option>
+              <% }) %>
+            </select>
           </div>
 
           <div class="edit-product-field">
@@ -79,6 +78,28 @@
           </div>
 
           <div class="edit-product-field">
+            <label for="price">DESCUENTO: </label>
+            <input
+              type="number"
+              name="discount"
+              id="discount"
+              required
+              value="<%=product.discount%>"
+            />
+          </div>
+
+          <div class="edit-product-field">
+            <label for="price">STOCK </label>
+            <input
+              type="number"
+              name="stock"
+              id="stock"
+              required
+              value="<%=product.stock%>"
+            />
+          </div>
+
+          <div class="edit-product-field">
             <label for="image">IMAGEN: </label>
             <input
               type="file"
@@ -86,16 +107,6 @@
               id="image"
               accept="image/png, image/jpeg"
               multiple
-            />
-          </div>
-
-          <div class="edit-product-field">
-            <label for="tall">TAMAÑO (cm<sup>3</sup>, mL): </label>
-            <input
-              type="number"
-              name="tall"
-              id="tall"
-              value="<%=product.price%>"
             />
           </div>
 

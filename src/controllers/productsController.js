@@ -68,7 +68,7 @@ const productsController = {
     
     //!FALTAN CORREGIR COSITAS/////////////////////////////////////
     edit: async (req, res) => {
-        res.render('products/editProduct', {product: await productService.getBy(req.params.id)});
+        res.render('products/editProduct', {product: await productService.getBy(req.params.id), grapes: await grapeService.getAll(), country: await countryService.getAll()});
     },
     
     update: (req, res) => {
