@@ -6,7 +6,36 @@
 		<%- include('../partials/header.ejs') %>
 			<main>
 				<section class="products">
-					<article class="box-product">
+					<% products.forEach(product => { %>
+						<article class="box-product">
+							<figure class="product-image">
+								<a href="">
+									<img src="/images/products/<%= product.images.name %>" alt="">
+									<figcaption class="product-name">
+										<h3><%= product.name %></h3>
+									</figcaption>
+									<p><i class="fa-regular fa-heart"></i></p>
+								</a>
+							</figure>
+							<div class="product-details">
+								<% if (product.discount > 0) { %>
+									<p class="old-price"><strike>$<%= product.price %></strike></p>
+									<% newPrice = product.price - (product.price * product.discount / 100); %>
+									<p class="price">$<%= newPrice.toFixed(2) %></p>
+									<p class="discount"><strong> <%= product.discount %>% OFF!</strong></p>
+								<% } else { %>
+								<p class="price">$<%= product.price %></p>
+								<% } %>
+							</div>
+							<form action="">
+								<button class="add-to-cart">
+									<i class="fa-solid fa-cart-shopping"></i>
+								</button>
+							</form>
+						</article>
+					<% }) %>
+
+					<!-- <article class="box-product">
 						<figure class="product-image">
 							<a href="">
 								<img src="/images/products/catena.png" alt="">
@@ -70,29 +99,7 @@
 								<i class="fa-solid fa-cart-shopping"></i>
 							</button>
 						</form>
-					</article>
-
-					<article class="box-product">
-						<figure class="product-image">
-							<a href="">
-								<img src="/images/products/catena.png" alt="">
-								<figcaption class="product-name">
-									<h3>Catena Zapata Malbec</h3>
-								</figcaption>
-								<p><i class="fa-regular fa-heart"></i></p>
-							</a>
-						</figure>
-						<div class="product-details">
-							<p class="old-price"><strike>$10.000</strike></p>
-							<p class="price">$7.000</p>
-							<p class="discount"><strong>30% OFF!</strong></p>
-						</div>
-						<form action="">
-							<button class="add-to-cart">
-								<i class="fa-solid fa-cart-shopping"></i>
-							</button>
-						</form>
-					</article>
+					</article> -->
 				</section>
 			</main>
 			<%- include('../partials/footer.ejs') %>
