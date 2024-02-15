@@ -7,7 +7,7 @@ function Product(data) {
 	this.price = data.price;
 	this.discount = data.discount;
 	this.descripcion = data.descripcion;
-	// this.stock = data.stock;
+	this.stock = data.stock;
 }
 
 const productService = {

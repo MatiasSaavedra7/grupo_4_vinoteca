@@ -25,7 +25,7 @@
             <label for="varieties">VARIEDAD: </label>
             <select name="" id="">
               <% grapes.forEach(grape => { %>
-                <option value="grape.id"><%= grape.name %></option>
+                <option value="grapes.id"><%= grape.name %></option>
               <% }) %>
             </select>
           </div>
@@ -39,32 +39,52 @@
             </select>
           </div>
 
-          <div class="add-product-field">
-            <label for="description">DESCRIPCION: </label>
-            <input type="text" name="description" id="description" required />
-          </div>
-
+          
           <div class="add-product-field">
             <label for="price">PRECIO (ARS): </label>
             <input
-              type="number"
-              name="price"
+            type="number"
+            name="price"
               id="price"
               placeholder="$"
               required
-            />
-          </div>
+              />
+            </div>
 
           <div class="add-product-field">
-            <label for="image">IMAGEN: </label>
+            <label for="price">DESCUENTO: </label>
             <input
+            type="number"
+            name="discount"
+              id="discount"
+              required
+              />
+            </div>
+            
+            <div class="add-product-field">
+              <label for="price">STOCK: </label>
+              <input
+              type="number"
+              name="stock"
+              id="stock"
+              required
+              />
+            </div>
+            
+            <div class="add-product-field">
+              <label for="image">IMAGEN: </label>
+              <input
               type="file"
               name="image"
               id="image"
               accept="image/png, image/jpeg"
-            />
-          </div>
-
+              />
+            </div>
+            
+            <div class="add-product-field">
+              <label for="description">DESCRIPCION: </label>
+              <input type="text" name="description" id="description" required />
+            </div>
 
           <div class="buttons">
             <button type="submit" class="add">AGREGAR</button>

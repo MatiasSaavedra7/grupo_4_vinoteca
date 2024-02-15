@@ -1,6 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 const productService = require("../model/services/productService")
+const grapeService = require("../model/services/grapesService")
+const countryService = require("../model/services/countryService")
 
 // const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
 // const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
@@ -38,8 +40,8 @@ const productsController = {
         res.render('products/productDetail', {product: await productService.getBy(req.params.id)});
     },
 
-    add: (req, res) => {
-        res.render('products/addProduct');
+    add: async (req, res) => {
+        res.render('products/addProduct', {grapes: await grapeService.getAll(), country: await countryService.getAll()});
     },
     
     create: (req, res) => {
