@@ -27,7 +27,7 @@ const productsController = {
     imported: async (req, res) => {
         // let imported = products.filter( product => product.category == 'international')
 
-        res.render('products/products', {products: await productService.getAllImpoted(), title: 'Imported'});
+        res.render('products/products', {products: await productService.getAllImported(), title: 'Imported'});
     },
 
     detail: async (req, res) => {

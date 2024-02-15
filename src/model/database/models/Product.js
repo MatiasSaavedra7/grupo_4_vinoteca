@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
 		description: {
 			type: DataTypes.TEXT,
 		},
-		stock_id: {
+		stock: {
 			type: DataTypes.INTEGER,
 			unsigned: true,
 		},
