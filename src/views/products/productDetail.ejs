@@ -8,47 +8,54 @@
     <%- include('../partials/header.ejs') %>
 
       <main>
-        <section class="show-img-product">
-          <div>
-            <div class="img-product">
-              <img src="/images/products/<%= product.image %>" alt="" />
-            </div>
-            <div>
 
-            </div>
-        </section>
-        <section class="description-product">
-          <div>
-            <h3>
-              <%= product.name%>
-            </h3>
-            <i class="fa-regular fa-heart"></i>
-          </div>
-          <div class="details">
-            <p>
-              <strong>Tipo de Vino:</strong>
-              <%= product.grapes && product.grapes.name ? product.grapes.name : " " %> 
-            </p>
-            <p>
-              <strong>Origen:</strong>
-              <%= product.country && product.country.name ? product.country.name : " " %> 
-            </p>
-            <p>
-              <strong>Descripcion:</strong>
-              <%= product.description %>
-            </p>
-            <p>
-              <strong>Stock:</strong>
-              <%= product.stock %>
-            </p>
-          </div>
+        <article class="product">
+          <section class="image-section">
+            <figure class="product-image">
+              <img src="/images/products/<%= product.image %>" alt="">
+            </figure>
+          </section>
 
-          <button type="submit" id="buy-now">Comprar ahora!</button>
-          <button type="" id="add-cart">Agregar al carro!</button>
-          <a href="/products/edit/<%= product.id %>">Editar</a>
-          <form action="/products/delete/<%= product.id %>?_method=delete" method="post">
-            <button type="submit">Eliminar</button>
-          </form>
+          <section class="info-section">
+            <div class="product-info">
+              <p class="product-name">
+                <%= product.name %>
+              </p>
+              <% if (product.grapes && product.grapes.name) { %>
+                <p class="product-grape">
+                  <i class="fa-solid fa-wine-bottle"></i>
+                  <%= product.grapes.name %>
+                </p>
+                <% } %>
+                  <% if (product.country && product.country.name) { %>
+                    <p class="product-country">
+                      <i class="fa-solid fa-earth-americas"></i>
+                      <%= product.country.name %>
+                    </p>
+                    <% } %>
+                      <p class="product-description">
+                        <span>Descripcion: </span> <br>
+                        <%= product.description %>
+                      </p>
+            </div>
+
+            <div class="buttons">
+              <button type="submit" id="buy-now">Comprar ahora!</button>
+              <button type="" id="add-cart">Agregar al carro!</button>
+            </div>
+          </section>
+        </article>
+
+        <section class="admin-panel">
+          <h6>PANEL DE ADMINISTRACION</h6>
+          <div class="admin-buttons">
+            <a href="/products/edit/<%= product.id %>">
+              <button type="submit">EDITAR PRODUCTO</button>
+            </a>
+            <form action="">
+              <button type="submit">ELIMINAR PRODUCTO</button>
+            </form>
+          </div>
         </section>
 
       </main>
@@ -56,5 +63,4 @@
       <%- include('../partials/footer.ejs') %>
 
   </body>
-
 </html>
