@@ -94,7 +94,11 @@ const productsController = {
         res.redirect("/products");
     },
 
-    delete: (req, res) => {
+    delete: async (req, res) => {
+        res.render('products/deleteProduct', { product: await productService.getBy(req.params.id)})
+    },
+
+    destroy: (req, res) => {
         let indice = products.findIndex(p => p.id == req.params.id);
 
         products.splice(indice, 1);
