@@ -1,5 +1,6 @@
 const { where } = require("sequelize");
 const db = require("../database/models");
+const e = require("express");
 const Op = db.Sequelize.Op;
 
 function Product(data, image) {
@@ -85,20 +86,33 @@ const productService = {
 	},
 
 	updateBy: async (id, data) => {
-	    try {
-	        return await db.Product.update(new Product(data), { where: { id: id } });
-	    } catch (e) {
-	        console.error(e);
-	    }
+		try {
+			return await db.Product.update(new Product(data), { where: { id: id } });
+		} catch (e) {
+			console.error(e);
+		}
 	},
 
 	deleteBy: async (id) => {
-	    try {
-	        return await db.Product.destroy({ where: { id: id } });
-	    } catch (e) {
-	        console.error(e);
-	    }
+		try {
+			return await db.Product.destroy({ where: { id: id } });
+		} catch (e) {
+			console.error(e);
+		}
 	},
+
+	searchProduct: async (data) => {
+		try {
+			return await db.Product.findAll({
+				where: {
+					name: { [Op.like]: `%${data}%` },
+				}
+			})
+		} catch (error) {
+			console.error(error);
+			return [];
+		}
+	}
 };
 
 module.exports = productService;
