@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  let alias = "Role";
+  let alias = "Rol";
 
   let columns = {
     id: {
@@ -16,17 +16,17 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   let config = {
-    tableName: "roles",
+    tableName: "rol",
     timestamps: false,
   };
 
-  let Role = sequelize.define(alias, columns, config);
-  Role.associate = function (models) {
-    Role.hasMany(models.User, {
-      as: "role",
-      foreignKey: "role_id",
+  let Rol = sequelize.define(alias, columns, config);
+  Rol.associate = function (models) {
+    Rol.hasMany(models.User, {
+      as: "rol",
+      foreignKey: "rol_id",
     });
   };
 
-  return Role;
+  return Rol;
 };

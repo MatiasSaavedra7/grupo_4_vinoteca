@@ -15,7 +15,7 @@ router.get('/detail/:id', controller.detail);
 
 // ADD PRODUCTS
 router.get('/add', controller.add);
-
+//! AGREGAR MIDDLEWARE PARA PERMISOS DE ADMIN!!!!!!!!!
 router.post('/add', upload.single('image'), controller.create);
 
 //EDIT PRODUCTS

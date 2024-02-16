@@ -2,11 +2,11 @@ const fs = require("fs");
 const path = require("path");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
+const usersService = require('../model/services/usersService');
+const { log } = require("console");
 
-
-
-const userFilePath = path.join(__dirname, "../data/usersDataBase.json");
-const users = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
+// const userFilePath = path.join(__dirname, "../data/usersDataBase.json");
+// const users = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
 
 const usersController = {
 	register: (req, res) => {
@@ -17,7 +17,7 @@ const usersController = {
 		res.render("users/login");
 	},
 
-	addUser: (req, res) => {
+	addUser: async (req, res) => {
 		//Validamos los datos
 		const errors = validationResult(req);
 
@@ -34,21 +34,29 @@ const usersController = {
 		const image = req.file ? req.file.filename : "default-image.png";
 
 		//Creamos al nuevo usuario
-		const newUser = {
+		/* const newUser = {
 			id: users.length + 1,
 			...req.body,
 			password: bcryptjs.hashSync(req.body.password, 10),
 			image,
-		};
+		}; */
+		try {
+			let newUser = await usersService.add(req.body, req.email, image)
+			console.log(newUser);
+		} catch (error) {
+			console.log(error.message);
+		}
 
 		//Lo agregamos al array de objetos
-		users.push(newUser);
+		// users.push(newUser);
 
 		//Pasamos el array a json y guardamos
-		fs.writeFileSync(userFilePath, JSON.stringify(users, null, " "));
+		// fs.writeFileSync(userFilePath, JSON.stringify(users, null, " "));
 
 		//Redireccionamos al home
 		res.redirect("/users/login");
+
+
 	},
 
 	loginProcess: (req, res) => {

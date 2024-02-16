@@ -9,11 +9,11 @@ module.exports = (sequelize, DataTypes) => {
       unique: true,
       autoIncrement: true,
     },
-    name: {
+    firstName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    surname: {
+    lastName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -22,7 +22,11 @@ module.exports = (sequelize, DataTypes) => {
       unique: true,
       allowNull: false,
     },
-    role_id: {
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    rol_id: {
       type: DataTypes.INTEGER,
     },
   };
@@ -35,18 +39,10 @@ module.exports = (sequelize, DataTypes) => {
   let User = sequelize.define(alias, columns, config);
 
   User.associate = function (models) {
-    User.belongsTo(models.Role, {
-      as: "role",
-      foreignKey: "role_id",
+    User.belongsTo(models.Rol, {
+      as: "rol",
+      foreignKey: "rol_id",
     }) 
-
-    User.belongsToMany(models.Product, {
-        as: "products",
-        through: 'users_products',
-        foreignKey: 'user_id',
-        otherKey: 'product_id',
-        timestamps: false
-    })
   };
   return User;
 };
