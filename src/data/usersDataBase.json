@@ -15,7 +15,8 @@
   "email": "falso124@gmail.com",
   "tel": "5345345435",
   "password": "$2a$10$HWZlEZeMLbhXPEJEYnaBCuln1wrWkw/pUFqc2EVxNCeOEqcvz2N1m",
-  "image": "1705704628539-descarga (1).jpeg"
+  "image": "1705704628539-descarga (1).jpeg",
+  "rol" : "Administrador"
  },
  {
   "id": 3,
@@ -24,7 +25,8 @@
   "email": "falso123@gmail.com",
   "tel": "5345345435",
   "password": "$2a$10$r32GhWq06pYQgo0ibdy8XOMvj1jETU5cscmtGceNpnwlw7MCU3bw6",
-  "image": "1705704966441-messi.jpg"
+  "image": "1705704966441-messi.jpg",
+  "rol": "Cliente"
  },
  {
   "id": 4,

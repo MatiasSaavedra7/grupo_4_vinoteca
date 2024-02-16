@@ -65,14 +65,15 @@
             </div>
           </section>
         </article>
-
-        <section class="admin-panel">
-          <h6>PANEL DE ADMINISTRACION</h6>
-          <div class="admin-buttons">
-            <a href="/products/edit/<%= product.id %>">EDITAR PRODUCTO</a>
-            <a href="/products/delete/<%= product.id %>">ELIMINAR PRODUCTO</a>
-          </div>
-        </section>
+        <% if (locals.rol) { %>
+          <section class="admin-panel">
+            <h6>PANEL DE ADMINISTRACION</h6>
+            <div class="admin-buttons">
+              <a href="/products/edit/<%= product.id %>">EDITAR PRODUCTO</a>
+              <a href="/products/delete/<%= product.id %>">ELIMINAR PRODUCTO</a>
+            </div>
+          </section>
+        <% } %>
 
       </main>
 
