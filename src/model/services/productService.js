@@ -1,4 +1,6 @@
+const { where } = require("sequelize");
 const db = require("../database/models");
+const Op = db.Sequelize.Op;
 
 function Product(data, image) {
 	this.grapes_id = data.grapes_id;
@@ -37,39 +39,45 @@ const productService = {
 
 	getAllNational: async () => {
 		try {
-			const data = await db.Product.findAll({ include: ["country"] });
-			return data.filter(
-				(w) =>
-					w &&
-					w.country &&
-					typeof w.country.name === "string" &&
-					w.country.name.toLowerCase() == "argentina"
-			);
+			const products = await db.Product.findAll({
+				include: [
+					{ association: "country" },
+					{ association: "grapes" },
+				],
+				where: {
+					"$country.name$": "Argentina",
+				},
+			});
+			return products;
 		} catch (e) {
-			console.error("Error al obtener los productos:", e);
+			console.error(e);
 			return [];
 		}
 	},
 
 	getAllImported: async () => {
 		try {
-			const data = await db.Product.findAll({ include: ["country"] });
-			return data.filter(
-				(w) =>
-					w &&
-					w.country &&
-					typeof w.country.name === "string" &&
-					w.country.name.toLowerCase() !== "argentina"
-			);
+			const products = await db.Product.findAll({
+				include: [
+					{ association: "country" },
+					{ association: "grapes" },
+				],
+				where: {
+					"$country.name$": { [Op.ne]: "Argentina" },
+				},
+			});
+			return products;
 		} catch (e) {
-			console.error("Error al obtener los productos:", e);
+			console.error(e);
 			return [];
 		}
 	},
 
 	getBy: async (id) => {
 		try {
-			return await db.Product.findByPk(id, { include: ["country", "grapes"] });
+			return await db.Product.findByPk(id, {
+				include: ["country", "grapes"],
+			});
 		} catch (e) {
 			console.e(e);
 			return [];
