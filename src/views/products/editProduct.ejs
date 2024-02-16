@@ -25,22 +25,14 @@
             />
           </div>
 
-          <!-- <div class="edit-product-field">
-            <label for="varieties">VARIEDAD: </label>
-            <input
-              type="text"
-              name="varieties"
-              id="varieties"
-              placeholder="Variedades de uva, cepas..."
-              value="
-            />
-          </div> -->
-
           <div class="edit-product-field">
             <label for="varieties">VARIEDAD: </label>
             <select name="" id="">
               <% grapes.forEach(grape => { %>
-                <option value=<%=grape.id%> <%= product.grapes_id === grape.id? 'selected': " "  %> ><%= grape.name  %></option>
+              <option value=<%=grape.id%>
+                <%= product.grapes_id === grape.id? 'selected': " " %> ><%=
+                grape.name %>
+              </option>
               <% }) %>
             </select>
           </div>
@@ -49,7 +41,10 @@
             <label for="origin">ORIGEN: </label>
             <select name="" id="">
               <% country.forEach(country => { %>
-                <option value=<%=country.id%> <%= product.country_id === country.id? 'selected': " "  %> ><%= country.name  %></option>
+              <option value=<%=country.id%>
+                <%= product.country_id === country.id? 'selected': " " %> ><%=
+                country.name %>
+              </option>
               <% }) %>
             </select>
           </div>

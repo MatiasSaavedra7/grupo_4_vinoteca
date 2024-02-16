@@ -36,9 +36,9 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.INTEGER,
 			unsigned: true,
 		},
-		id_image: {
-			type: DataTypes.INTEGER,
-			unsigned: true,
+		image: {
+			type: DataTypes.STRING,
+			allowNull: false,
 		},
 	};
 
@@ -58,11 +58,6 @@ module.exports = (sequelize, DataTypes) => {
 		Product.belongsTo(models.Country, {
 			as: "country",
 			foreignKey: "country_id",
-		});
-
-		Product.belongsTo(models.Image, {
-			as: "images",
-			foreignKey: "id_image",
 		});
 	};
 

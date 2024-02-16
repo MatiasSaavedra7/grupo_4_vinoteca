@@ -23,19 +23,19 @@
           
           <div class="add-product-field">
             <label for="varieties">VARIEDAD: </label>
-            <select name="" id="">
+            <select name="grapes_id" id="grapes_id">
               <% grapes.forEach(grape => { %>
-                <option value="grapes.id"><%= grape.name %></option>
+                <option value=<%= grape.id %>><%= grape.name %></option>
               <% }) %>
             </select>
           </div>
 
           <div class="add-product-field">
             <label for="origin">ORIGEN: </label>
-            <select name="" id="">
-              <% country.forEach(country => { %>
-                <option value="contry.id"><%= country.name %></option>
-              <% }) %>
+            <select name="country_id" id="country_id">
+              <% country.forEach(c => { %>
+                <option value=<%=c.id %>> <%= c.name %> </option>
+                <% }) %>
             </select>
           </div>
 

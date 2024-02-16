@@ -1,19 +1,23 @@
 const db = require("../database/models");
 
-function Product(data) {
+function Product(data, image) {
 	this.grapes_id = data.grapes_id;
 	this.country_id = data.country_id;
 	this.name = data.name;
 	this.price = data.price;
 	this.discount = data.discount;
-	this.descripcion = data.descripcion;
+	this.description = data.description;
 	this.stock = data.stock;
+	this.image = image;
 }
 
 const productService = {
-	//!COMPLETAR
-	create: async (data) => {
-
+	create: async (data, image) => {
+		try {
+			return await db.Product.create(new Product(data, image));
+		} catch (error) {
+			console.error(error);
+		}
 	},
 
 	getAll: async () => {
@@ -22,7 +26,6 @@ const productService = {
 				include: [
 					{ association: "country" },
 					{ association: "grapes" },
-					{ association: "images" },
 				],
 			});
 			return data;
@@ -34,7 +37,7 @@ const productService = {
 
 	getAllNational: async () => {
 		try {
-			const data = await db.Product.findAll({ include: ["country", "images"] });
+			const data = await db.Product.findAll({ include: ["country"] });
 			return data.filter(
 				(w) =>
 					w &&
@@ -50,7 +53,7 @@ const productService = {
 
 	getAllImported: async () => {
 		try {
-			const data = await db.Product.findAll({ include: ["country", "images"] });
+			const data = await db.Product.findAll({ include: ["country"] });
 			return data.filter(
 				(w) =>
 					w &&
@@ -66,7 +69,7 @@ const productService = {
 
 	getBy: async (id) => {
 		try {
-			return await db.Product.findByPk(id, {include: ["country", "images", "grapes"]});
+			return await db.Product.findByPk(id, { include: ["country", "grapes"] });
 		} catch (e) {
 			console.e(e);
 			return [];
