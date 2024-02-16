@@ -36,7 +36,27 @@
                       <p class="product-description">
                         <span>Descripcion: </span> <br>
                         <%= product.description %>
-                      </p>
+                      </p class="price-info">
+                      <% if (product.discount > 0) { %>
+                        <p>
+                          <span class="product-discount">
+                            <%= product.discount %> OFF! 
+                          </span> <br>
+
+                          <span class="product-price">
+                            <% newPrice=product.price - (product.price * product.discount / 100); %>
+                            $<%= newPrice.toFixed(2) %>
+                          </span>
+
+                          <span class="product-old-price">
+                            $<%= product.price %>
+                          </span>
+                        </p>
+                          <% } else { %>
+                            <p class="product-price">
+                              $<%= product.price %>
+                            </p>
+                            <% } %>
             </div>
 
             <div class="buttons">
@@ -49,12 +69,8 @@
         <section class="admin-panel">
           <h6>PANEL DE ADMINISTRACION</h6>
           <div class="admin-buttons">
-            <a href="/products/edit/<%= product.id %>">
-              <button type="submit">EDITAR PRODUCTO</button>
-            </a>
-            <form action="">
-              <button type="submit">ELIMINAR PRODUCTO</button>
-            </form>
+            <a href="/products/edit/<%= product.id %>">EDITAR PRODUCTO</a>
+            <a href="/products/delete/<%= product.id %>">ELIMINAR PRODUCTO</a>
           </div>
         </section>
 
@@ -63,4 +79,5 @@
       <%- include('../partials/footer.ejs') %>
 
   </body>
+
 </html>

@@ -123,6 +123,28 @@ section .info-section {
 	text-align: center;
 }
 
+.product-discount {
+	font-family: 'Segoe UI';
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 36px;
+	background-color: green;
+	color: white;
+	padding: 5px 10px;
+	border-radius: 10px;
+}
+
+.product-price {
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 36px;
+}
+
+.product-old-price {
+	text-decoration: line-through;
+	color: grey;
+}
+
 .buttons {
 	background-color: #ebebeb;
 }
@@ -155,30 +177,28 @@ section .info-section {
 .admin-panel h6 {
 	font-size: 24px;
 	margin-bottom: 20px;
+	text-align: center;
+	border-bottom: 1px solid grey;
 }
 .admin-buttons {
 	display: flex;
-	flex-wrap: wrap;
+	/* flex-wrap: wrap; */
 	gap: 20px;
 	justify-content: space-around;
 }
 
-.admin-buttons a button {
+.admin-buttons a {
 	font-size: 22px;
-	font-weight: bold;
+	font-weight: bolder;
+	text-decoration: none;
 	padding: 10px;
 	border-radius: 10px;
-	background-color: yellow;
-	color: black;
+	background-color: rgb(180, 20, 20);
+	color: white;
 }
 
-.admin-buttons form button {
-	font-size: 24px;
-	font-weight: bold;
-	border-radius: 10px;
-	padding: 10px;
-	background-color: red;
-	color: white;
+a:hover {
+	opacity: 0.9;
 }
 
 @media (min-width: 768px) {
