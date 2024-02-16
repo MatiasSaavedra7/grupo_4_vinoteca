@@ -79,24 +79,24 @@ const productService = {
 				include: ["country", "grapes"],
 			});
 		} catch (e) {
-			console.e(e);
+			console.error(e);
 			return [];
 		}
 	},
 
-	// updateBy: async (id, data) => {
-	//     try {
-	//         return await db.Product.update(new Product(body), { where: { id: id } });
-	//     } catch (e) {
-	//         console.e(e);
-	//     }
-	// },
+	updateBy: async (id, data) => {
+	    try {
+	        return await db.Product.update(new Product(data), { where: { id: id } });
+	    } catch (e) {
+	        console.error(e);
+	    }
+	},
 
 	deleteBy: async (id) => {
 	    try {
 	        return await db.Product.destroy({ where: { id: id } });
 	    } catch (e) {
-	        console.e(e);
+	        console.error(e);
 	    }
 	},
 };

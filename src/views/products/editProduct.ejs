@@ -26,8 +26,8 @@
           </div>
 
           <div class="edit-product-field">
-            <label for="varieties">VARIEDAD: </label>
-            <select name="" id="">
+            <label for="grapes_id">VARIEDAD: </label>
+            <select name="grapes_id" id="">
               <% grapes.forEach(grape => { %>
               <option value=<%=grape.id%>
                 <%= product.grapes_id === grape.id? 'selected': " " %> ><%=
@@ -38,8 +38,8 @@
           </div>
 
           <div class="edit-product-field">
-            <label for="origin">ORIGEN: </label>
-            <select name="" id="">
+            <label for="country_id">ORIGEN: </label>
+            <select name="country_id" id="">
               <% country.forEach(country => { %>
               <option value=<%=country.id%>
                 <%= product.country_id === country.id? 'selected': " " %> ><%=
@@ -73,7 +73,7 @@
           </div>
 
           <div class="edit-product-field">
-            <label for="price">DESCUENTO: </label>
+            <label for="discount">DESCUENTO: </label>
             <input
               type="number"
               name="discount"
@@ -84,7 +84,7 @@
           </div>
 
           <div class="edit-product-field">
-            <label for="price">STOCK </label>
+            <label for="stock">STOCK </label>
             <input
               type="number"
               name="stock"
