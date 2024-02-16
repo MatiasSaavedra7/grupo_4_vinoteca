@@ -32,6 +32,19 @@ const usersService = {
         }
     },
 
+    checkEmail: async (email) => {
+        try {
+			return await db.User.findAll({
+				where: {
+					email: { [Op.like]: `%${email}%` },
+				}
+			})
+		} catch (error) {
+			console.error(error);
+			return [];
+		}
+    },
+
     add: async function(data, email, image) {
         // const emaildb = db.User.findAll({
         //     where: {
