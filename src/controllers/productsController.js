@@ -71,7 +71,6 @@ const productsController = {
         res.redirect("/products");
     },
 
-    //!FALTAN CORREGIR COSITAS/////////////////////////////////////
     edit: async (req, res) => {
         res.render('products/editProduct', { product: await productService.getBy(req.params.id), grapes: await grapeService.getAll(), country: await countryService.getAll() });
     },
@@ -98,13 +97,9 @@ const productsController = {
         res.render('products/deleteProduct', { product: await productService.getBy(req.params.id)})
     },
 
-    destroy: (req, res) => {
-        let indice = products.findIndex(p => p.id == req.params.id);
-
-        products.splice(indice, 1);
-
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
-
+    destroy: async (req, res) => {
+        await productService.deleteBy(req.params.id);
+        
         res.redirect("/products");
     }
 };

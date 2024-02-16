@@ -14,8 +14,8 @@
                 </figcaption>
             </figure>
             <h4 class="question">Estás seguro que deseas eliminar este producto?</h4>
-            <form action="">
-                <button class="delete-button">ELIMINAR</button>
+            <form action="/products/delete/<%= product.id%>?_method=DELETE" method="POST" enctype="multipart/form-data">
+                <button type="submit" class="delete-button">ELIMINAR</button>
 
                 <a href="/products/detail/<%= product.id %>" class="cancel-button">CANCELAR</a>
             </form>

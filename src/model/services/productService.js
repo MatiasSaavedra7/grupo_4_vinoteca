@@ -92,18 +92,13 @@ const productService = {
 	//     }
 	// },
 
-	// deleteBy: async (id) => {
-	//     //Opcion 1:
-	//     //Falta buscar las relaciones de este producto en las tablas intermedias y borrarlas antes de hacer
-	//     //el destroy
-
-	//     //Opcion 2: borrarla logicamente
-	//     try {
-	//         return await db.Product.destroy({ where: { id: id } });
-	//     } catch (e) {
-	//         console.e(e);
-	//     }
-	// },
+	deleteBy: async (id) => {
+	    try {
+	        return await db.Product.destroy({ where: { id: id } });
+	    } catch (e) {
+	        console.e(e);
+	    }
+	},
 };
 
 module.exports = productService;
