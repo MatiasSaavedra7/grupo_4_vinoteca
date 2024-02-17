@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,25 +25,32 @@
         border-radius: 10px;
     }
 </style>
+
 <body>
-    <a href="/"><h3>HOME</h3></a>
+    <a href="/">
+        <h3>HOME</h3>
+    </a>
     <h1>Productos!!!!</h1>
     <ul>
-        <% products.forEach(product => { %>
+        <% products.forEach(product=> { %>
             <li>
-                <h5><%= product.name %> - ID: <%= product.id %></h5>
+                <h5>
+                    <%= product.name %> - ID: <%= product.id %>
+                </h5>
                 <img src="/images/products/<%= product.image %>" width="80px">
-                <p>$<%= product.price %></p>
+                <p>$<%= product.price %>
+                </p>
             </li>
-        <% }) %>
+            <% }) %>
     </ul>
 
     <ul class="pages"> Paginas:
         <li><a href="/test">1</a></li>
-        <li><a href="/test/1">2</a></li>
-        <li><a href="/test/2">3</a></li>
-        <li><a href="/test/3">4</a></li>
+        <% for( let i=2; i < pages; i++ ) { %>
+            <li><a href="/test/<%= i %>"><%= i %></a></li>
+            <% } %>
     </ul>
     </form>
 </body>
+
 </html>

@@ -114,19 +114,21 @@ const productService = {
 		}
 	},
 
-	getCount: async function(){
+	getCount: async function (limit) {
 		try {
-			return await db.Product.count()
+			let count = await db.Product.count();
+			return Math.ceil(count / limit);
 		} catch (error) {
 			return error.message;
 		}
 	},
 
-	paginate: async function(page){
+
+	paginate: async function (page) {
 		let proxPage = 12 * page || 0;
 		try {
 			// let totalItems = db.Product.count()
-			let pageProducts = db.Product.findAll({offset: proxPage, limit: 12})
+			let pageProducts = db.Product.findAll({ offset: proxPage, limit: 12 })
 			return pageProducts
 		} catch (error) {
 			return error.message

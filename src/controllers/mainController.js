@@ -22,7 +22,7 @@ const controller = {
 
 	test: async (req, res) => {
 		try {
-			res.render("test", {
+			res.render("test", {pages: await productService.getCount(12),
 				products: await productService.paginate(req.params.page),
 			});
 		} catch (error) {
