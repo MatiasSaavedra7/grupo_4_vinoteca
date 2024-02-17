@@ -2,6 +2,7 @@ const path = require('path');
 const { body } = require('express-validator');
 const fs = require('fs');
 const userService = require('../model/services/usersService');
+const { log } = require('console');
 
 const validateRegister = [
         body('firstName')
@@ -12,9 +13,8 @@ const validateRegister = [
                 .notEmpty().withMessage('Tienes que escribir un correo electronico').bail()
                 .isEmail().withMessage('Debes escribir un formato de correo válido').bail()
                 .custom(async (value, { req }) => {
-                        
-                                
-                        if (await userService.checkEmail(req.body.email).lenght != 0) {
+                          
+                        if (await userService.checkEmail("email", req.body.email)) {
                                 throw new Error("El correo ya se encuentra registrado");
                         }
 

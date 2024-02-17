@@ -20,29 +20,27 @@ const usersService = {
             console.log(error);
         }
     },
-    getOne: async function(email) {
-        try {
-            const email = await db.User.findOne({
-                where:{
-                    email: { [Op.like] : '%email%'}
-                }
-            })
-        } catch (error) {
-            console.log(error);
-        }
-    },
+    // getOne: async function(email) {
+    //     try {
+    //         const email = await db.User.findOne({
+    //             where:{
+    //                 email: { [Op.like] : '%email%'}
+    //             }
+    //         })
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // },
 
-    checkEmail: async (email) => {
-        try {
-			return await db.User.findAll({
-				where: {
-					email: { [Op.like]: `%${email}%` },
-				}
-			})
-		} catch (error) {
-			console.error(error);
-			return [];
-		}
+    checkEmail: async (campo, dato) => {
+            try {
+                return await db.User.findOne({
+                    where: {[campo]: dato},
+                });
+            } catch (e) {
+                console.error(e);
+                return null;
+            }
     },
 
     add: async function(data, email, image) {
