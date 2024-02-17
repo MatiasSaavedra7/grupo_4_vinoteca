@@ -14,23 +14,21 @@ const controller = {
 	},
 
 	search: async (req, res) => {
-		res.render("search", { products: await productService.searchProduct(req.query.keywords), search: req.query.keywords });
+		res.render("search", {
+			products: await productService.searchProduct(req.query.keywords),
+			search: req.query.keywords,
+		});
 	},
 
-	// test: async (req, res) => {
-	// 	db.Product.findAll({include: [
-	// 		{association: 'country'},
-	// 		{association: 'grapes'},
-	// 		{association: 'images'}
-	// 		]})
-	// 		.then((products) => {
-	// 			return res.render("test", { products });
-	// 		})
-	// 		.catch((error) => {
-	// 			return res.send(error.message);
-	// 		});
-	// },
-
+	test: async (req, res) => {
+		try {
+			res.render("test", {
+				products: await productService.paginate(req.params.page),
+			});
+		} catch (error) {
+			res.send(error.message);
+		}
+	},
 };
 
 module.exports = controller;

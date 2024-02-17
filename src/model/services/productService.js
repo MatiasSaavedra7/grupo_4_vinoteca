@@ -112,6 +112,25 @@ const productService = {
 			console.error(error);
 			return [];
 		}
+	},
+
+	getCount: async function(){
+		try {
+			return await db.Product.count()
+		} catch (error) {
+			return error.message;
+		}
+	},
+
+	paginate: async function(page){
+		let proxPage = 12 * page || 0;
+		try {
+			// let totalItems = db.Product.count()
+			let pageProducts = db.Product.findAll({offset: proxPage, limit: 12})
+			return pageProducts
+		} catch (error) {
+			return error.message
+		}
 	}
 };
 
