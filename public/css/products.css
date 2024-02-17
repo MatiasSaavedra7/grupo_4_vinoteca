@@ -129,7 +129,7 @@ main {
 /* CONFIGURACION DE ESTILOS PARA DESKTOP */
 @media (min-width: 1024px) {
 	.box-product {
-		width: 30%;
+		width: 20%;
 		max-width: 250px;
 	}
 

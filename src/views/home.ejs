@@ -2,6 +2,7 @@
 <html lang="en">
   <%- include('./partials/head.ejs', {title: 'VENNER Vinoteca' , css: 'home.css'
   }) %>
+  <link rel="stylesheet" href="/css/products.css">
 
   <body>
     <%- include('./partials/header.ejs') %>
@@ -9,22 +10,11 @@
     <main>
 
       <%- include('./partials/slideShow.ejs') %>
+
+      <h1>OFERTAS</h1>
+
+      <%- include("./partials/products.ejs", {products}) %>
       
-      <!-- <section class="banner">
-        <img src="images/drinkwine.png" alt="" />
-      </section> -->
-
-      <h2>AQUI SE MUESTRAN OFERTAS</h2>
-
-      <!-- <section class="banner">
-        <img src="images/horadeunvinito.png" alt="" />
-      </section> -->
-
-      <h2>AQUI SE MUESTRAN OTROS PRODUCTOS</h2>
-
-      <!-- <section class="banner">
-        <img src="images/regalamomentos.png" alt="" />
-      </section> -->
     </main>
 
     <%- include('./partials/footer.ejs') %>

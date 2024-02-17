@@ -74,6 +74,21 @@ const productService = {
 		}
 	},
 
+	getAllDiscount: async () => {
+		try {
+			const products = await db.Product.findAll({
+				where: {
+					"discount": { [Op.ne]: 0 },
+				},
+			});
+			return products;
+		} catch (e) {
+			console.error(e);
+			return [];
+		}
+	},
+
+
 	getBy: async (id) => {
 		try {
 			return await db.Product.findByPk(id, {
