@@ -110,6 +110,14 @@ main {
 	padding: 10px 0px;
 }
 
+.heart {
+	transition: all ease 400ms;
+}
+
+.heart:hover {
+	scale: 1.3;
+}
+
 .add-to-cart .fa-cart-shopping {
 	transition: all ease 400ms;
 }
