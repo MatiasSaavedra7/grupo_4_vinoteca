@@ -2,6 +2,15 @@ const db = require("../database/models");
 const bcryptjs = require("bcryptjs");
 const Op = db.Sequelize.Op;
 
+function User(data, image) {
+  this.firstName = data.firstName;
+  this.lastName = data.lastName;
+  this.email = data.email;
+  this.password = bcryptjs.hashSync(data.password, 10);
+  this.image = image;
+  this.rol_id = 2;
+}
+
 const usersService = {
   getAll: async function () {
     try {
@@ -9,17 +18,19 @@ const usersService = {
       return users;
     } catch (error) {
       console.log(error);
+      return [];
     }
   },
-  getBy: async function (id) {
-    try {
-      const user = await db.User.findOne({
-        where: { id: id },
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  },
+
+  // getBy: async function (id) {
+  //   try {
+  //     const user = await db.User.findOne({
+  //       where: { id: id },
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // },
 
   checkEmail: async (campo, dato) => {
     try {
@@ -27,7 +38,6 @@ const usersService = {
         where: { [campo]: dato },
       });
     } catch (e) {
-      console.error(e);
       return null;
     }
   },
@@ -37,7 +47,7 @@ const usersService = {
       const user = db.User.create(new User(data, image));
       return user;
     } catch (error) {
-      console.log(error);
+      return Promise.reject(error);
     }
   },
 
@@ -73,13 +83,5 @@ const usersService = {
 
 };
 
-function User(data, image) {
-  this.firstName = data.firstName;
-  this.lastName = data.lastName;
-  this.email = data.email;
-  this.password = bcryptjs.hashSync(data.password, 10);
-  this.image = image;
-  this.rol_id = 2;
-}
 
 module.exports = usersService;

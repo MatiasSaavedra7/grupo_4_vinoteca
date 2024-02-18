@@ -1,6 +1,8 @@
 const { validationResult } = require("express-validator");
 const usersService = require("../model/services/usersService");
-
+const fs = require("fs");
+const path = require("path");
+const bcryptjs = require("bcryptjs");
 
 const usersController = {
   register: (req, res) => {
@@ -12,33 +14,34 @@ const usersController = {
   },
 
   addUser: async (req, res) => {
-    //Validamos los datos
-    const errors = validationResult(req);
-
-    console.log(errors);
-
-    if (!errors.isEmpty()) {
-      return res.render("users/register", {
-        errors: errors.mapped(),
-        old: req.body,
-      });
-    }
-
-    delete req.body.confirmpassword;
-
-    //Verificamos si el usuario subio una imagen
-    const image = req.file ? req.file.filename : "default-image.png";
-
-    //Creamos al nuevo usuario
     try {
+      //Validamos los datos
+      const errors = validationResult(req);
+
+      console.log(errors);
+
+      if (!errors.isEmpty()) {
+        return res.render("users/register", {
+          errors: errors.mapped(),
+          old: req.body,
+        });
+      }
+
+      delete req.body.confirmpassword;
+
+      //Verificamos si el usuario subio una imagen
+      const image = req.file ? req.file.filename : "default-image.png";
+
+      //Creamos al nuevo usuario
       let newUser = await usersService.add(req.body, image);
-      console.log(newUser);
+
+      //Redireccionamos al home
+      res.redirect("/users/login");
+
     } catch (error) {
       console.log(error.message);
+      res.redirect("/users/register");
     }
-
-    //Redireccionamos al home
-    res.redirect("/users/login");
   },
 
   loginProcess: async (req, res) => {
@@ -56,6 +59,8 @@ const usersController = {
       let userFind = await usersService.log(req.body);
 
       //Guardamos al usuario en session una vez validado el usuario.
+      userFind.password = null;
+
       req.session.userLogged = userFind;
 
       //Guardamos en una cookie si el usuario tildo la casilla "recodar usuario".
@@ -79,6 +84,62 @@ const usersController = {
       });
     }
   },
+
+  loginProcess3: (req, res) => {
+		//Asignamos a errors los resultados de las validaciones.
+		const errors = validationResult(req);
+
+		//Verificamos si errors no esta vacia
+		if (!errors.isEmpty()) {
+			//Retornamos a la vista login los errores
+			return res.render("users/login", { errors: errors.mapped() });
+		}
+
+		//Buscamos al usuario a traves de su email
+		const userFilePath = path.join(__dirname, "../data/usersDataBase.json");
+		const users2 = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
+
+		const userFind = users2.find((u) => u.email == req.body.email);
+
+		if (userFind) {
+			//Si existe el usuario verificamos la contraseña
+			if (bcryptjs.compareSync(req.body.password, userFind.password)) {
+				//En caso afirmativo borramos la contraseña del usuario
+				delete userFind.password;
+
+				//Guardamos al usuario en session
+				req.session.userLogged = userFind;
+
+				if (req.body.remember) {
+					res.cookie("userEmail", req.body.email, {
+						maxAge: 1000 * 30,
+					});
+				}
+
+				//Retornamos a la home una vez validados el email y password
+				return res.redirect("/users/profile");
+			} else {
+				//En caso de que la contraseña sea incorrecta mostramos un mensaje
+				return res.render("users/login", {
+					errors: {
+						email: {
+							msg: "Las credenciales no coinciden",
+						},
+					},
+				});
+			}
+		}
+
+		//En caso de que el correo se no encuentre mostramos este mensaje
+		return res.render("users/login", {
+			errors: {
+				email: {
+					msg: "Correo no encontrado :(",
+				},
+			},
+		});
+	},
+
 
   profile: (req, res) => {
     res.render("users/profile", { user: req.session.userLogged });
