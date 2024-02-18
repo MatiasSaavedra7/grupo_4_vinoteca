@@ -27,6 +27,6 @@ router.get('/logout', controller.logout);
 router.get("/delete/:id", controller.delete);
 router.delete('/delete/:id', controller.destroy);
 
-router.delete("/delete/:id", controller.delete);
+// router.delete("/delete/:id", controller.delete);
 
 module.exports = router;
