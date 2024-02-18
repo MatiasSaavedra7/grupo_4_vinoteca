@@ -29,6 +29,10 @@ module.exports = (sequelize, DataTypes) => {
     rol_id: {
       type: DataTypes.INTEGER,
     },
+    image: {
+      type: DataTypes.STRING,
+			allowNull: false,
+    }
   };
 
   let config = {

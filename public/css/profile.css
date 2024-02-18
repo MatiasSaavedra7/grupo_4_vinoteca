@@ -71,12 +71,15 @@ legend{
     text-align: center;
 }
 
-h4 {
-    padding-top: 15px;
+h5 {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 10px;
 }
 
 #dato{
     font-size: 15px;
+    padding: 10px;
 }
 
 @media (min-width: 768px){
