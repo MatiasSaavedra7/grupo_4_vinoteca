@@ -24,7 +24,7 @@
                 <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
             </div>
             <% if (locals.isLogged) { %>
-                <div class="welcome">¡Bienvenido <%= locals.userLogged.firstName %>!</div>
+                <div class="welcome">¡Bienvenido <%= locals.userLogged.name %>!</div>
                 <div class="dropdown-menu">
                     <figure>
                         <img src="/images/users/<%= locals.userLogged.image %>" alt="">

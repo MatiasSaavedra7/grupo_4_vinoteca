@@ -30,7 +30,6 @@ app.use(
 
 app.use(cookieParser());
 
-
 app.use(userLogged);
 
 //Sección de Requerimiento de Rutas

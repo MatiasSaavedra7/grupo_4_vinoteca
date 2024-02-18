@@ -11,7 +11,7 @@ function Product(data, image) {
 	this.discount = data.discount;
 	this.description = data.description;
 	this.stock = data.stock;
-	this.image = image || "";
+	this.image = image;
 }
 
 const productService = {
@@ -100,22 +100,11 @@ const productService = {
 		}
 	},
 
-	updateBy: async (id, data, image) => {
+	updateBy: async (id, data) => {
 		try {
-
-			// Verificamos si el parámetro image es vacío o undefined
-			if (!image) {
-				// Buscamos el producto por id
-				let product = await db.Product.findByPk(id);
-
-				// Usamos el nombre de la imagen anterior
-				image = product.image;
-			}
-
-			// Creamos un nuevo producto con los datos actualizados
-			return await db.Product.update(new Product(data, image), { where: { id: id } });
+			return await db.Product.update(new Product(data), { where: { id: id } });
 		} catch (e) {
-			Promise.reject(e)
+			console.error(e);
 		}
 	},
 
