@@ -104,7 +104,12 @@ const usersController = {
     res.render("users/deleteUser", {
       user: await usersService.getBy(req.params.id),
     })
-  }
+  },
+  destroy: async (req, res) => {
+    await usersService.deleteBy(req.params.id);
+    
+    res.redirect("/users/login");
+  },
 };
  
 module.exports = usersController;

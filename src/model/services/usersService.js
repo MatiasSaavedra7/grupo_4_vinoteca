@@ -77,6 +77,13 @@ const usersService = {
       console.error(e);
     }
   },
+  deleteBy: async (id) => {
+		try {
+			return await db.User.destroy({ where: { id: id } });
+		} catch (e) {
+			console.error(e);
+		}
+	},
 
 };
 
