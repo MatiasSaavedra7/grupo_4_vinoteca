@@ -85,62 +85,6 @@ const usersController = {
     }
   },
 
-  loginProcess3: (req, res) => {
-		//Asignamos a errors los resultados de las validaciones.
-		const errors = validationResult(req);
-
-		//Verificamos si errors no esta vacia
-		if (!errors.isEmpty()) {
-			//Retornamos a la vista login los errores
-			return res.render("users/login", { errors: errors.mapped() });
-		}
-
-		//Buscamos al usuario a traves de su email
-		const userFilePath = path.join(__dirname, "../data/usersDataBase.json");
-		const users2 = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
-
-		const userFind = users2.find((u) => u.email == req.body.email);
-
-		if (userFind) {
-			//Si existe el usuario verificamos la contraseña
-			if (bcryptjs.compareSync(req.body.password, userFind.password)) {
-				//En caso afirmativo borramos la contraseña del usuario
-				delete userFind.password;
-
-				//Guardamos al usuario en session
-				req.session.userLogged = userFind;
-
-				if (req.body.remember) {
-					res.cookie("userEmail", req.body.email, {
-						maxAge: 1000 * 30,
-					});
-				}
-
-				//Retornamos a la home una vez validados el email y password
-				return res.redirect("/users/profile");
-			} else {
-				//En caso de que la contraseña sea incorrecta mostramos un mensaje
-				return res.render("users/login", {
-					errors: {
-						email: {
-							msg: "Las credenciales no coinciden",
-						},
-					},
-				});
-			}
-		}
-
-		//En caso de que el correo se no encuentre mostramos este mensaje
-		return res.render("users/login", {
-			errors: {
-				email: {
-					msg: "Correo no encontrado :(",
-				},
-			},
-		});
-	},
-
-
   profile: (req, res) => {
     res.render("users/profile", { user: req.session.userLogged });
   },

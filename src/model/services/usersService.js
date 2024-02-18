@@ -41,32 +41,34 @@ const usersService = {
       console.log(error);
     }
   },
-  log : async function (data) {
+
+  log: async function (data) {
     try {
-        //Buscamos al usuario a traves de su email
-        let userFind = await db.User.findOne({
-            where: {
-                email: data.email,
-            },
-        });
-        //Si existe el usuario verificamos la contraseña
-        if (userFind) {
-            //En caso afirmativo borramos la contraseña del usuario
-            if (bcryptjs.compareSync(data.password, userFind.password)) {
+      //Buscamos al usuario a traves de su email en la bd.
+      let userFind = await db.User.findOne({
+        where: {
+          email: data.email,
+        },
+      });
 
-                delete userFind.password;
+      //Si existe el usuario verificamos la contraseña.
+      if (userFind) {
 
-                return userFind;
-            } else {
-                //En caso de que la contraseña sea incorrecta mostramos un mensaje
-                return Promise.reject("Las credenciales no coinciden");
-            }
+        //En caso afirmativo borramos la contraseña del usuario
+        if (bcryptjs.compareSync(data.password, userFind.password)) {
+          //Borramos
+          delete userFind.password;
+          //Retornamos el usuario sin contraseña.
+          return userFind;
+        } else {
+          //En caso de que la contraseña sea incorrecta rechazamos una promesa con un error.
+          return Promise.reject(new Error("Las credenciales no coinciden"));
         }
-        //En caso de que el correo se no encuentre mostramos este mensaje
-        return Promise.reject("El usuario no está registrado");
+      }
+      //En caso de que el correo se no encuentre rechazamos una promesa con un error.
+      return Promise.reject(new Error("No se encontró ningún usuario con ese correo"));
     } catch (error) {
-        console.error(error);
-        return Promise.reject(error);
+      return Promise.reject(error);
     }
   },
   
