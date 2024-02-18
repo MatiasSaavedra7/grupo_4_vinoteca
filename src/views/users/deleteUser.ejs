@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs', {title: 'Eliminar un Usuario',css: 'deleteProduct.css'}) %>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <section>
+            <figure>
+                <img src="/images/users/<%= user.image %>" alt="">
+                <figcaption>
+                    <h3>
+                        <%= user.firstName %> <%= user.lastName %> - ID: <%= user.id %>
+                    </h3>
+                </figcaption>
+            </figure>
+            <h4 class="question">Estás seguro que deseas eliminar este usuario?</h4>
+            <form action="/users/delete/<%= user.id%>" method="POST" enctype="multipart/form-data" class="delete">
+                <button type="submit" class="delete-button">ELIMINAR</button>
+
+                <a href="/users/profile/<%= user.id %>" class="cancel-button">CANCELAR</a>
+            </form>
+        </section>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

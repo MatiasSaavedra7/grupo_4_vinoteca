@@ -27,14 +27,5 @@
   "password": "$2a$10$r32GhWq06pYQgo0ibdy8XOMvj1jETU5cscmtGceNpnwlw7MCU3bw6",
   "image": "1705704966441-messi.jpg",
   "rol": "Cliente"
- },
- {
-  "id": 4,
-  "name": "Luana",
-  "surname": "monteros",
-  "email": "falso@gmail.com",
-  "tel": "",
-  "password": "$2a$10$jlbRXWHWmipRaDUwFv/WKehJehlZiYT15IPPFpJrdvegUMY2npfwu",
-  "image": "default-image.png"
  }
 ]
