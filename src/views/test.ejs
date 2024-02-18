@@ -1,33 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina de pruebas</title>
 </head>
+<style>
+    .pages {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .pages li {
+        list-style: none;
+    }
+
+    .pages li a {
+        color: inherit;
+        text-decoration: none;
+        background-color: grey;
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+</style>
+
 <body>
-    <h1>PRODUCTOS</h1>
+    <a href="/">
+        <h3>HOME</h3>
+    </a>
+    <h1>Productos!!!!</h1>
     <ul>
-        <% products.forEach(product => { %>
+        <% products.forEach(product=> { %>
             <li>
-                <h5><%= product.name %> - Precio: $<%= product.price %></h1>
-                <figure>
-                    <img src="/images/products/<%= product.images.name %>"/>
-                </figure>
-                <% if (product.country != undefined) { %>
-                    <p>Pais de origen: <%= product.country.name %></p>
-                <% } %>
-                <% if (product.grapes != undefined) { %>
-                    <p>Uva: <%= product.grapes.name %></p>
-                <% } %>
-                <p>
-                    <%= product.description %>
+                <h5>
+                    <%= product.name %> - ID: <%= product.id %>
+                </h5>
+                <img src="/images/products/<%= product.image %>" width="80px">
+                <p>$<%= product.price %>
                 </p>
-                <p>
-                    <%= product.stock %>
-                </p>
-            </li>   
-        <% }) %>
+            </li>
+            <% }) %>
     </ul>
+
+    <ul class="pages"> Paginas:
+        <li><a href="/test">1</a></li>
+        <% for( let i=2; i < pages; i++ ) { %>
+            <li><a href="/test/<%= i %>"><%= i %></a></li>
+            <% } %>
+    </ul>
+    </form>
 </body>
+
 </html>
