@@ -16,7 +16,7 @@
                     <h5>Datos Personales</h5>
                     <p id="dato"><strong>Nombre y Apellido: </strong><%= user.firstName+" "+user.lastName%></p>
                     <p id="dato"><strong>Email: </strong><%= user.email%></p>
-                    <a href="#" class="edit-user">Editar</a>                   
+                    <a href="/users/edit/<%=user.id%>" class="edit-user">Editar</a>                   
             </div>
             <div class="colum2">
                 <div class="shopping-history">

@@ -16,6 +16,7 @@ const usersService = {
       const user = await db.User.findOne({
         where: { id: id },
       });
+      return user;
     } catch (error) {
       console.log(error);
     }
@@ -67,7 +68,15 @@ const usersService = {
         console.error(error);
         return Promise.reject(error);
     }
-}
+  },
+  
+  updateBy: async (id, data) => {
+    try {
+      return await db.User.update(new User(data), { where: { id: id } });
+    } catch (e) {
+      console.error(e);
+    }
+  },
 
 };
 

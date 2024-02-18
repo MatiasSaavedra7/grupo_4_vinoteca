@@ -17,6 +17,9 @@ router.post('/login', validateLogin, controller.loginProcess);
 //PROFILE USER
 router.get('/profile', authMiddleware ,controller.profile);
 
+//EDIT USER
+router.get("/edit/:id", controller.edit);
+
 //LOGOUT
 router.get('/logout', controller.logout);
 

@@ -81,6 +81,19 @@ const usersController = {
     res.render("users/profile", { user: req.session.userLogged });
   },
 
+  edit: async (req, res) => {
+    res.render("users/editUser", {
+      user: await usersService.getBy(req.params.id),
+    })
+  },
+  update: async (req, res) => {
+    try {
+      await usersService.updateBy(req.params.id, req.body);
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
   logout: (req, res) => {
     res.clearCookie("userEmail");
     req.session.destroy();
