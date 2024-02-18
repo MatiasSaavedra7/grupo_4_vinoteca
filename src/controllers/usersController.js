@@ -115,8 +115,12 @@ const usersController = {
   },
   destroy: async (req, res) => {
     await usersService.deleteBy(req.params.id);
+
+    res.clearCookie("userEmail");
     
-    res.redirect("/users/login");
+    req.session.destroy();
+
+    res.redirect("/");
   },
 };
  
