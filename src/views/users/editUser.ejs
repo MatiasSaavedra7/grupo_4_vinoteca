@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs', { title: "Editar Datos", css: "editUser.css" }) %>
+
+  <body>
+    <%- include('../partials/header.ejs') %>
+
+      <main id="main-editUser">
+        <section>
+          <form action="/users/edit/<%= user.id %>?_method=put" method="post" id="formulario" enctype="multipart/form-data">
+            <legend>EDITA TUS DATOS</legend>
+
+            <div class="div-form">
+              <label for="firstName">NOMBRE</label>
+              <input type="text" name="firstName" id="firstName" value="<%= user.firstName %>"/>
+              <span class="feedback"><%= locals.errors && errors.name ? errors.name.msg : "" %></span>
+            </div>
+
+            <div class="div-form">
+              <label for="lastName">APELLIDO</label>
+              <input type="text" name="lastName" id="lastName" value="<%= user.lastName %>"/>
+              <span class="feedback"><%= locals.errors && errors.surname ? errors.surname.msg : "" %></span>
+            </div>
+
+            <div class="div-form">
+              <label for="email">CORREO</label>
+              <input type="email" name="email" id="email" value="<%= user.email %>" />
+              <span class="feedback"><%= locals.errors && errors.email ? errors.email.msg : "" %></span>
+            </div>
+
+            <div class="div-form">
+              <label for="pass">CONTRASEÑA</label>
+              <input type="password" name="password" id="pass" />
+              <img src="" alt="" />
+              <span class="feedback"><%= locals.errors && errors.password ? errors.password.msg : "" %></span>
+            </div>
+
+            <div class="div-form">
+              <label for="reppass">CONFIRMAR CONTRASEÑA</label>
+              <input type="password" name="confirmpassword" id="reppass" />
+              <img src="" alt="" />
+              <span class="feedback"><%= locals.errors && errors.confirmpassword ? errors.confirmpassword.msg : "" %></span>
+            </div>
+
+            <div class="div-form">
+              <label for="image">IMAGEN: </label>
+              <input type="file" name="image" id="image" accept="image/png, image/jpeg">
+            </div>
+            
+            <button type="submit" id="button-form">MODIFICAR DATOS</button>
+          </form>
+        </section>
+        
+      </main>
+
+      <%- include('../partials/footer.ejs') %>
+  </body>
+
+</html>
