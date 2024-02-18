@@ -25,6 +25,7 @@ router.get('/logout', controller.logout);
 
 //DELETE
 router.get("/delete/:id", controller.delete);
+router.delete('/delete/:id', controller.destroy);
 
 router.delete("/delete/:id", controller.delete);
 
