@@ -87,6 +87,7 @@ const productsController = {
     } catch (error) {
       console.error(error);
       res.redirect("/")
+      //comentario
     }
   },
 
