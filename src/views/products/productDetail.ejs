@@ -65,7 +65,7 @@
             </div>
           </section>
         </article>
-        <% if (locals.rol) { %>
+        <% if (locals.userLogged && userLogged.rol_id == 1) { %>
           <section class="admin-panel">
             <h6>PANEL DE ADMINISTRACION</h6>
             <div class="admin-buttons">
