@@ -13,14 +13,14 @@
 
             <div class="div-form">
               <label for="firstName">NOMBRE</label>
-              <input type="text" name="firstName" id="firstName" placeholder="Nombre" value="<%= locals.old && old.name ? old.name : "" %>"/>
-              <span class="feedback"><%= locals.errors && errors.name ? errors.name.msg : "" %></span>
+              <input type="text" name="firstName" id="firstName" placeholder="Nombre" value="<%= locals.old && old.firstName ? old.firstName : "" %>"/>
+              <span class="feedback"><%= locals.errors && errors.firstName ? errors.firstName.msg : "" %></span>
             </div>
 
             <div class="div-form">
               <label for="lastName">APELLIDO</label>
-              <input type="text" name="lastName" id="lastName" placeholder="Apellido" value="<%= locals.old && old.surname ? old.surname : "" %>"/>
-              <span class="feedback"><%= locals.errors && errors.surname ? errors.surname.msg : "" %></span>
+              <input type="text" name="lastName" id="lastName" placeholder="Apellido" value="<%= locals.old && old.lastName ? old.lastName : "" %>"/>
+              <span class="feedback"><%= locals.errors && errors.lastName ? errors.lastName.msg : "" %></span>
             </div>
 
             <div class="div-form">
