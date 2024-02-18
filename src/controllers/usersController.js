@@ -108,7 +108,7 @@ const usersController = {
   destroy: async (req, res) => {
     await usersService.deleteBy(req.params.id);
     
-    res.redirect("/users/login");
+    res.redirect("/");
   },
 };
  
