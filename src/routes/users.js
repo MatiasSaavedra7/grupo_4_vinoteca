@@ -23,4 +23,8 @@ router.get("/edit/:id", controller.edit);
 //LOGOUT
 router.get('/logout', controller.logout);
 
+//DELETE 
+router.get("/delete/:id", controller.delete);
+
+
 module.exports = router;
