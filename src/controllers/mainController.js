@@ -2,7 +2,7 @@ const productService = require("../model/services/productService");
 
 const controller = {
 	home: async (req, res) => {
-		res.render("home", {products: await productService.getAllDiscount()});
+		res.render("home", { products: await productService.getAllDiscount() });
 	},
 
 	about: (req, res) => {

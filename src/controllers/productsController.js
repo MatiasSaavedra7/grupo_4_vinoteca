@@ -29,53 +29,85 @@ const productsController = {
   },
 
   detail: async (req, res) => {
-    res.render("products/productDetail", {
-      product: await productService.getBy(req.params.id),
-    });
+    try {
+      res.render("products/productDetail", {
+        product: await productService.getBy(req.params.id),
+      });
+    } catch (error) {
+      res.send(error);
+    }
   },
 
   add: async (req, res) => {
-    res.render("products/addProduct", {
-      grapes: await grapeService.getAll(),
-      country: await countryService.getAll(),
-    });
+    try {
+      res.render("products/addProduct", {
+        grapes: await grapeService.getAll(),
+        country: await countryService.getAll(),
+      });
+    } catch (error) {
+      res.send(error);
+    }
   },
 
   create: async (req, res) => {
-    const image = req.file ? req.file.filename : "vaquita.png";
+    try {
+      const image = req.file ? req.file.filename : "vaquita.png";
 
-    await productService.create(req.body, image);
+      await productService.create(req.body, image);
 
-    res.redirect("/products");
+      res.redirect("/products");
+    } catch (error) {
+      res.send(error);
+    }
   },
 
   edit: async (req, res) => {
-    res.render("products/editProduct", {
-      product: await productService.getBy(req.params.id),
-      grapes: await grapeService.getAll(),
-      country: await countryService.getAll(),
-    });
+    try {
+      res.render("products/editProduct", {
+        product: await productService.getBy(req.params.id),
+        grapes: await grapeService.getAll(),
+        country: await countryService.getAll(),
+      });
+    } catch (error) {
+      res.send(error);
+    }
   },
 
   update: async (req, res) => {
     try {
-      await productService.updateBy(req.params.id, req.body);
+      //Verificamos si se subio una imagen.
+      let filename = req.file ? req.file.filename : "";
+
+      //Llamamos al service de actualizacion.
+      await productService.updateBy(req.params.id, req.body, filename);
+
+      //Redireccionamos una vez actualizado.
       res.redirect(`/products/detail/${req.params.id}`);
+
     } catch (error) {
-      console.log(error);
+      console.error(error);
+      res.redirect("/")
     }
   },
 
   delete: async (req, res) => {
-    res.render("products/deleteProduct", {
-      product: await productService.getBy(req.params.id),
-    });
+    try {
+      res.render("products/deleteProduct", {
+        product: await productService.getBy(req.params.id),
+      });
+    } catch (error) {
+      res.send(error);
+    }
   },
 
   destroy: async (req, res) => {
-    await productService.deleteBy(req.params.id);
+    try {
+      await productService.deleteBy(req.params.id);
 
-    res.redirect("/products");
+      res.redirect("/products");
+    } catch (error) {
+      res.send(error);
+    }
   },
 };
 
