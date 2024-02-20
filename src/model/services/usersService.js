@@ -53,7 +53,6 @@ const usersService = {
 
       //Si existe el usuario verificamos la contraseña.
       if (userFind) {
-
         //En caso afirmativo borramos la contraseña del usuario
         if (bcryptjs.compareSync(data.password, userFind.password)) {
           //Borramos
@@ -66,27 +65,44 @@ const usersService = {
         }
       }
       //En caso de que el correo se no encuentre rechazamos una promesa con un error.
-      return Promise.reject(new Error("No se encontró ningún usuario con ese correo"));
+      return Promise.reject(
+        new Error("No se encontró ningún usuario con ese correo")
+      );
     } catch (error) {
       return Promise.reject(error);
     }
   },
-  
-  updateBy: async (id, data) => {
+
+  updateBy: async (id, data, image) => {
     try {
-      return await db.User.update(new User(data), { where: { id: id } });
+      // Verificamos si el parámetro image es vacío o undefined
+      if (!image) {
+        // Buscamos el usuario por id
+        let user = await db.User.findByPk(id);
+        // Usamos el nombre de la imagen anterior
+        image = user.image;
+      }
+      // Creamos un nuevo usuario con los datos actualizados
+    
+      return await db.User.update(
+        new UserEdit({ firstName: data.firstName, lastName: data.lastName }, image),
+        {
+          where: {
+            id: id,
+          },
+        }
+      );
+    } catch (e) {
+      console.log(e);
+    }
+  },
+  deleteBy: async (id) => {
+    try {
+      return await db.User.destroy({ where: { id: id } });
     } catch (e) {
       console.error(e);
     }
   },
-  deleteBy: async (id) => {
-		try {
-			return await db.User.destroy({ where: { id: id } });
-		} catch (e) {
-			console.error(e);
-		}
-	},
-
 };
 
 function User(data, image) {
@@ -96,6 +112,11 @@ function User(data, image) {
   this.password = bcryptjs.hashSync(data.password, 10);
   this.image = image;
   this.rol_id = 2;
+}
+function UserEdit(data,image) {
+  this.firstName = data.firstName;
+  this.lastName = data.lastName;
+  this.image =  image;
 }
 
 module.exports = usersService;

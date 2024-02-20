@@ -94,12 +94,20 @@ const usersController = {
 	},
 	update: async (req, res) => {
 		try {
-			await usersService.updateBy(req.params.id, req.body);
-		} catch (error) {
-			console.log(error);
-		}
-	},
+		  //Verificamos si se subio una imagen.
+		  let filename = req.file ? req.file.filename : "";
 
+		  //Llamamos al service de actualizacion.
+		  await usersService.updateBy(req.params.id, req.body, filename);	
+
+		  //Redireccionamos una vez actualizado.
+		  res.redirect("users/profile");
+
+		} catch (error) {
+		  console.error(error);
+		  res.redirect("/")
+		}
+	  },	
 	logout: (req, res) => {
 		res.clearCookie("userEmail");
 		req.session.destroy();

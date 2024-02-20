@@ -18,7 +18,8 @@ router.post('/login', validateMiddleware.login, controller.loginProcess);
 router.get('/profile', authMiddleware ,controller.profile);
 
 //EDIT USER
-router.get("/edit/:id", controller.edit);
+router.get("/edit/:id", authMiddleware, controller.edit);
+router.put("/edit/:id", upload2.single('image'), controller.update);
 
 //LOGOUT
 router.get('/logout', controller.logout);
