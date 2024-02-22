@@ -92,3 +92,30 @@ No encontramos nada que debamos hacer menos.
 Creemos que debemos dejar de hacer todo el trabajo en conjunto y subir todo desde una única cuenta.
 
 Como conclusión general el equipo, a pesar de haber obtenido buenos resultados y de trabajar bien en equipo, creemos que es bueno delimitar las tareas para que cada uno pueda desempeñarse por sí mismo, acudiendo a ayudar el resto del equipo cuando sea necesario.
+
+## Retrospectiva: Sprint 5
+
+Luego de realizar una reunión para el análisis retrospectivo del Sprint 5, utilizando la dinámica de estrella de mar, las conclusiones fueron las siguientes:
+
++ **Comenzar a hacer:**
+
+Durante el desarrollo utilizamos ramas pero consideramos que deberíamos emplear la metodología del flujo de ramas, para una mayor organización en el proyecto remoto. 
+
++ **Hacer más:**
+
+Prestar un poco más de atención al momento de revisar el proyecto final antes de la entrega del sprint para evitar que se nos pasen puntos sin hacer.
+
++ **Continuar haciendo:**
+
+Continuar con la distribución de las tareas entre los miembros del equipo, asignando a cada uno una tarea por hacer para garantizar que quede registrada la participación de todos en el proyecto.
+Continuar utilizando el tablero de trabajo, mantener la buena comunicación del equipo, la resolución de conflictos, la predisposición de ayudarnos y pedir ayuda cuando sea necesario. Mantener la frecuencia de las reuniones. 
+
++ **Hacer menos:**
+
+No encontramos nada que debamos hacer menos.
+
++ **Dejar hacer:**
+
+No encontramos algo que debamos dejar de hacer durante este sprint.
+
+El balance general del trabajo realizado durante el sprint 5 por parte del equipo de Venner es muy bueno. Debiendo implementar algunas metodologias de trabajo para mejorar aún más la organización y productividad. 

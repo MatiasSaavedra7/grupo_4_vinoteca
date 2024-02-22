@@ -1,8 +1,5 @@
 const { validationResult } = require("express-validator");
 const usersService = require("../model/services/usersService");
-const fs = require("fs");
-const path = require("path");
-const bcryptjs = require("bcryptjs");
 
 const usersController = {
 	register: (req, res) => {
@@ -98,10 +95,16 @@ const usersController = {
 		  let filename = req.file ? req.file.filename : "";
 
 		  //Llamamos al service de actualizacion.
-		  await usersService.updateBy(req.params.id, req.body, filename);	
+		  let updatedUser= await usersService.updateBy(req.params.id, req.body, filename);
+
+		  //Borramos la contraseña
+		  updatedUser.password = null;
+
+		  //Actualizamos los datos del usuario logeado
+		  req.session.userLogged = updatedUser;
 
 		  //Redireccionamos una vez actualizado.
-		  res.redirect("users/profile");
+		  res.redirect("/users/profile");
 
 		} catch (error) {
 		  console.error(error);

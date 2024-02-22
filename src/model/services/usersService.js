@@ -73,7 +73,7 @@ const usersService = {
     }
   },
 
-  updateBy: async (id, data, image) => {
+  updateBy: async function (id, data, image) {
     try {
       // Verificamos si el parámetro image es vacío o undefined
       if (!image) {
@@ -83,15 +83,19 @@ const usersService = {
         image = user.image;
       }
       // Creamos un nuevo usuario con los datos actualizados
-    
-      return await db.User.update(
-        new UserEdit({ firstName: data.firstName, lastName: data.lastName }, image),
+
+      await db.User.update(
+        new UserEdit(
+          { firstName: data.firstName, lastName: data.lastName },
+          image
+        ),
         {
           where: {
             id: id,
           },
         }
       );
+      return await this.getBy(id);
     } catch (e) {
       console.log(e);
     }
