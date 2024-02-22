@@ -5,8 +5,10 @@ const countryService = require("../model/services/countryService");
 const productsController = {
   products: async (req, res) => {
     try {
+      const page = req.query.page || 1;
+      const limit = 15; // Cantidad de productos por página
       res.render("products/products", {
-        products: await productService.getAll(),
+        products: await productService.paginate(page, limit),
         title: "Todos los productos",
       });
     } catch (error) {

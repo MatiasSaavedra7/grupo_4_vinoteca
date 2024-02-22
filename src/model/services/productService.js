@@ -74,6 +74,24 @@ const productService = {
 		}
 	},
 
+	paginate: async function (page, limit) {
+		try {
+			const offset = (page - 1) * limit;
+			const products = await db.Product.findAll({
+				include: [
+					{ association: "country" },
+					{ association: "grapes" },
+				],
+				offset: offset,
+				limit: limit,
+			});
+			return products;
+		} catch (error) {
+			console.error(error);
+			return [];
+		}
+	},
+
 	getBy: async (id) => {
 		try {
 			return await db.Product.findByPk(id, {
