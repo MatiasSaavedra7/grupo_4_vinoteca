@@ -25,7 +25,7 @@ const productService = {
 
 	getAll: async (page) => {
 		try {
-			const products = await db.Product.findAndCountAll({
+			const products = await db.Product.findAll({
 				include: [
 					{ association: "country" },
 					{ association: "grapes" },
@@ -33,7 +33,6 @@ const productService = {
 				limit: 12,
 				offset: page * 12 || 0
 			});
-			// console.log(products.count);
 			return products;
 		} catch (e) {
 			console.error(e);
@@ -43,7 +42,7 @@ const productService = {
 
 	getAllNational: async (page) => {
 		try {
-			const productsNational = await db.Product.findAndCountAll({
+			const products = await db.Product.findAll({
 				include: [
 					{ association: "country" },
 					{ association: "grapes" },
@@ -54,8 +53,7 @@ const productService = {
 				limit: 12,
 				offset: page * 12 || 0
 			});
-			console.log("La cantidad de productos es " + productsNational);
-			return productsNational;
+			return products;
 		} catch (e) {
 			console.error(e);
 			return [];
@@ -64,7 +62,7 @@ const productService = {
 
 	getAllImported: async (page) => {
 		try {
-			const products = await db.Product.findAndCountAll({
+			const products = await db.Product.findAll({
 				include: [
 					{ association: "country" },
 					{ association: "grapes" },
@@ -75,7 +73,6 @@ const productService = {
 				limit: 12,
 				offset: page * 12 || 0
 			});
-			console.log(products.rows);
 			return products;
 		} catch (e) {
 			console.error(e);
@@ -146,6 +143,44 @@ const productService = {
 		} catch (error) {
 			console.error(error);
 			return [];
+		}
+	},
+
+	countAll: async () => {
+		try {
+			let count = await db.Product.count();
+			console.log(count);
+			return count;
+		} catch (error) {
+			return error.message;
+		}
+	},
+
+	countNational: async () => {
+		try {
+			let count = await db.Product.count({
+				include: ["country"],
+				where: {
+					"$country.name$": "Argentina",
+			}});
+			console.log(count);
+			return count;
+		} catch (error) {
+			return error.message;
+		}
+	},
+
+	countImported: async () => {
+		try {
+			let count = await db.Product.count({
+				include: ["country"],
+				where: {
+					"$country.name$": { [Op.ne]: "Argentina" },
+			}});
+			console.log(count);
+			return count
+		} catch (error) {
+			return error.message;
 		}
 	}
 };

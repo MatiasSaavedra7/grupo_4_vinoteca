@@ -5,12 +5,12 @@ const countryService = require("../model/services/countryService");
 const productsController = {
   products: async (req, res) => {
     try {
-      let products = await productService.getAll(req.params.page)
+      let products = await productService.getAll(req.params.page);
+      let totalPages = Math.ceil(await productService.countAll() / 12);
       res.render("products/products", {
         title: "VENNER - Todos los productos",
-        products: products.rows,
-        totalPages: Math.ceil(products.count / 12),
-        currentPage: req.params.page,
+        products: products,
+        totalPages: totalPages,
         path: "/products/"
       });
     } catch (error) {
@@ -20,12 +20,12 @@ const productsController = {
 
   national: async (req, res) => {
     try {
-      let productsNational = await productService.getAllNational()
+      let productsNational = await productService.getAllNational();
+      let totalPages = Math.ceil(await productService.countNational() / 12);
       res.render("products/products", {
         title: "VENNER - Productos nacionales",
-        products: productsNational.rows,
-        totalPages: Math.ceil(productsNational.count / 12),
-        currentPage: req.params.page,
+        products: productsNational,
+        totalPages: totalPages,
         path: "/products/national/"
       });
     } catch (error) {
@@ -35,13 +35,13 @@ const productsController = {
 
   imported: async (req, res) => {
     try {
-      let productsImported = await productService.getAllImported(req.params.page)
+      let productsImported = await productService.getAllImported();
+      let totalPages = Math.ceil(await productService.countImported() / 12);
       res.render("products/products", {
         title: "VENNER - Productos importados",
-        products: productsImported.rows,
-        totalPages: Math.ceil(productsImported.count / 12),
-        currentPage: req.params.page,
-        path: "products/imported/"
+        products: productsImported,
+        totalPages: totalPages,
+        path: "/products/imported/"
       });
     } catch (error) {
       res.send(error.message)
