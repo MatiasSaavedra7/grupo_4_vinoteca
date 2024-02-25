@@ -23,32 +23,17 @@ const productService = {
 		}
 	},
 
-	getAll: async () => {
+	getAll: async (page) => {
 		try {
-			const data = await db.Product.findAll({
+			const products = await db.Product.findAndCountAll({
 				include: [
 					{ association: "country" },
 					{ association: "grapes" },
 				],
+				limit: 12,
+				offset: page * 12 || 0
 			});
-			return data;
-		} catch (e) {
-			console.error(e);
-			return [];
-		}
-	},
-
-	getAllNational: async () => {
-		try {
-			const products = await db.Product.findAll({
-				include: [
-					{ association: "country" },
-					{ association: "grapes" },
-				],
-				where: {
-					"$country.name$": "Argentina",
-				},
-			});
+			// console.log(products.count);
 			return products;
 		} catch (e) {
 			console.error(e);
@@ -56,9 +41,30 @@ const productService = {
 		}
 	},
 
-	getAllImported: async () => {
+	getAllNational: async (page) => {
 		try {
-			const products = await db.Product.findAll({
+			const productsNational = await db.Product.findAndCountAll({
+				include: [
+					{ association: "country" },
+					{ association: "grapes" },
+				],
+				where: {
+					"$country.name$": "Argentina",
+				},
+				limit: 12,
+				offset: page * 12 || 0
+			});
+			console.log("La cantidad de productos es " + productsNational);
+			return productsNational;
+		} catch (e) {
+			console.error(e);
+			return [];
+		}
+	},
+
+	getAllImported: async (page) => {
+		try {
+			const products = await db.Product.findAndCountAll({
 				include: [
 					{ association: "country" },
 					{ association: "grapes" },
@@ -66,7 +72,10 @@ const productService = {
 				where: {
 					"$country.name$": { [Op.ne]: "Argentina" },
 				},
+				limit: 12,
+				offset: page * 12 || 0
 			});
+			console.log(products.rows);
 			return products;
 		} catch (e) {
 			console.error(e);

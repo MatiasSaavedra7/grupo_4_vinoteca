@@ -5,27 +5,47 @@ const countryService = require("../model/services/countryService");
 const productsController = {
   products: async (req, res) => {
     try {
+      let products = await productService.getAll(req.params.page)
       res.render("products/products", {
-        products: await productService.getAll(),
-        title: "Todos los productos",
+        title: "VENNER - Todos los productos",
+        products: products.rows,
+        totalPages: Math.ceil(products.count / 12),
+        currentPage: req.params.page,
+        path: "/products/"
       });
     } catch (error) {
-      res.send(e);
+      res.send(error.message);
     }
   },
 
   national: async (req, res) => {
-    res.render("products/products", {
-      products: await productService.getAllNational(),
-      title: "National",
-    });
+    try {
+      let productsNational = await productService.getAllNational()
+      res.render("products/products", {
+        title: "VENNER - Productos nacionales",
+        products: productsNational.rows,
+        totalPages: Math.ceil(productsNational.count / 12),
+        currentPage: req.params.page,
+        path: "/products/national/"
+      });
+    } catch (error) {
+      res.send(error.message)
+    }
   },
 
   imported: async (req, res) => {
-    res.render("products/products", {
-      products: await productService.getAllImported(),
-      title: "Imported",
-    });
+    try {
+      let productsImported = await productService.getAllImported(req.params.page)
+      res.render("products/products", {
+        title: "VENNER - Productos importados",
+        products: productsImported.rows,
+        totalPages: Math.ceil(productsImported.count / 12),
+        currentPage: req.params.page,
+        path: "products/imported/"
+      });
+    } catch (error) {
+      res.send(error.message)
+    }
   },
 
   detail: async (req, res) => {

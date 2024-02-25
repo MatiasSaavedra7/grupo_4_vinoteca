@@ -40,72 +40,13 @@
 
 						</article>
 					<% }) %>
-
-					<!-- <article class="box-product">
-						<figure class="product-image">
-							<a href="">
-								<img src="/images/products/catena.png" alt="">
-								<figcaption class="product-name">
-									<h3>Catena Zapata Malbec</h3>
-								</figcaption>
-								<p><i class="fa-regular fa-heart"></i></p>
-							</a>
-						</figure>
-						<div class="product-details">
-							<p class="old-price"><strike>$10.000</strike></p>
-							<p class="price">$7.000</p>
-							<p class="discount"><strong>30% OFF!</strong></p>
-						</div>
-						<form action="">
-							<button class="add-to-cart">
-								<i class="fa-solid fa-cart-shopping"></i>
-							</button>
-						</form>
-					</article>
-
-					<article class="box-product">
-						<figure class="product-image">
-							<a href="">
-								<img src="/images/products/catena.png" alt="">
-								<figcaption class="product-name">
-									<h3>Catena Zapata Malbec</h3>
-								</figcaption>
-								<p><i class="fa-regular fa-heart"></i></p>
-							</a>
-						</figure>
-						<div class="product-details">
-							<p class="old-price"><strike>$10.000</strike></p>
-							<p class="price">$7.000</p>
-							<p class="discount"><strong>30% OFF!</strong></p>
-						</div>
-						<form action="">
-							<button class="add-to-cart">
-								<i class="fa-solid fa-cart-shopping"></i>
-							</button>
-						</form>
-					</article>
-
-					<article class="box-product">
-						<figure class="product-image">
-							<a href="">
-								<img src="/images/products/catena.png" alt="">
-								<figcaption class="product-name">
-									<h3>Catena Zapata Malbec</h3>
-								</figcaption>
-								<p><i class="fa-regular fa-heart"></i></p>
-							</a>
-						</figure>
-						<div class="product-details">
-							<p class="old-price"><strike>$10.000</strike></p>
-							<p class="price">$7.000</p>
-							<p class="discount"><strong>30% OFF!</strong></p>
-						</div>
-						<form action="">
-							<button class="add-to-cart">
-								<i class="fa-solid fa-cart-shopping"></i>
-							</button>
-						</form>
-					</article> -->
+				
+				<div class="pages">
+					<% for( let i = 0; i < totalPages; i++ ) { %>
+						<a href="<%=path%><%= i %>"> <%= i %> </a>
+					<% } %>
+				</div>
+				
 				</section>
 			</main>
 			<%- include('../partials/footer.ejs') %>

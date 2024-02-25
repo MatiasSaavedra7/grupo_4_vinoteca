@@ -126,6 +126,19 @@ main {
 	scale: 1.3;
 	rotate: 360deg;
 }
+.pages {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+.pages a {
+	text-decoration: none;
+	background-color: #5e0d26;
+	color: #f5debf;
+	padding: 2px 5px;
+	border-radius: 10px;
+	margin-bottom: 15px;
+}
 
 /* CONFIGURACION DE ESTILOS PARA TABLETS */
 @media (min-width: 768px) {

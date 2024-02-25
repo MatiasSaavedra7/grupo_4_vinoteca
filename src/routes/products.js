@@ -6,11 +6,11 @@ const adminMiddleware = require('../middlewares/adminMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 
 // GET PRODUCTS
-router.get('/', controller.products);
+router.get('/:page?', controller.products);
 
-router.get('/national', controller.national);
+router.get('/national/:page?', controller.national);
 
-router.get('/imported', controller.imported);
+router.get('/imported/:page?', controller.imported);
 
 // DETAIL PRODUCTS
 router.get('/detail/:id', controller.detail);
