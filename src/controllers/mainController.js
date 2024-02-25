@@ -22,9 +22,14 @@ const controller = {
 
 	test: async (req, res) => {
 		try {
-			res.render("test", {pages: await productService.getCount(12),
-				products: await productService.paginate(req.params.page),
-			});
+			// res.render("test", {pages: await productService.countAll(12),
+			// 	products: await productService.paginate(req.params.page),
+			// });
+			let products = await productService.findAndCount(req.params.page);
+			let currentPage = req.params.page;
+			let count = products.count;
+			let totalPages = Math.ceil(count / 12);
+			res.render("test", {products: products.rows, count, currentPage, totalPages})
 		} catch (error) {
 			res.send(error.message);
 		}

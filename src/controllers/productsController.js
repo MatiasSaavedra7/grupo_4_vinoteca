@@ -9,23 +9,34 @@ const productsController = {
         products: await productService.getAll(),
         title: "Todos los productos",
       });
+      let count = await productService.countAll(12);
     } catch (error) {
       res.send(e);
     }
   },
 
   national: async (req, res) => {
-    res.render("products/products", {
-      products: await productService.getAllNational(),
-      title: "National",
-    });
+    try {
+      res.render("products/products", {
+        products: await productService.getAllNational(),
+        title: "National",
+      });
+      let count = await productService.countNational(12);
+    } catch (error) {
+      console.log(error.message);
+    }
   },
 
   imported: async (req, res) => {
-    res.render("products/products", {
-      products: await productService.getAllImported(),
-      title: "Imported",
-    });
+    try {
+      res.render("products/products", {
+        products: await productService.getAllImported(),
+        title: "Imported",
+      });
+      let count = await productService.countImported(12);
+    } catch (error) {
+      
+    }
   },
 
   detail: async (req, res) => {
