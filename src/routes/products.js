@@ -8,9 +8,9 @@ const authMiddleware = require('../middlewares/authMiddleware');
 // GET PRODUCTS
 router.get('/:page?', controller.products);
 
-router.get('/national/:page?', controller.national);
+router.get('/national', controller.national);
 
-router.get('/imported/:page?', controller.imported);
+router.get('/imported', controller.imported);
 
 // DETAIL PRODUCTS
 router.get('/detail/:id', controller.detail);

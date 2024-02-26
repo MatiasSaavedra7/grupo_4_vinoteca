@@ -148,9 +148,7 @@ const productService = {
 
 	countAll: async () => {
 		try {
-			let count = await db.Product.count();
-			console.log(count);
-			return count;
+			return await db.Product.count();
 		} catch (error) {
 			return error.message;
 		}
@@ -158,13 +156,11 @@ const productService = {
 
 	countNational: async () => {
 		try {
-			let count = await db.Product.count({
+			return await db.Product.count({
 				include: ["country"],
 				where: {
 					"$country.name$": "Argentina",
 			}});
-			console.log(count);
-			return count;
 		} catch (error) {
 			return error.message;
 		}
@@ -172,13 +168,11 @@ const productService = {
 
 	countImported: async () => {
 		try {
-			let count = await db.Product.count({
+			return await db.Product.count({
 				include: ["country"],
 				where: {
 					"$country.name$": { [Op.ne]: "Argentina" },
 			}});
-			console.log(count);
-			return count
 		} catch (error) {
 			return error.message;
 		}

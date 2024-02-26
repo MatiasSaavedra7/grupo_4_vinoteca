@@ -5,13 +5,10 @@ const countryService = require("../model/services/countryService");
 const productsController = {
   products: async (req, res) => {
     try {
-      let products = await productService.getAll(req.params.page);
-      let totalPages = Math.ceil(await productService.countAll() / 12);
       res.render("products/products", {
         title: "VENNER - Todos los productos",
-        products: products,
-        totalPages: totalPages,
-        path: "/products/"
+        products: await productService.getAll(),
+        totalPages: Math.ceil(await productService.countAll() / 12),
       });
     } catch (error) {
       res.send(error.message);
@@ -20,13 +17,10 @@ const productsController = {
 
   national: async (req, res) => {
     try {
-      let productsNational = await productService.getAllNational();
-      let totalPages = Math.ceil(await productService.countNational() / 12);
       res.render("products/products", {
         title: "VENNER - Productos nacionales",
-        products: productsNational,
-        totalPages: totalPages,
-        path: "/products/national/"
+        products: await productService.getAllNational(),
+        totalPages: Math.ceil(await productService.countNational() / 12),
       });
     } catch (error) {
       res.send(error.message)
@@ -35,13 +29,10 @@ const productsController = {
 
   imported: async (req, res) => {
     try {
-      let productsImported = await productService.getAllImported();
-      let totalPages = Math.ceil(await productService.countImported() / 12);
       res.render("products/products", {
         title: "VENNER - Productos importados",
-        products: productsImported,
-        totalPages: totalPages,
-        path: "/products/imported/"
+        products: await productService.getAllImported(),
+        totalPages: Math.ceil(await productService.countImported() / 12),
       });
     } catch (error) {
       res.send(error.message)
