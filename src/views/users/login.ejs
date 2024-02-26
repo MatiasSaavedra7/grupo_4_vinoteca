@@ -21,7 +21,7 @@
                 <label for="email">CORREO</label>
                 <div>
                     <i class="fa-regular fa-envelope"></i>
-                    <input type="email" placeholder="ejemplo@email.com" name="email" id="email">
+                    <input type="email" placeholder="ejemplo@email.com" name="email" id="email" required>
                 </div>
                
                 <span><%= locals.errors && errors.email? errors.email.msg : "" %></span>
@@ -32,7 +32,7 @@
                 <label for="password">CONTRASEÑA</label>
                 <div>
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" name="password" id="password">
+                    <input type="password" name="password" id="password" required>
                     <i class="fa-regular fa-eye-slash icon-eye"></i>
                 </div>
                 <span><%= locals.errors && errors.password? errors.password.msg : "" %> </span>
