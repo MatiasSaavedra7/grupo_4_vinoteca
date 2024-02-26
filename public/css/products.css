@@ -24,7 +24,7 @@ main {
 
 .box-product {
 	width: 45%;
-	max-width: 150px;
+	max-width: 200px;
 	margin: 20px auto;
 	border-radius: 20px;
 	box-shadow: 0px 0px 10px rgb(100, 100, 100);
@@ -130,7 +130,7 @@ main {
 /* CONFIGURACION DE ESTILOS PARA TABLETS */
 @media (min-width: 768px) {
 	.box-product {
-		width: 30%;
+		width: 40%;
 	}
 }
 
