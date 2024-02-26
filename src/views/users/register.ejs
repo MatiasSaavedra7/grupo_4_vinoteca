@@ -8,37 +8,37 @@
 
       <main id="main-register">
         <section>
-          <form action="/users/register" method="post" id="formulario" enctype="multipart/form-data">
+          <form action="/users/register" method="post" id="formulario" enctype="multipart/form-data" required>
             <legend>REGISTRATE</legend>
 
             <div class="div-form">
               <label for="firstName">NOMBRE</label>
-              <input type="text" name="firstName" id="firstName" placeholder="Nombre" value="<%= locals.old && old.firstName ? old.firstName : "" %>"/>
+              <input type="text" name="firstName" id="firstName" placeholder="Nombre" required value="<%= locals.old && old.firstName ? old.firstName : "" %>"/>
               <span class="feedback"><%= locals.errors && errors.firstName ? errors.firstName.msg : "" %></span>
             </div>
 
             <div class="div-form">
               <label for="lastName">APELLIDO</label>
-              <input type="text" name="lastName" id="lastName" placeholder="Apellido" value="<%= locals.old && old.lastName ? old.lastName : "" %>"/>
+              <input type="text" name="lastName" id="lastName" placeholder="Apellido" required value="<%= locals.old && old.lastName ? old.lastName : "" %>"/>
               <span class="feedback"><%= locals.errors && errors.lastName ? errors.lastName.msg : "" %></span>
             </div>
 
             <div class="div-form">
               <label for="email">CORREO</label>
-              <input type="email" name="email" id="email" placeholder="correo@.." value="<%= locals.old && old.email ? old.email : "" %>" />
+              <input type="email" name="email" id="email" placeholder="correo@.." required value="<%= locals.old && old.email ? old.email : "" %>" />
               <span class="feedback"><%= locals.errors && errors.email ? errors.email.msg : "" %></span>
             </div>
 
             <div class="div-form">
               <label for="pass">CONTRASEÑA</label>
-              <input type="password" name="password" id="pass" />
+              <input type="password" name="password" id="pass" required/>
               <img src="" alt="" />
               <span class="feedback"><%= locals.errors && errors.password ? errors.password.msg : "" %></span>
             </div>
 
             <div class="div-form">
               <label for="reppass">CONFIRMAR CONTRASEÑA</label>
-              <input type="password" name="confirmpassword" id="reppass" />
+              <input type="password" name="confirmpassword" id="reppass" required/>
               <img src="" alt="" />
               <span class="feedback"><%= locals.errors && errors.confirmpassword ? errors.confirmpassword.msg : "" %></span>
             </div>
