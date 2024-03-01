@@ -4,7 +4,7 @@ const countryService = require("../model/services/countryService");
 
 const productsController = {
   products: async (req, res) => {
-    const results = await productService.findAndCount(12, req.params.id);
+    const results = await productService.getAndCountAll(12, req.params.id);
     const products = results.rows;
     const count = results.count;
     const totalPages = Math.ceil(count / 12);
@@ -17,7 +17,7 @@ const productsController = {
   },
 
   national: async (req, res) => {
-    const results = await productService.findAndCountNational(12, req.params.id);
+    const results = await productService.getAndCountNational(12, req.params.id);
     const products = results.rows;
     const count = results.count;
     const totalPages = Math.ceil(count / 12);
@@ -29,8 +29,8 @@ const productsController = {
     })
   },
 
-  imported: async (req, res) => {
-    const results = await productService.findAndCountImported(12, req.params.id);
+  imported: async (req, res) => {get
+    const results = await productService.getAndCountImported(12, req.params.id);
     const products = results.rows;
     const count = results.count;
     const totalPages = Math.ceil(count / 12);

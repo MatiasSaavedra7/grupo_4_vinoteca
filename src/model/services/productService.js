@@ -114,7 +114,7 @@ const productService = {
 		}
 	},
 
-	findAndCount: async function(limit, page){
+	getAndCountAll: async function(limit, page){
 		try {
 			//El método findAndCountAll me devuelve un objeto con dos propiedades, count y rows.
 			return await db.Product.findAndCountAll({
@@ -127,7 +127,7 @@ const productService = {
 		}
 	},
 
-	findAndCountNational: async function (limit, page) {
+	getAndCountNational: async function (limit, page) {
 		try {
 			return await db.Product.findAndCountAll({
 				include: ["country"],
@@ -142,7 +142,7 @@ const productService = {
 		}
 	},
 
-	findAndCountImported: async function (limit, page) {
+	getAndCountImported: async function (limit, page) {
 		try {
 			return await db.Product.findAndCountAll({
 				include: ["country"],
