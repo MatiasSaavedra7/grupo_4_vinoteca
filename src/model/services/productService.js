@@ -114,68 +114,46 @@ const productService = {
 		}
 	},
 
-	countAll: async function (limit) {
-		try {
-			let count = await db.Product.count();
-			console.log(count);
-			return Math.ceil(count / limit);
-		} catch (error) {
-			return error.message;
-		}
-	},
-
-	countNational: async function (limit) {
-		try {
-			let count = await db.Product.count({
-				include: ["country"],
-				where: {
-					"$country.name$": "Argentina",
-			}});
-			console.log(count);
-			// return Math.ceil(count / limit);
-		} catch (error) {
-			return error.message;
-		}
-	},
-
-	countImported: async function (limit) {
-		try {
-			let count = await db.Product.count({
-				include: ["country"],
-				where: {
-					"$country.name$": { [Op.ne]: "Argentina" },
-			}});
-			console.log(count);
-			return Math.ceil(count / limit);
-		} catch (error) {
-			return error.message;
-		}
-	},
-
-	paginate: async function (page) {
-		let proxPage = 12 * page || 0;
-		try {
-			let pageProducts = db.Product.findAll({
-				offset: proxPage,
-				limit: 12
-			})
-			return pageProducts
-		} catch (error) {
-			return error.message
-		}
-	},
-
-	findAndCount: async function(page){
+	findAndCount: async function(limit, page){
 		try {
 			//El método findAndCountAll me devuelve un objeto con dos propiedades, count y rows.
-			let products = await db.Product.findAndCountAll({
+			return await db.Product.findAndCountAll({
 				include: [{association: "country"}],
-				limit: 12,
-				offset: page * 12 || 0
+				limit: limit,
+				offset: page * limit || 0
 			});
-			return products
 		} catch (error) {
 			console.log(error.message);
+		}
+	},
+
+	findAndCountNational: async function (limit, page) {
+		try {
+			return await db.Product.findAndCountAll({
+				include: ["country"],
+				where: {
+					"$country.name$": "Argentina"
+				},
+				limit: limit,
+				offset: limit * page || 0
+			});
+		} catch (error) {
+			return error.message;
+		}
+	},
+
+	findAndCountImported: async function (limit, page) {
+		try {
+			return await db.Product.findAndCountAll({
+				include: ["country"],
+				where: {
+					"$country.name$": { [Op.ne]: "Argentina" }
+				},
+				limit: limit,
+				offset: limit * page || 0
+			});
+		} catch (error) {
+			return error.message;
 		}
 	}
 };

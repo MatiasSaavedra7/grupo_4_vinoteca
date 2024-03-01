@@ -4,39 +4,42 @@ const countryService = require("../model/services/countryService");
 
 const productsController = {
   products: async (req, res) => {
-    try {
-      res.render("products/products", {
-        products: await productService.getAll(),
-        title: "Todos los productos",
-      });
-      let count = await productService.countAll(12);
-    } catch (error) {
-      res.send(e);
-    }
+    const results = await productService.findAndCount(12, req.params.id);
+    const products = results.rows;
+    const count = results.count;
+    const totalPages = Math.ceil(count / 12);
+
+    res.render("products/products", {
+      title: "All Products",
+      products,
+      totalPages
+    })
   },
 
   national: async (req, res) => {
-    try {
-      res.render("products/products", {
-        products: await productService.getAllNational(),
-        title: "National",
-      });
-      let count = await productService.countNational(12);
-    } catch (error) {
-      console.log(error.message);
-    }
+    const results = await productService.findAndCountNational(12, req.params.id);
+    const products = results.rows;
+    const count = results.count;
+    const totalPages = Math.ceil(count / 12);
+
+    res.render("products/products", {
+      title: "National Products",
+      products,
+      totalPages
+    })
   },
 
   imported: async (req, res) => {
-    try {
-      res.render("products/products", {
-        products: await productService.getAllImported(),
-        title: "Imported",
-      });
-      let count = await productService.countImported(12);
-    } catch (error) {
-      
-    }
+    const results = await productService.findAndCountImported(12, req.params.id);
+    const products = results.rows;
+    const count = results.count;
+    const totalPages = Math.ceil(count / 12);
+
+    res.render("products/products", {
+      title: "Imported Products",
+      products,
+      totalPages
+    })
   },
 
   detail: async (req, res) => {

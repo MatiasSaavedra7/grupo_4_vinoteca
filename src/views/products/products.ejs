@@ -5,6 +5,10 @@
 	<body>
 		<%- include('../partials/header.ejs') %>
 			<main>
+				<h3>Cantidad de Productos/pag: <%= products.length %></h3>
+				<h3>Cantidad de Páginas: <%= totalPages %></h3>
+
+
 				<section class="products">
 
 					<% products.forEach(product => { %>
