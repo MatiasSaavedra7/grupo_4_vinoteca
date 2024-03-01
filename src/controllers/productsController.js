@@ -4,41 +4,44 @@ const countryService = require("../model/services/countryService");
 
 const productsController = {
   products: async (req, res) => {
-    const results = await productService.getAndCountAll(12, req.params.id);
+    const results = await productService.getAndCountAll(12, req.params.page);
     const products = results.rows;
     const count = results.count;
     const totalPages = Math.ceil(count / 12);
 
     res.render("products/products", {
-      title: "All Products",
+      title: "VENNER - All Products",
       products,
-      totalPages
+      totalPages,
+      path: "all"
     })
   },
 
   national: async (req, res) => {
-    const results = await productService.getAndCountNational(12, req.params.id);
+    const results = await productService.getAndCountNational(12, req.params.page);
     const products = results.rows;
     const count = results.count;
     const totalPages = Math.ceil(count / 12);
 
     res.render("products/products", {
-      title: "National Products",
+      title: "VENNER - National Products",
       products,
-      totalPages
+      totalPages,
+      path: "national"
     })
   },
 
   imported: async (req, res) => {
-    const results = await productService.getAndCountImported(12, req.params.id);
+    const results = await productService.getAndCountImported(12, req.params.page);
     const products = results.rows;
     const count = results.count;
     const totalPages = Math.ceil(count / 12);
 
     res.render("products/products", {
-      title: "Imported Products",
+      title: "VENNER - Imported Products",
       products,
-      totalPages
+      totalPages,
+      path: "imported"
     })
   },
 
