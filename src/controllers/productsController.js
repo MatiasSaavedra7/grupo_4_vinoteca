@@ -29,7 +29,7 @@ const productsController = {
     })
   },
 
-  imported: async (req, res) => {get
+  imported: async (req, res) => {
     const results = await productService.getAndCountImported(12, req.params.id);
     const products = results.rows;
     const count = results.count;
