@@ -43,10 +43,12 @@ To run this project, you will need to add the following environment variables to
 
 `DB_NAME`
 
+`DB_PORT`
+
 
 ## Authors
 
-- [@matiases1995](https://github.com/matiases1995)
+- [@MatiasSaavera7](https://github.com/matiases1995)
 - [@SantiagoAlmaraz](https://github.com/SantiagoAlmaraz)
 - [@IvanaLuna](https://github.com/IvanaLuna)
 - [@LuanaMonteros](https://github.com/LuanaMonteros)

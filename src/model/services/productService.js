@@ -85,6 +85,8 @@ const productService = {
 				where: {
 					"discount": { [Op.ne]: 0 },
 				},
+				order: [["price", "ASC"]],
+				limit: 12
 			});
 			return products;
 		} catch (e) {

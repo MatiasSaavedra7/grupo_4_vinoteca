@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+  <link rel="stylesheet" href="/css/products.css">
   <%- include('./partials/head.ejs', {title: 'VENNER Vinoteca' , css: 'home.css'
   }) %>
-  <link rel="stylesheet" href="/css/products.css">
 
   <body>
     <%- include('./partials/header.ejs') %>
@@ -11,9 +11,10 @@
 
       <%- include('./partials/slideShow.ejs') %>
 
-      <h1>OFERTAS</h1>
-
-      <%- include("./partials/products.ejs", {products}) %>
+      <h2>OFERTAS</h2>
+      <section class="home-offers">
+        <%- include("./partials/products.ejs", {products}) %>
+      </section>
       
     </main>
 

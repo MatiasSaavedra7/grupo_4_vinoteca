@@ -25,3 +25,16 @@ main {
     width: 100%;
     padding: 20px 0px;
 }
+.home-offers {
+    overflow-x: scroll;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.products {
+	display: flex;
+    flex-direction: row;
+	flex-wrap: nowrap;
+	gap: 25px;
+    width: max-content;
+}
