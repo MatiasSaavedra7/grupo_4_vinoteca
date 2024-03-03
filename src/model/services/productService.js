@@ -85,7 +85,7 @@ const productService = {
 				where: {
 					"discount": { [Op.ne]: 0 },
 				},
-				order: [["price", "ASC"]],
+				order: [["discount", "DESC"]],
 				limit: 12
 			});
 			return products;
