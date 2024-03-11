@@ -9,6 +9,7 @@ const validateMiddleware = require('../middlewares/validateMiddleware');
 //ADD USER
 router.get('/register', guestMiddleware, controller.register);
 router.post('/register', upload2.single('image'), validateMiddleware.register, controller.addUser);
+// router.post('/register', controller.addUser);
 
 //LOGIN USER
 router.get('/login', guestMiddleware, controller.login);
