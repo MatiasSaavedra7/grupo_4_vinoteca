@@ -35,9 +35,9 @@ window.addEventListener("load", function() {
         }
   
         // Validación del campo "descuento"
-        if (isNaN(discount.value) || parseFloat(discount.value) < 30) {
+        if (isNaN(discount.value) || parseInt(discount.value) <= 0) {
             errors = true;
-            document.querySelector("#discountError").textContent = "El campo descuento debe ser mayor o igual a 30.";
+            document.querySelector("#discountError").textContent = "El campo descuento debe ser mayor a 0.";
             discount.classList.remove("inputCuadro");
             discount.classList.add("errorInput");
         } else {
