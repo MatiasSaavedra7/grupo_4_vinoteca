@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head.ejs', {css: 'products.css' }) %>
+<head>
+	<script src="/js/scripts.js"></script>
+</head>
 
 	<body>
 		<%- include('../partials/header.ejs') %>
@@ -31,13 +34,13 @@
 								<p class="price">$<%= product.price %></p>
 								<% } %>
 							</div>
-
-							<form action="">
-								<button class="add-to-cart">
+							<!-- BOTON PARA AGREGAR AL CARRITO -->
+							<div>
+								<button class="add-to-cart" data-id="<%= product.id %>">
 									<i class="fa-solid fa-cart-shopping"></i>
 								</button>
-							</form>
-
+							</div>
+							<!-- FIN BOTON PARA AGREGAR AL CARRITO -->
 						</article>
 					<% }) %>
 
