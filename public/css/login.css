@@ -92,6 +92,16 @@ body {
     outline: none;
 }
 
+div .error {
+    /* color: #dc3545; */
+    border: solid 2px #dc3545;
+}
+
+div .success {
+    color: #28a745;
+    border: solid 2px #28a745;
+}
+
 .campo-container a {
     display: block;
     margin-top: 8px;

@@ -14,6 +14,7 @@ router.post('/register', upload2.single('image'), validateMiddleware.register, c
 //LOGIN USER
 router.get('/login', guestMiddleware, controller.login);
 router.post('/login', validateMiddleware.login, controller.loginProcess);
+// router.post('/login', controller.loginProcess);
 
 //PROFILE USER
 router.get('/profile', authMiddleware ,controller.profile);
@@ -28,7 +29,5 @@ router.get('/logout', controller.logout);
 //DELETE
 router.get("/delete/:id", controller.delete);
 router.delete('/delete/:id', controller.destroy);
-
-// router.delete("/delete/:id", controller.delete);
 
 module.exports = router;
