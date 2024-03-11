@@ -84,7 +84,7 @@ const productsController = {
 
       await productService.create(req.body, image);
 
-      res.redirect("/products");
+      res.redirect("/products/all");
     } catch (error) {
       res.send(error);
     }
@@ -133,7 +133,7 @@ const productsController = {
     try {
       await productService.deleteBy(req.params.id);
 
-      res.redirect("/products");
+      res.redirect("/products/all");
     } catch (error) {
       res.send(error);
     }
