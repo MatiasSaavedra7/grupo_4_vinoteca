@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head.ejs', {css: 'products.css' }) %>
+<head>
+	<script src="/js/scripts.js"></script>
+</head>
 
 	<body>
 		<%- include('../partials/header.ejs') %>
@@ -31,82 +34,25 @@
 								<p class="price">$<%= product.price %></p>
 								<% } %>
 							</div>
-
-							<form action="">
-								<button class="add-to-cart">
+							<!-- BOTON PARA AGREGAR AL CARRITO -->
+							<div>
+								<button class="add-to-cart" data-id="<%= product.id %>">
 									<i class="fa-solid fa-cart-shopping"></i>
 								</button>
-							</form>
-
+							</div>
+							<!-- FIN BOTON PARA AGREGAR AL CARRITO -->
 						</article>
 					<% }) %>
 
-					<!-- <article class="box-product">
-						<figure class="product-image">
-							<a href="">
-								<img src="/images/products/catena.png" alt="">
-								<figcaption class="product-name">
-									<h3>Catena Zapata Malbec</h3>
-								</figcaption>
-								<p><i class="fa-regular fa-heart"></i></p>
-							</a>
-						</figure>
-						<div class="product-details">
-							<p class="old-price"><strike>$10.000</strike></p>
-							<p class="price">$7.000</p>
-							<p class="discount"><strong>30% OFF!</strong></p>
-						</div>
-						<form action="">
-							<button class="add-to-cart">
-								<i class="fa-solid fa-cart-shopping"></i>
-							</button>
-						</form>
-					</article>
-
-					<article class="box-product">
-						<figure class="product-image">
-							<a href="">
-								<img src="/images/products/catena.png" alt="">
-								<figcaption class="product-name">
-									<h3>Catena Zapata Malbec</h3>
-								</figcaption>
-								<p><i class="fa-regular fa-heart"></i></p>
-							</a>
-						</figure>
-						<div class="product-details">
-							<p class="old-price"><strike>$10.000</strike></p>
-							<p class="price">$7.000</p>
-							<p class="discount"><strong>30% OFF!</strong></p>
-						</div>
-						<form action="">
-							<button class="add-to-cart">
-								<i class="fa-solid fa-cart-shopping"></i>
-							</button>
-						</form>
-					</article>
-
-					<article class="box-product">
-						<figure class="product-image">
-							<a href="">
-								<img src="/images/products/catena.png" alt="">
-								<figcaption class="product-name">
-									<h3>Catena Zapata Malbec</h3>
-								</figcaption>
-								<p><i class="fa-regular fa-heart"></i></p>
-							</a>
-						</figure>
-						<div class="product-details">
-							<p class="old-price"><strike>$10.000</strike></p>
-							<p class="price">$7.000</p>
-							<p class="discount"><strong>30% OFF!</strong></p>
-						</div>
-						<form action="">
-							<button class="add-to-cart">
-								<i class="fa-solid fa-cart-shopping"></i>
-							</button>
-						</form>
-					</article> -->
 				</section>
+				
+				<ul class="paginate"> 
+					<% for( let i = 0; i < totalPages; i++ ) { %>
+						<li>
+							<a href="/products/<%= path %>/<%= i %>"><%= i + 1 %></a>
+						</li>
+					<% } %>
+				</ul>
 			</main>
 			<%- include('../partials/footer.ejs') %>
 	</body>

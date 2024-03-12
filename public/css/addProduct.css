@@ -50,7 +50,7 @@ main {
 	padding-bottom: 5px;
 }
 
-.add-product form input {
+.inputCuadro {
 	border: 1px solid #5e0d26;
 	padding: 10px;
 	width: 100%;
@@ -84,6 +84,20 @@ main {
 	font-weight: bold;
 	letter-spacing: 2px;
 	cursor: pointer;
+}
+
+/* Estilo para los mensajes de error */
+.errorText{
+    color: red; /* Color del texto del mensaje de error */
+    font-size: 14px; /* Tamaño de fuente del mensaje de error */
+    margin-top: 5px; /* Espacio superior para separar del campo de entrada */
+}
+
+/* Opcional: Estilo para resaltar el campo de entrada con error */
+.errorInput {
+	border: 1px solid red;
+	padding: 10px;
+	width: 100%;
 }
 
 @media (min-width: 768px) {

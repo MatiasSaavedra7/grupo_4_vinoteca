@@ -126,6 +126,26 @@ main {
 	scale: 1.3;
 	rotate: 360deg;
 }
+.paginate {	
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	gap: 10px;
+	margin: 10px 0;
+	font-size: 1.25rem;
+	
+}
+.paginate li {
+	list-style: none;
+}
+
+.paginate li a{
+	text-decoration: none;
+	font-size: 1.25rem;
+	color:#5e0d26; 
+	font-weight:bold ;
+	
+}
 
 /* CONFIGURACION DE ESTILOS PARA TABLETS */
 @media (min-width: 768px) {

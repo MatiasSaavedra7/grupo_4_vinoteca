@@ -23,24 +23,27 @@ const productService = {
 		}
 	},
 
-	getAll: async () => {
+	getAll: async (limit, page) => {
 		try {
-			const data = await db.Product.findAll({
+			// El metodo findAndCountAll() devuelve un objeto con dos propiedades, count y rows.
+			// Siendo count la cantidad total de registros y rows un array con todos los registros
+			return await db.Product.findAndCountAll({
 				include: [
 					{ association: "country" },
 					{ association: "grapes" },
 				],
+				limit: limit,
+				offset: page * limit || 0
 			});
-			return data;
 		} catch (e) {
 			console.error(e);
 			return [];
 		}
 	},
 
-	getAllNational: async () => {
+	getAllNational: async (limit, page) => {
 		try {
-			const products = await db.Product.findAll({
+			return await db.Product.findAndCountAll({
 				include: [
 					{ association: "country" },
 					{ association: "grapes" },
@@ -48,17 +51,18 @@ const productService = {
 				where: {
 					"$country.name$": "Argentina",
 				},
+				limit: limit,
+				offset: page * limit || 0
 			});
-			return products;
 		} catch (e) {
 			console.error(e);
 			return [];
 		}
 	},
 
-	getAllImported: async () => {
+	getAllImported: async (limit, page) => {
 		try {
-			const products = await db.Product.findAll({
+			return await db.Product.findAndCountAll({
 				include: [
 					{ association: "country" },
 					{ association: "grapes" },
@@ -66,8 +70,9 @@ const productService = {
 				where: {
 					"$country.name$": { [Op.ne]: "Argentina" },
 				},
+				limit: limit,
+				offset: page * limit || 0
 			});
-			return products;
 		} catch (e) {
 			console.error(e);
 			return [];
@@ -80,6 +85,8 @@ const productService = {
 				where: {
 					"discount": { [Op.ne]: 0 },
 				},
+				order: [["discount", "DESC"]],
+				limit: 12
 			});
 			return products;
 		} catch (e) {

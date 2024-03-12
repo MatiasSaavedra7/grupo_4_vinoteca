@@ -2,6 +2,9 @@
 <html lang="es">
 
 <%- include('../partials/head.ejs', {title: "Iniciar Sesion", css: "login.css"}) %>
+<head>
+    <script src="/js/login.js"></script>
+</head>
 
 <body>
 
@@ -21,21 +24,24 @@
                 <label for="email">CORREO</label>
                 <div>
                     <i class="fa-regular fa-envelope"></i>
-                    <input type="email" placeholder="ejemplo@email.com" name="email" id="email">
+                    <input type="email" placeholder="ejemplo@email.com" name="email" id="email" required>
+                    <small></small>
                 </div>
-               
                 <span><%= locals.errors && errors.email? errors.email.msg : "" %></span>
-              
             </div>
 
             <div class="campo-container">
                 <label for="password">CONTRASEÑA</label>
                 <div>
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" name="password" id="password">
+                    <input type="password" name="password" id="password" required>
+                    <small></small>
                     <i class="fa-regular fa-eye-slash icon-eye"></i>
                 </div>
                 <span><%= locals.errors && errors.password? errors.password.msg : "" %> </span>
+
+                <small></small>
+
                 <section class="container-all">
                     <section class="container-remember">
                         <input type="checkbox" name="remember">

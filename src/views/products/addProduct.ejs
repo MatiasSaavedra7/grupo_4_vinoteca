@@ -9,17 +9,18 @@
       <main>
         <div class="add-product">
           <h1>AGREGA UN PRODUCTO!</h1>
-          <form action="/products/add" method="post" enctype="multipart/form-data">
+          <form action="/products/add" method="post" enctype="multipart/form-data" id="formProducts">
 
-            <div class="add-product-field">
+            <div class="add-product-field terror">
               <label for="name">NOMBRE: </label>
-              <input type="text" name="name" id="name" required />
+              <input class="inputCuadro" type="text" name="name" id="name" required />
+              <span class="errorText" id="nameError"></span>
             </div>
 
             <div class="add-product-field">
               <label for="grapes_id">VARIEDAD: </label>
               <select name="grapes_id" id="grapes_id">
-                <% grapes.forEach(grape => { %>
+                <% grapes.forEach(grape=> { %>
                   <option value="<%= grape.id %>">
                     <%= grape.name %>
                   </option>
@@ -27,39 +28,46 @@
               </select>
             </div>
 
-          <div class="add-product-field">
-            <label for="country_id">ORIGEN: </label>
-            <select name="country_id" id="">
-              <% country.forEach(country => { %>
-                <option value="<%= country.id %>"><%= country.name %></option>
-              <% }) %>
-            </select>
-          </div>
-
-
             <div class="add-product-field">
+              <label for="country_id">ORIGEN: </label>
+              <select name="country_id" id="">
+                <% country.forEach(country=> { %>
+                  <option value="<%= country.id %>">
+                    <%= country.name %>
+                  </option>
+                  <% }) %>
+              </select>
+            </div>
+
+
+            <div class="add-product-field terror">
               <label for="price">PRECIO (ARS): </label>
-              <input type="number" name="price" id="price" placeholder="$" required />
+              <input class="inputCuadro" type="number" name="price" id="price" placeholder="$" required />
+              <span class="errorText" id="priceError"></span>
             </div>
 
-            <div class="add-product-field">
+            <div class="add-product-field terror">
               <label for="discount">DESCUENTO: </label>
-              <input type="number" name="discount" id="discount" required />
+              <input class="inputCuadro" type="number" name="discount" id="discount" required />
+              <span class="errorText" id="discountError"></span>
             </div>
 
-            <div class="add-product-field">
+            <div class="add-product-field terror">
               <label for="stock">STOCK: </label>
-              <input type="number" name="stock" id="stock" required />
+              <input class="inputCuadro" type="number" name="stock" id="stock" required />
+              <span class="errorText" id="stockError"></span>
             </div>
 
             <div class="add-product-field">
               <label for="image">IMAGEN: </label>
-              <input type="file" name="image" id="image" accept="image/png, image/jpeg" />
+              <input class="inputCuadro" type="file" name="image" id="image"
+                accept="image/png, image/jpg, image/jpeg, image/gif" />
             </div>
 
-            <div class="add-product-field">
-              <label for="description">DESCRIPCION: </label>
-              <input type="text" name="description" id="description" required />
+            <div class="add-product-field terror">
+              <label for="description">DESCRIPCIÓN: </label>
+              <input class="inputCuadro" type="text" name="description" id="description" required />
+              <span class="errorText" id="descriptionError"></span>
             </div>
 
             <div class="buttons">
@@ -72,5 +80,7 @@
 
       <%- include('../partials/footer.ejs') %>
   </body>
+  
+  <script src="/js/productsValidate.js"></script>
 
 </html>

@@ -2,45 +2,55 @@
 <html lang="en">
 
 <%- include('../partials/head.ejs', { title: "Registrate", css: "register.css" }) %>
+<head>
+  <script src="/js/register.js"></script>
+</head>
 
   <body>
     <%- include('../partials/header.ejs') %>
 
       <main id="main-register">
         <section>
-          <form action="/users/register" method="post" id="formulario" enctype="multipart/form-data">
+
+          <form action="/users/register" method="post" id="register-form" enctype="multipart/form-data">
+            
             <legend>REGISTRATE</legend>
 
             <div class="div-form">
               <label for="firstName">NOMBRE</label>
               <input type="text" name="firstName" id="firstName" placeholder="Nombre" value="<%= locals.old && old.firstName ? old.firstName : "" %>"/>
               <span class="feedback"><%= locals.errors && errors.firstName ? errors.firstName.msg : "" %></span>
+              <small></small>
             </div>
 
             <div class="div-form">
               <label for="lastName">APELLIDO</label>
               <input type="text" name="lastName" id="lastName" placeholder="Apellido" value="<%= locals.old && old.lastName ? old.lastName : "" %>"/>
               <span class="feedback"><%= locals.errors && errors.lastName ? errors.lastName.msg : "" %></span>
+              <small></small>
             </div>
 
             <div class="div-form">
               <label for="email">CORREO</label>
               <input type="email" name="email" id="email" placeholder="correo@.." value="<%= locals.old && old.email ? old.email : "" %>" />
               <span class="feedback"><%= locals.errors && errors.email ? errors.email.msg : "" %></span>
+              <small></small>
             </div>
 
             <div class="div-form">
               <label for="pass">CONTRASEÑA</label>
-              <input type="password" name="password" id="pass" />
+              <input type="password" name="password" id="pass"/>
               <img src="" alt="" />
               <span class="feedback"><%= locals.errors && errors.password ? errors.password.msg : "" %></span>
+              <small></small>
             </div>
 
             <div class="div-form">
               <label for="reppass">CONFIRMAR CONTRASEÑA</label>
-              <input type="password" name="confirmpassword" id="reppass" />
+              <input type="password" name="confirmpassword" id="reppass"/>
               <img src="" alt="" />
               <span class="feedback"><%= locals.errors && errors.confirmpassword ? errors.confirmpassword.msg : "" %></span>
+              <small></small>
             </div>
 
             <div class="div-form">
@@ -58,6 +68,5 @@
       </main>
 
       <%- include('../partials/footer.ejs') %>
-  </body>
-
+    </body>
 </html>

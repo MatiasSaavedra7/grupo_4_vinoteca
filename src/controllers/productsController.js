@@ -5,27 +5,56 @@ const countryService = require("../model/services/countryService");
 const productsController = {
   products: async (req, res) => {
     try {
+      const results = await productService.getAll(12, req.params.page);
+      const products = results.rows;
+      const count = results.count;
+      const totalPages = Math.ceil(count / 12);
+
       res.render("products/products", {
-        products: await productService.getAll(),
-        title: "Todos los productos",
-      });
+        title: "VENNER - Todos los productos!",
+        products,
+        totalPages,
+        path: "all"
+      })
     } catch (error) {
-      res.send(e);
+      res.send(error);
     }
   },
 
   national: async (req, res) => {
-    res.render("products/products", {
-      products: await productService.getAllNational(),
-      title: "National",
-    });
+    try {
+      const results = await productService.getAllNational(12, req.params.page);
+      const products = results.rows;
+      const count = results.count;
+      const totalPages = Math.ceil(count / 12);
+
+      res.render("products/products", {
+        title: "VENNER - Productos nacionales",
+        products,
+        totalPages,
+        path: "national"
+      })
+    } catch (error) {
+      res.send(error)
+    }
   },
 
   imported: async (req, res) => {
-    res.render("products/products", {
-      products: await productService.getAllImported(),
-      title: "Imported",
-    });
+    try {
+      const results = await productService.getAllImported(12, req.params.page);
+      const products = results.rows;
+      const count = results.count;
+      const totalPages = Math.ceil(count / 12);
+
+      res.render("products/products", {
+        title: "VENNER - Productos importados",
+        products,
+        totalPages,
+        path: "imported"
+      })
+    } catch (error) {
+      res.send(error)
+    }
   },
 
   detail: async (req, res) => {
@@ -55,7 +84,7 @@ const productsController = {
 
       await productService.create(req.body, image);
 
-      res.redirect("/products");
+      res.redirect("/products/all");
     } catch (error) {
       res.send(error);
     }
@@ -104,7 +133,7 @@ const productsController = {
     try {
       await productService.deleteBy(req.params.id);
 
-      res.redirect("/products");
+      res.redirect("/products/all");
     } catch (error) {
       res.send(error);
     }
