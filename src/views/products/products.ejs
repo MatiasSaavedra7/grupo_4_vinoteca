@@ -8,50 +8,62 @@
 	<body>
 		<%- include('../partials/header.ejs') %>
 			<main>
-				<section class="products">
+				<h1><%= title %></h1>
+				<div class="products-container">
+					<section class="products">
 
-					<% products.forEach(product => { %>
-
-						<article class="box-product">
-
-							<figure class="product-image">
-								<a href="/products/detail/<%=product.id%>">
-									<img src="/images/products/<%= product.image%>" alt="">
-									<figcaption class="product-name">
-										<h3><%= product.name %></h3>
-									</figcaption>
-									<p><i class="fa-regular fa-heart heart"></i></p>
-								</a>
-							</figure>
-
-							<div class="product-details">
-								<% if (product.discount > 0) { %>
-									<p class="old-price"><strike>$<%= product.price %></strike></p>
-									<% newPrice = product.price - (product.price * product.discount / 100); %>
-									<p class="price">$<%= newPrice.toFixed(2) %></p>
-									<p class="discount"><strong> <%= product.discount %>% OFF!</strong></p>
-								<% } else { %>
-								<p class="price">$<%= product.price %></p>
-								<% } %>
-							</div>
-							<!-- BOTON PARA AGREGAR AL CARRITO -->
-							<div>
-								<button class="add-to-cart" data-id="<%= product.id %>">
-									<i class="fa-solid fa-cart-shopping"></i>
-								</button>
-							</div>
-							<!-- FIN BOTON PARA AGREGAR AL CARRITO -->
-						</article>
-					<% }) %>
-
-				</section>
+						<% products.forEach(product => { %>
+	
+							<article class="box-product">
+	
+								<figure class="product-image">
+									<a href="/products/detail/<%=product.id%>">
+										<img src="/images/products/<%= product.image%>" alt="">
+										<figcaption class="product-name">
+											<h3><%= product.name %></h3>
+										</figcaption>
+										<p><i class="fa-regular fa-heart heart"></i></p>
+									</a>
+								</figure>
+	
+								<div class="product-details">
+									<% if (product.discount > 0) { %>
+										<p class="old-price"><strike>$<%= product.price %></strike></p>
+										<% newPrice = product.price - (product.price * product.discount / 100); %>
+										<p class="price">$<%= newPrice.toFixed(2) %></p>
+										<p class="discount"><strong> <%= product.discount %>% OFF!</strong></p>
+									<% } else { %>
+									<p class="price">$<%= product.price %></p>
+									<% } %>
+								</div>
+								<!-- BOTON PARA AGREGAR AL CARRITO -->
+								<div>
+									<button class="add-to-cart" data-id="<%= product.id %>">
+										<i class="fa-solid fa-cart-shopping"></i>
+									</button>
+								</div>
+								<!-- FIN BOTON PARA AGREGAR AL CARRITO -->
+							</article>
+						<% }) %>
+	
+					</section>
+				</div>
+				
 				
 				<ul class="paginate"> 
+					<li>
+						<a class="page-number"> < </a>
+					</li>
 					<% for( let i = 0; i < totalPages; i++ ) { %>
 						<li>
-							<a href="/products/<%= path %>/<%= i %>"><%= i + 1 %></a>
+							<div class="page-number">
+								<a href="/products/<%= path %>/<%= i %>"><%= i + 1 %></a>
+							</div>
 						</li>
 					<% } %>
+					<li>
+						<a class="page-number"> > </a>
+					</li>
 				</ul>
 			</main>
 			<%- include('../partials/footer.ejs') %>

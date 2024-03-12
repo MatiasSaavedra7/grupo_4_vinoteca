@@ -29,7 +29,7 @@ const productService = {
 			// Siendo count la cantidad total de registros y rows un array con todos los registros
 			return await db.Product.findAndCountAll({
 				include: [
-					{ association: "country" },
+					{ association: "countries" },
 					{ association: "grapes" },
 				],
 				limit: limit,
@@ -45,11 +45,11 @@ const productService = {
 		try {
 			return await db.Product.findAndCountAll({
 				include: [
-					{ association: "country" },
+					{ association: "countries" },
 					{ association: "grapes" },
 				],
 				where: {
-					"$country.name$": "Argentina",
+					"$countries.name$": "Argentina",
 				},
 				limit: limit,
 				offset: page * limit || 0
@@ -64,11 +64,11 @@ const productService = {
 		try {
 			return await db.Product.findAndCountAll({
 				include: [
-					{ association: "country" },
+					{ association: "countries" },
 					{ association: "grapes" },
 				],
 				where: {
-					"$country.name$": { [Op.ne]: "Argentina" },
+					"$countries.name$": { [Op.ne]: "Argentina" },
 				},
 				limit: limit,
 				offset: page * limit || 0
@@ -99,7 +99,7 @@ const productService = {
 	getBy: async (id) => {
 		try {
 			return await db.Product.findByPk(id, {
-				include: ["country", "grapes"],
+				include: ["countries", "grapes"],
 			});
 		} catch (e) {
 			console.error(e);

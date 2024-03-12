@@ -56,7 +56,7 @@ module.exports = (sequelize, DataTypes) => {
 		});
 
 		Product.belongsTo(models.Country, {
-			as: "country",
+			as: "countries",
 			foreignKey: "country_id",
 		});
 	};

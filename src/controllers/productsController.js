@@ -8,10 +8,10 @@ const productsController = {
       const results = await productService.getAll(12, req.params.page);
       const products = results.rows;
       const count = results.count;
-      const totalPages = Math.ceil(count / 12);
+      const totalPages = Math.ceil(count/12);
 
       res.render("products/products", {
-        title: "VENNER - Todos los productos!",
+        title: "Todos los productos",
         products,
         totalPages,
         path: "all"
@@ -26,10 +26,10 @@ const productsController = {
       const results = await productService.getAllNational(12, req.params.page);
       const products = results.rows;
       const count = results.count;
-      const totalPages = Math.ceil(count / 12);
+      const totalPages = Math.ceil(count/12);
 
       res.render("products/products", {
-        title: "VENNER - Productos nacionales",
+        title: "Vinos nacionales",
         products,
         totalPages,
         path: "national"
@@ -44,10 +44,10 @@ const productsController = {
       const results = await productService.getAllImported(12, req.params.page);
       const products = results.rows;
       const count = results.count;
-      const totalPages = Math.ceil(count / 12);
+      const totalPages = Math.ceil(count /12);
 
       res.render("products/products", {
-        title: "VENNER - Productos importados",
+        title: "Vinos importados",
         products,
         totalPages,
         path: "imported"
