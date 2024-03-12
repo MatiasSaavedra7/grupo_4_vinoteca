@@ -5,10 +5,10 @@ const countryService = require("../model/services/countryService");
 const productsController = {
   products: async (req, res) => {
     try {
-      const results = await productService.getAll(20, req.params.page);
+      const results = await productService.getAll(12, req.params.page);
       const products = results.rows;
       const count = results.count;
-      const totalPages = Math.ceil(count/20);
+      const totalPages = Math.ceil(count/12);
 
       res.render("products/products", {
         title: "Todos los productos",
@@ -23,10 +23,10 @@ const productsController = {
 
   national: async (req, res) => {
     try {
-      const results = await productService.getAllNational(20, req.params.page);
+      const results = await productService.getAllNational(12, req.params.page);
       const products = results.rows;
       const count = results.count;
-      const totalPages = Math.ceil(count/20);
+      const totalPages = Math.ceil(count/12);
 
       res.render("products/products", {
         title: "Vinos nacionales",
@@ -41,10 +41,10 @@ const productsController = {
 
   imported: async (req, res) => {
     try {
-      const results = await productService.getAllImported(20, req.params.page);
+      const results = await productService.getAllImported(12, req.params.page);
       const products = results.rows;
       const count = results.count;
-      const totalPages = Math.ceil(count /20);
+      const totalPages = Math.ceil(count /12);
 
       res.render("products/products", {
         title: "Vinos importados",

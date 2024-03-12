@@ -51,11 +51,19 @@
 				
 				
 				<ul class="paginate"> 
+					<li>
+						<a class="page-number"> < </a>
+					</li>
 					<% for( let i = 0; i < totalPages; i++ ) { %>
 						<li>
-							<a href="/products/<%= path %>/<%= i %>"><%= i + 1 %></a>
+							<div class="page-number">
+								<a href="/products/<%= path %>/<%= i %>"><%= i + 1 %></a>
+							</div>
 						</li>
 					<% } %>
+					<li>
+						<a class="page-number"> > </a>
+					</li>
 				</ul>
 			</main>
 			<%- include('../partials/footer.ejs') %>
