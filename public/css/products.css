@@ -14,12 +14,29 @@ main {
 	margin: 0 auto;
 }
 
+h1 {
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
 /* ¡¡¡¡¡¡¡¡¡¡¡ NUEVO DISEÑO !!!!!!!!!!*/
+.products-container {
+	display: flex;
+	justify-content: center;
+}
+
+.home-offers {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 .products {
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
 	gap: 25px;
+	max-width: 1280px;
 }
 
 .box-product {
@@ -29,6 +46,7 @@ main {
 	border-radius: 20px;
 	box-shadow: 0px 0px 10px rgb(100, 100, 100);
 	position: relative;
+	min-width: 150px;
 }
 
 .product-image a {
@@ -157,7 +175,6 @@ main {
 /* CONFIGURACION DE ESTILOS PARA DESKTOP */
 @media (min-width: 1024px) {
 	.box-product {
-		width: 20%;
 		max-width: 250px;
 	}
 

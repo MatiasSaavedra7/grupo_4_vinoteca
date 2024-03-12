@@ -5,13 +5,13 @@ const countryService = require("../model/services/countryService");
 const productsController = {
   products: async (req, res) => {
     try {
-      const results = await productService.getAll(12, req.params.page);
+      const results = await productService.getAll(20, req.params.page);
       const products = results.rows;
       const count = results.count;
-      const totalPages = Math.ceil(count / 12);
+      const totalPages = Math.ceil(count/20);
 
       res.render("products/products", {
-        title: "VENNER - Todos los productos!",
+        title: "Todos los productos",
         products,
         totalPages,
         path: "all"
@@ -23,13 +23,13 @@ const productsController = {
 
   national: async (req, res) => {
     try {
-      const results = await productService.getAllNational(12, req.params.page);
+      const results = await productService.getAllNational(20, req.params.page);
       const products = results.rows;
       const count = results.count;
-      const totalPages = Math.ceil(count / 12);
+      const totalPages = Math.ceil(count/20);
 
       res.render("products/products", {
-        title: "VENNER - Productos nacionales",
+        title: "Vinos nacionales",
         products,
         totalPages,
         path: "national"
@@ -41,13 +41,13 @@ const productsController = {
 
   imported: async (req, res) => {
     try {
-      const results = await productService.getAllImported(12, req.params.page);
+      const results = await productService.getAllImported(20, req.params.page);
       const products = results.rows;
       const count = results.count;
-      const totalPages = Math.ceil(count / 12);
+      const totalPages = Math.ceil(count /20);
 
       res.render("products/products", {
-        title: "VENNER - Productos importados",
+        title: "Vinos importados",
         products,
         totalPages,
         path: "imported"
