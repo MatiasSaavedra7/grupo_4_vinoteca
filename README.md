@@ -48,7 +48,7 @@ To run this project, you will need to add the following environment variables to
 
 ## Authors
 
-- [@MatiasSaavera7](https://github.com/matiases1995)
+- [@MatiasSaavera7](https://github.com/MatiasSaavedra7)
 - [@SantiagoAlmaraz](https://github.com/SantiagoAlmaraz)
 - [@IvanaLuna](https://github.com/IvanaLuna)
 - [@LuanaMonteros](https://github.com/LuanaMonteros)
