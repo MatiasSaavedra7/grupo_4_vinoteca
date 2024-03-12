@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
 	};
 
 	let config = {
-		tableName: "country",
+		tableName: "countries",
 		timestamps: false,
 	};
 
@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
   
 	Country.associate = function (models) {
 		Country.hasMany(models.Product, {
-			as: "country",
+			as: "countries",
 			foreignKey: "country_id",
 		});
 	};

@@ -16,14 +16,14 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   let config = {
-    tableName: "rol",
+    tableName: "roles",
     timestamps: false,
   };
 
   let Rol = sequelize.define(alias, columns, config);
   Rol.associate = function (models) {
     Rol.hasMany(models.User, {
-      as: "rol",
+      as: "roles",
       foreignKey: "rol_id",
     });
   };
