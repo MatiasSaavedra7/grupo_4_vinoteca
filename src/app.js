@@ -38,12 +38,14 @@ const mainRouter = require("./routes/main");
 const productsRouter = require("./routes/products");
 const cartRouter = require("./routes/cart");
 const usersRouter = require("./routes/users");
+const apiRouter = require("./routes/api");
 
 //Sección de Rutas
 app.use("/", mainRouter);
 app.use("/products", productsRouter);
 app.use("/cart", cartRouter);
 app.use("/users", usersRouter);
+app.use("/api", apiRouter);
 
 app.use((req, res, next) => {
 	res.status(404).render("not-found");
