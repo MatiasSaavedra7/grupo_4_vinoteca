@@ -1,4 +1,4 @@
-const apiProductService = require('../../model/services/apiServices/apiProductService');
+const apiProductService = require("../../model/services/apiServices/apiProductService");
 
 module.exports = {
     getAllV2: async (req, res) => {
@@ -6,19 +6,28 @@ module.exports = {
         let limit = 10;
         let offset = limit * page;
 
-        let products = await apiProductService.getAll(limit, offset)
-        let countByCategory = await apiProductService.countByGrape();
+        let products = await apiProductService.getAll(limit, offset);
+        let countByGrapes = await apiProductService.countByGrape();
+        let countByCountries = await apiProductService.countByCountry();
+
+        console.log(countByGrapes.include);
 
         return res.json({
             meta: {
                 status: 200,
                 count: products.count,
-                countByCategory: countByCategory,
-                next: offset + limit < products.count ? `/api/products/?page=${page + 1}` : null,
+                categories: {
+                    grapes: countByGrapes,
+                    countries: countByCountries,
+                },
+                next:
+                    offset + limit < products.count
+                        ? `/api/products/?page=${page + 1}`
+                        : null,
                 previous: page > 0 ? `/api/products/?page=${page - 1}` : null,
             },
             products: products.rows,
-        })
+        });
     },
 
     // getAll: async (req, res) => {
@@ -36,13 +45,13 @@ module.exports = {
     // },
 
     getById: async (req, res) => {
-        let product = await apiProductService.getById(req.params.id)
+        let product = await apiProductService.getById(req.params.id);
 
         return res.json({
             meta: {
                 status: 200,
             },
             product: product,
-        })
+        });
     },
-}
+};

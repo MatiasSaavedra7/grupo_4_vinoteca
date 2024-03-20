@@ -23,7 +23,8 @@ module.exports = {
             return await db.Product.findAll({
                 attributes: [
                     [db.sequelize.col('grapes.name'), 'name'],
-                    [db.sequelize.fn('COUNT', '*'), 'count']
+                    // [db.sequelize.fn('COUNT', db.sequelize.col('grapes.id')), 'count']
+                    [db.sequelize.literal('COUNT(*)'),  'count']
                 ],
                 include: [{
                     model: db.Grape,
@@ -39,6 +40,27 @@ module.exports = {
         }
     },
 
+    countByCountry: async function () {
+        try {
+            return await db.Product.findAll({
+                attributes: [
+                    [db.sequelize.col('countries.name'), 'name'],
+                    // [db.sequelize.fn('COUNT', db.sequelize.col('grapes.id')), 'count']
+                    [db.sequelize.literal('COUNT(*)'),  'count']
+                ],
+                include: [{
+                    model: db.Country,
+                    as: "countries",
+                    attributes: [],
+                    required: true  // Esto asegura que solo se incluyan los productos que tienen un grapes_id no nulo
+                }],
+                group: ['countries.name']
+            });
+        } catch (error) {
+            console.error(error);
+            return [];
+        }
+    },
 
 
     getById: async function (id) {
