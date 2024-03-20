@@ -3,10 +3,12 @@ const Op = db.Sequelize.Op;
 
 module.exports = {
 
-    getAll: async function () {
+    getAll: async function (limit, offset) {
         try {
-            return await db.User.findAll({
+            return await db.User.findAndCountAll({
                 attributes: ['id', 'firstName', 'lastName', 'email', [db.Sequelize.literal("CONCAT('/api/users/', `id`)"), 'detail']], // Especificamos las columnas requeridas
+                limit: limit,
+                offset: offset
             });
         } catch (error) {
             return [];

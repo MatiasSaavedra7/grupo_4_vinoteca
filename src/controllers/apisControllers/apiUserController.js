@@ -2,14 +2,20 @@ const apiUserService = require('../../model/services/apiServices/apiUserService'
 
 module.exports = {
     getAll: async (req, res) => {
+        let page = req.query.page ? Number(req.query.page) : 0;
+        let limit = 10;
+        let offset = limit * page;
+
         let users = await apiUserService.getAll()
 
         return res.json({
             meta: {
                 status: 200,
-                count: users.length,
+                count: users.count,
+                next: offset + limit < users.count ? `/api/users/?page=${page + 1}` : null,
+                previous: page > 0 ? `/api/users/?page=${page - 1}` : null,
             },
-            users: users,
+            users: users.rows,
         })
     },
 

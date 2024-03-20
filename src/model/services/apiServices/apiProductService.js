@@ -3,11 +3,13 @@ const Op = db.Sequelize.Op;
 
 module.exports = {
 
-    getAll: async function () {
+    getAll: async function (limit, offset) {
         try {
             return await db.Product.findAndCountAll({
-                attributes: ["id", "name", "description", [db.Sequelize.literal("CONCAT('/products/detail/', Product.id)"), 'detail']],
-                include: ["grapes", "countries"]
+                attributes: ["id", "name", "description", [db.Sequelize.literal("CONCAT('/api/products/', Product.id)"), 'detail']],
+                include: ["grapes", "countries"],
+                limit: limit,
+                offset: offset
             });
         } catch (error) {
             console.error(error);
@@ -36,17 +38,25 @@ module.exports = {
             return [];
         }
     },
-    
-    
+
+
 
     getById: async function (id) {
         try {
             return await db.Product.findByPk(id, {
-                attributes: ['id', 'firstName', 'lastName', 'email', [db.Sequelize.literal("CONCAT('/users/profile')"), 'profile']], // Especificamos las columnas requeridas
+                attributes: [
+                    ...Object.keys(db.Product.rawAttributes), // Esto incluirá todos los atributos del modelo
+                    [db.Sequelize.literal("CONCAT('/api/products/image/', Product.id)"), 'image']
+                ],
+                include: ['grapes', 'countries']
             });
         } catch (error) {
             return [];
         }
     },
 
+
+    pagination: async function(id){
+
+    }
 };
