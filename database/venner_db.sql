@@ -131,62 +131,6 @@ LOCK TABLES `products_cart` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `products_country`
---
-
-DROP TABLE IF EXISTS `products_country`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `products_country` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `id_country` int unsigned DEFAULT NULL,
-  `id_product` int unsigned DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `id_country` (`id_country`),
-  KEY `id_product` (`id_product`),
-  CONSTRAINT `products_country_ibfk_1` FOREIGN KEY (`id_country`) REFERENCES `countries` (`id`),
-  CONSTRAINT `products_country_ibfk_2` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `products_country`
---
-
-LOCK TABLES `products_country` WRITE;
-/*!40000 ALTER TABLE `products_country` DISABLE KEYS */;
-/*!40000 ALTER TABLE `products_country` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `products_grapes`
---
-
-DROP TABLE IF EXISTS `products_grapes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `products_grapes` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `grapes_id` int unsigned DEFAULT NULL,
-  `products_id` int unsigned DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `grapes_id` (`grapes_id`),
-  KEY `products_id` (`products_id`),
-  CONSTRAINT `products_grapes_ibfk_1` FOREIGN KEY (`grapes_id`) REFERENCES `grapes` (`id`),
-  CONSTRAINT `products_grapes_ibfk_2` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `products_grapes`
---
-
-LOCK TABLES `products_grapes` WRITE;
-/*!40000 ALTER TABLE `products_grapes` DISABLE KEYS */;
-/*!40000 ALTER TABLE `products_grapes` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `roles`
 --
 
@@ -280,4 +224,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-20 20:36:35
+-- Dump completed on 2024-03-20 21:08:56
