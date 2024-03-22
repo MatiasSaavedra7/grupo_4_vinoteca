@@ -116,7 +116,7 @@ window.addEventListener('load', function(){
         if(!(isRequired(password))){
             showError(passInput, 'Debes ingresar una contraseña.');
         } else if(!(isPasswordSecure(password))){
-            showError(passInput, 'La contraseña debe tener al menos 8 caracteres que incluyan al menos una letra mayuscula, una minuscula, un número y un caracter especial.');
+            showError(passInput, 'La contraseña debe tener al menos 8 caracteres que incluyan al menos una letra mayuscula, una minuscula, un número y un caracter especial (!, @, #, $, %, ^, &, *.).');
         } else {
             showSuccess(passInput);
             valid = true;
