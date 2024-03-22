@@ -33,7 +33,6 @@ h1 {
 
 .products {
 	display: flex;
-	justify-content: space-around;
 	flex-wrap: wrap;
 	gap: 25px;
 	max-width: 1280px;
@@ -172,6 +171,12 @@ h1 {
 }
 
 /* CONFIGURACION DE ESTILOS PARA TABLETS */
+@media (max-width: 360px) {
+	.box-product {
+		min-width: 50px;
+	}
+}
+
 @media (min-width: 768px) {
 	.box-product {
 		width: 40%;

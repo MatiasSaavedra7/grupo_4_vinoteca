@@ -45,6 +45,15 @@ To run this project, you will need to add the following environment variables to
 
 `DB_PORT`
 
+## Navigate as Client!
+
+Email: cliente@venner.com
+Password: Cliente123!
+
+## Navigate as Admin!
+
+Email: admin@venner.com
+Password: Admin123!
 
 ## Authors
 

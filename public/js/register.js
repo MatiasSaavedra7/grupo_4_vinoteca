@@ -22,9 +22,10 @@ window.addEventListener('load', function(){
     };
 
     const isPasswordSecure = (password) => {
-        const re = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+        const re = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9\\s])(?=.{8,})");
         return re.test(password);
     };
+      
 
     // Desarrollo de funciones que muestran mensajes de error/exito
 
@@ -116,7 +117,7 @@ window.addEventListener('load', function(){
         if(!(isRequired(password))){
             showError(passInput, 'Debes ingresar una contraseña.');
         } else if(!(isPasswordSecure(password))){
-            showError(passInput, 'La contraseña debe tener al menos 8 caracteres que incluyan al menos una letra mayuscula, una minuscula, un número y un caracter especial.');
+            showError(passInput, 'La contraseña debe tener al menos 8 caracteres que incluyan al menos una letra mayuscula, una minuscula, un número y un caracter especil.');
         } else {
             showSuccess(passInput);
             valid = true;

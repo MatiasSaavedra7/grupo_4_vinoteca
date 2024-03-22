@@ -6,13 +6,12 @@ const productsController = {
   products: async (req, res) => {
     try {
       const results = await productService.getAll(12, req.params.page);
-      const products = results.rows;
       const count = results.count;
       const totalPages = Math.ceil(count/12);
 
       res.render("products/products", {
         title: "Todos los productos",
-        products,
+        products: results.rows,
         totalPages,
         path: "all"
       })
@@ -24,13 +23,12 @@ const productsController = {
   national: async (req, res) => {
     try {
       const results = await productService.getAllNational(12, req.params.page);
-      const products = results.rows;
       const count = results.count;
       const totalPages = Math.ceil(count/12);
 
       res.render("products/products", {
         title: "Vinos nacionales",
-        products,
+        products: results.rows,
         totalPages,
         path: "national"
       })
@@ -42,13 +40,12 @@ const productsController = {
   imported: async (req, res) => {
     try {
       const results = await productService.getAllImported(12, req.params.page);
-      const products = results.rows;
       const count = results.count;
       const totalPages = Math.ceil(count /12);
 
       res.render("products/products", {
         title: "Vinos importados",
-        products,
+        products: results.rows,
         totalPages,
         path: "imported"
       })
