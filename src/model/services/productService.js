@@ -36,9 +36,12 @@ const productService = {
 				offset: page * limit || 0
 			});
 		} catch (e) {
-			console.error(e);
-			return [];
-		}
+			console.error("ERROR: " + e);
+			return {
+				count: 0,
+				rows: []
+			}
+		};
 	},
 
 	getAllNational: async (limit, page) => {
@@ -56,7 +59,10 @@ const productService = {
 			});
 		} catch (e) {
 			console.error(e);
-			return [];
+			return {
+				count: 0,
+				rows: []
+			}
 		}
 	},
 
@@ -75,7 +81,10 @@ const productService = {
 			});
 		} catch (e) {
 			console.error(e);
-			return [];
+			return {
+				count: 0,
+				rows: []
+			}
 		}
 	},
 

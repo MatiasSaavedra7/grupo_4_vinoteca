@@ -36,7 +36,7 @@ const usersController = {
 			res.redirect("/users/login");
 		} catch (error) {
 			console.log(error.message);
-			res.redirect("/users/register");
+			res.redirect("/");
 		}
 	},
 
