@@ -1,8 +1,13 @@
 <section class="products">
 
+    <% if (products.length <= 0) { %>
+        <div><h2 style="color: red;">Falló Conexión con la Base de Datos</h2></div>
+    <% } %>
+
     <% products.forEach(product => { %>
 
         <article class="box-product">
+
 
             <figure class="product-image">
                 <a href="/products/detail/<%=product.id%>">
