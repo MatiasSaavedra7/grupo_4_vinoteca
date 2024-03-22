@@ -33,6 +33,22 @@ header {
     font-size: 20px;
     text-align: center;
 }
+.cart {
+    position: relative;
+    /* border: 1px dashed blue */
+}
+
+.cart-number {
+    position: absolute;
+    font-size: 12px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    padding: 0px 5px;
+    opacity: 0.9;
+    top: -5px;
+    right: 0px;
+}
 
 .icons .fa-solid {
     width: 40px;
@@ -168,6 +184,12 @@ header {
         margin: auto 0px;
         font-size: 28px;
         text-align: center;
+    }
+
+    .cart-number {
+        font-size: 16px;
+        top: 0px;
+        right: 0px;
     }
 
     .search-bar input {
