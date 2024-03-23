@@ -28,7 +28,7 @@
                 <div class="welcome">¡Bienvenido <%= locals.userLogged.firstName %>!</div>
                 <div class="dropdown-menu">
                     <figure>
-                        <img src="/images/users/<%= locals.userLogged.image %>" alt="">
+                        <img src="<%= locals.userLogged.image %>" alt="">
                     </figure>
                     <div class="dropdown-content">
                         <a href="/users/profile">Profile</a>
