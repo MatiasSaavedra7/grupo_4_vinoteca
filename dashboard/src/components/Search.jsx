@@ -1,4 +1,4 @@
-export default function SearchWrap(){
+export default function Search(){
     return(
 		<aside className="search-wrap">
 			<div className="search">
