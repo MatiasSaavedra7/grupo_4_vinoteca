@@ -3,10 +3,10 @@ const Op = db.Sequelize.Op;
 
 module.exports = {
 
-    getAll: async function (limit, offset) {
+    getAll: async function (limit, offset, host) {
         try {
             return await db.Product.findAndCountAll({
-                attributes: ["id", "name", "description", [db.Sequelize.literal("CONCAT('/api/products/', Product.id)"), 'detail']],
+                attributes: ["id", "name", "description", [db.Sequelize.literal(`CONCAT('http://${host}/api/products/', Product.id)`), 'detail']],
                 include: ["grapes", "countries"],
                 limit: limit,
                 offset: offset

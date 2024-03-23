@@ -3,17 +3,17 @@ const Op = db.Sequelize.Op;
 
 module.exports = {
 
-    getAll: async function (limit, offset) {
+    getAll: async function (limit, offset, host) {
         try {
             return await db.User.findAndCountAll({
-                attributes: ['id', 'firstName', 'lastName', 'email', [db.Sequelize.literal("CONCAT('/api/users/', `id`)"), 'detail']], // Especificamos las columnas requeridas
+                attributes: ['id', 'firstName', 'lastName', 'email', [db.Sequelize.literal(`CONCAT('http://${host}/api/users/', id)`), 'detail']],
                 limit: limit,
                 offset: offset
             });
         } catch (error) {
             return [];
         }
-    },
+    },    
 
     /*
     attributes: ['id', 'firstName', 'email', [db.Sequelize.literal("CONCAT('/api/users/:', id)"), 'detail']]: 

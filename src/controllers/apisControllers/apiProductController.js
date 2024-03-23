@@ -6,7 +6,7 @@ module.exports = {
         let limit = 10;
         let offset = limit * page;
 
-        let products = await apiProductService.getAll(limit, offset);
+        let products = await apiProductService.getAll(limit, offset, req.get('host'));
         let countByGrapes = await apiProductService.countByGrape();
         let countByCountries = await apiProductService.countByCountry();
 
@@ -22,9 +22,9 @@ module.exports = {
                 },
                 next:
                     offset + limit < products.count
-                        ? `/api/products/?page=${page + 1}`
+                        ? `http://${req.get('host')}/api/products/?page=${page + 1}`
                         : null,
-                previous: page > 0 ? `/api/products/?page=${page - 1}` : null,
+                previous: page > 0 ? `http://${req.get('host')}/api/products/?page=${page - 1}` : null,
             },
             products: products.rows,
         });
