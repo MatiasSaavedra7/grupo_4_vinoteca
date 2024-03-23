@@ -66,10 +66,6 @@ module.exports = {
     getById: async function (id) {
         try {
             return await db.Product.findByPk(id, {
-                attributes: [
-                    ...Object.keys(db.Product.rawAttributes), // Esto incluirá todos los atributos del modelo
-                    [db.Sequelize.literal("CONCAT('/api/products/image/', Product.id)"), 'image']
-                ],
                 include: ['grapes', 'countries']
             });
         } catch (error) {
