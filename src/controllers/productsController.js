@@ -86,7 +86,7 @@ const productsController = {
       //Verificamos si se cargó una imagen
 			if (req.file && req.file.buffer) {
 				//En caso afirmativo subimos la imagen a Clodinary
-				const { secure_url } = await cloudinary.uploadImgBuffer(req.body.firstName, req.file.buffer, "products")
+				const { secure_url } = await cloudinary.uploadImgBuffer(req.file.buffer, "products")
 				img = secure_url;
 			}
 
@@ -120,7 +120,7 @@ const productsController = {
       //Verificamos si se cargó una imagen
 			if (req.file && req.file.buffer) {
 				//En caso afirmativo subimos la imagen a Clodinary
-				const { secure_url } = await cloudinary.uploadImgBuffer(req.body.firstName, req.file.buffer, "users")
+				const { secure_url } = await cloudinary.uploadImgBuffer(req.file.buffer, "products")
 				img = secure_url;
 			}
 

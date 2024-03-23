@@ -28,10 +28,10 @@ function uploadImage(img, id) {
 }
 
 //*Versión para subir imagenes guardadas en memoria local (Usamos multer para guardar la imagen en memoria local)
-function uploadImgBuffer(id, buffer, folder) {
+function uploadImgBuffer(buffer, folder) {
     return new Promise((resolve, reject) => {
         cloudinary.uploader.upload_stream(
-            { resource_type: 'image', folder: folder, public_id: id },
+            { resource_type: 'image', folder: folder},
             (error, result) => {
                 if (error) {
                     reject(error)

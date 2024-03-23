@@ -36,7 +36,7 @@ const usersController = {
 			//Verificamos si se cargó una imagen
 			if (req.file && req.file.buffer) {
 				//En caso afirmativo subimos la imagen a Clodinary
-				const { secure_url } = await cloudinary.uploadImgBuffer(req.body.firstName, req.file.buffer, "users")
+				const { secure_url } = await cloudinary.uploadImgBuffer(req.file.buffer, "users")
 				img = secure_url;
 			}
 
@@ -111,7 +111,7 @@ const usersController = {
 			//Verificamos si se cargó una imagen
 			if (req.file && req.file.buffer) {
 				//En caso afirmativo subimos la imagen a Clodinary
-				const { secure_url } = await cloudinary.uploadImgBuffer(req.body.firstName, req.file.buffer, "users")
+				const { secure_url } = await cloudinary.uploadImgBuffer(req.file.buffer, "users")
 				img = secure_url;
 			}
 
