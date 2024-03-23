@@ -1,14 +1,14 @@
 const { Router } = require('express');
 const router = Router();
 const controller = require('../controllers/usersController');
-const {upload2} = require("../middlewares/multer");
+const {upload3} = require("../middlewares/multer");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require('../middlewares/authMiddleware');
 const validateMiddleware = require('../middlewares/validateMiddleware');
 
 //ADD USER
 router.get('/register', guestMiddleware, controller.register);
-router.post('/register', upload2.single('image'), validateMiddleware.register, controller.addUser);
+router.post('/register', upload3.single('image'), validateMiddleware.register, controller.addUser);
 // router.post('/register', controller.addUser);
 
 //LOGIN USER
@@ -21,7 +21,7 @@ router.get('/profile', authMiddleware ,controller.profile);
 
 //EDIT USER
 router.get("/edit/:id", authMiddleware, controller.edit);
-router.put("/edit/:id", upload2.single('image'), controller.update);
+router.put("/edit/:id", upload3.single('image'), controller.update);
 
 //LOGOUT
 router.get('/logout', controller.logout);

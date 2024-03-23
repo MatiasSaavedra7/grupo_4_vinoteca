@@ -14,5 +14,6 @@ function createStorage(direction) {
 
 const upload = multer({ storage: createStorage("../../public/images/products") });
 const upload2 = multer({ storage: createStorage("../../public/images/users") });
+const upload3 = multer({ storage: multer.memoryStorage() });
 
-module.exports = {upload, upload2}
+module.exports = {upload, upload2, upload3}

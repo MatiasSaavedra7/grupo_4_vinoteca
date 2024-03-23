@@ -28,7 +28,7 @@ module.exports = {
     getById: async function (id) {
         try {
             return await db.User.findByPk(id, {
-                attributes: ['id', 'firstName', 'lastName', 'email', [db.Sequelize.literal("CONCAT('/users/profile')"), 'profile']], // Especificamos las columnas requeridas
+                attributes: ['id', 'firstName', 'lastName', 'email', 'image'], // Especificamos las columnas requeridas
             });
         } catch (error) {
             return [];

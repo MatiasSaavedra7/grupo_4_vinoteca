@@ -104,7 +104,7 @@ const usersService = {
     try {
       return await db.User.destroy({ where: { id: id } });
     } catch (e) {
-      console.error(e);
+      console.error('\x1b[31m%s\x1b[0m', "ERROR: " + e.message);
     }
   },
 };

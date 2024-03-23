@@ -1,5 +1,6 @@
 const { validationResult } = require("express-validator");
 const usersService = require("../model/services/usersService");
+const cloudinary = require("../model/services/apiServices/cloudinaryService");
 
 const usersController = {
 	register: (req, res) => {
@@ -15,8 +16,7 @@ const usersController = {
 			//Validamos los datos
 			const errors = validationResult(req);
 
-			console.log(errors);
-
+			//Verificamos si hay errores
 			if (!errors.isEmpty()) {
 				return res.render("users/register", {
 					errors: errors.mapped(),
@@ -24,18 +24,29 @@ const usersController = {
 				});
 			}
 
+			//Eliminamos del objeto body la clave confirmpassword
 			delete req.body.confirmpassword;
 
 			//Verificamos si el usuario subio una imagen
-			const image = req.file ? req.file.filename : "default-image.png";
+			// const image = req.file ? req.file.filename : "default-image.jpg";
+
+			//Imagen por default
+			let img = "https://res.cloudinary.com/dq2jw6jnn/image/upload/v1711187546/default_img.jpg"
+
+			//Verificamos si se cargó una imagen
+			if (req.file && req.file.buffer) {
+				//En caso afirmativo subimos la imagen a Clodinary
+				const { secure_url } = await cloudinary.uploadImgBuffer(req.body.firstName, req.file.buffer, "users")
+				img = secure_url;
+			} 
 
 			//Creamos al nuevo usuario
-			let newUser = await usersService.add(req.body, image);
+			let newUser = await usersService.add(req.body, img);
 
 			//Redireccionamos al home
 			res.redirect("/users/login");
 		} catch (error) {
-			console.log(error.message);
+			console.error('\x1b[31m%s\x1b[0m', "ERROR: " + error.message);
 			res.redirect("/");
 		}
 	},
@@ -70,6 +81,7 @@ const usersController = {
 			return res.redirect("/users/profile");
 		} catch (error) {
 			//En caso de que haya un error de validacion del usuario o algun otro error se lo pasamos al vista.
+			console.error('\x1b[31m%s\x1b[0m', "ERROR: " + error.message);
 			return res.render("users/login", {
 				errors: {
 					email: {
@@ -91,26 +103,29 @@ const usersController = {
 	},
 	update: async (req, res) => {
 		try {
-		  //Verificamos si se subio una imagen.
-		  let filename = req.file ? req.file.filename : "";
+			//Verificamos si se subio una imagen.
+			let filename = req.file ? req.file.filename : "";
 
-		  //Llamamos al service de actualizacion.
-		  let updatedUser= await usersService.updateBy(req.params.id, req.body, filename);
+			//Llamamos al service de actualizacion.
+			let updatedUser = await usersService.updateBy(
+				req.params.id,
+				req.body,
+				filename
+			);
 
-		  //Borramos la contraseña
-		  updatedUser.password = null;
+			//Borramos la contraseña
+			updatedUser.password = null;
 
-		  //Actualizamos los datos del usuario logeado
-		  req.session.userLogged = updatedUser;
+			//Actualizamos los datos del usuario logeado
+			req.session.userLogged = updatedUser;
 
-		  //Redireccionamos una vez actualizado.
-		  res.redirect("/users/profile");
-
+			//Redireccionamos una vez actualizado.
+			res.redirect("/users/profile");
 		} catch (error) {
-		  console.error(error);
-		  res.redirect("/")
+			console.error('\x1b[31m%s\x1b[0m', "ERROR: " + error.message);
+			res.redirect("/");
 		}
-	  },	
+	},
 	logout: (req, res) => {
 		res.clearCookie("userEmail");
 		req.session.destroy();
