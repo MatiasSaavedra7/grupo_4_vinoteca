@@ -38,7 +38,7 @@ const usersController = {
 				//En caso afirmativo subimos la imagen a Clodinary
 				const { secure_url } = await cloudinary.uploadImgBuffer(req.body.firstName, req.file.buffer, "users")
 				img = secure_url;
-			} 
+			}
 
 			//Creamos al nuevo usuario
 			let newUser = await usersService.add(req.body, img);
@@ -104,13 +104,22 @@ const usersController = {
 	update: async (req, res) => {
 		try {
 			//Verificamos si se subio una imagen.
-			let filename = req.file ? req.file.filename : "";
+			// let filename = req.file ? req.file.filename : "";
+
+			let img = "";
+
+			//Verificamos si se cargó una imagen
+			if (req.file && req.file.buffer) {
+				//En caso afirmativo subimos la imagen a Clodinary
+				const { secure_url } = await cloudinary.uploadImgBuffer(req.body.firstName, req.file.buffer, "users")
+				img = secure_url;
+			}
 
 			//Llamamos al service de actualizacion.
 			let updatedUser = await usersService.updateBy(
 				req.params.id,
 				req.body,
-				filename
+				img
 			);
 
 			//Borramos la contraseña

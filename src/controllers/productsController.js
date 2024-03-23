@@ -1,6 +1,8 @@
 const productService = require("../model/services/productService");
 const grapeService = require("../model/services/grapesService");
 const countryService = require("../model/services/countryService");
+const cloudinary = require("../model/services/apiServices/cloudinaryService");
+
 
 const productsController = {
   products: async (req, res) => {
@@ -77,9 +79,18 @@ const productsController = {
 
   create: async (req, res) => {
     try {
-      const image = req.file ? req.file.filename : "vaquita.png";
+      // const image = req.file ? req.file.filename : "vaquita.png";
 
-      await productService.create(req.body, image);
+      let img = "https://res.cloudinary.com/dq2jw6jnn/image/upload/v1711224395/products/gfjdrs8sjftgkioylodt.png"
+
+      //Verificamos si se cargó una imagen
+			if (req.file && req.file.buffer) {
+				//En caso afirmativo subimos la imagen a Clodinary
+				const { secure_url } = await cloudinary.uploadImgBuffer(req.body.firstName, req.file.buffer, "products")
+				img = secure_url;
+			}
+
+      await productService.create(req.body, img);
 
       res.redirect("/products/all");
     } catch (error) {
@@ -102,10 +113,19 @@ const productsController = {
   update: async (req, res) => {
     try {
       //Verificamos si se subio una imagen.
-      let filename = req.file ? req.file.filename : "";
+      // let filename = req.file ? req.file.filename : "";
+
+      let img = "";
+
+      //Verificamos si se cargó una imagen
+			if (req.file && req.file.buffer) {
+				//En caso afirmativo subimos la imagen a Clodinary
+				const { secure_url } = await cloudinary.uploadImgBuffer(req.body.firstName, req.file.buffer, "users")
+				img = secure_url;
+			}
 
       //Llamamos al service de actualizacion.
-      await productService.updateBy(req.params.id, req.body, filename);
+      await productService.updateBy(req.params.id, req.body, img);
 
       //Redireccionamos una vez actualizado.
       res.redirect(`/products/detail/${req.params.id}`);
