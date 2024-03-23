@@ -52,6 +52,14 @@
 	
 					</section>
 				</div>
+
+				<!-- BOTON PARA AGREGAR UN PRODUCTO NUEVO -->
+				<% if (locals.userLogged && userLogged.rol_id == 1) { %>
+					<div class="add-product">
+						<a href="/products/add"> + </a>
+					</div>
+				<% } %>
+				<!-- FIN DE BOTON PARA AGREGAR UN PRODUCTO NUEVO -->
 				
 				
 				<ul class="paginate"> 
