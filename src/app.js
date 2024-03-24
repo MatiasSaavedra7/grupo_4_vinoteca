@@ -6,6 +6,10 @@ const app = express();
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const userLogged = require("../src/middlewares/userLoggedMiddleware");
+const cors = require('cors');
+
+//
+app.use(cors());
 
 //Sección de Configuración de Carpeta de Archivos Estáticos
 app.use(express.static(path.join(__dirname, "..", "public")));
