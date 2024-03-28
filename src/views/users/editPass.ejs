@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs', { title: "Editar Contraseña", css: "editPass.css" }) %>
+
+  <body>
+    <%- include('../partials/header.ejs') %>
+
+      <main id="main-editPass">
+        <section>
+          <form action="/users/editPass/<%= user.id %>?_method=put" method="post" id="formulario" enctype="multipart/form-data">
+            <legend>CAMBIA TU CONTRASEÑA</legend>
+
+              <div class="div-form">
+                <label for="password">CONTRASEÑA ACTUAL</label>
+                <input type="text" name="password" id="password"/>
+                <img src="" alt="" />
+                <span class="feedback"><%= locals.errors && errors.password ? errors.password.msg : "" %></span>
+                <small></small>
+              </div>
+
+              <div class="div-form">
+                <label for="pass">CONTRASEÑA NUEVA</label>
+                <input type="text" name="newpassword" id="pass"/>
+                <img src="" alt="" />
+                <span class="feedback"><%= locals.errors && errors.password ? errors.password.msg : "" %></span>
+                <small></small>
+              </div>
+  
+              <div class="div-form">
+                <label for="reppass">CONFIRMAR CONTRASEÑA</label>
+                <input type="text" name="confirmpassword" id="reppass"/>
+                <img src="" alt="" />
+                <span class="feedback"><%= locals.errors && errors.confirmpassword ? errors.confirmpassword.msg : "" %></span>
+                <small></small>
+              </div>
+            
+            <button type="submit" id="button-form">MODIFICAR DATOS</button>
+          </form>
+        </section>
+        
+      </main>
+
+      <%- include('../partials/footer.ejs') %>
+  </body>
+
+</html>

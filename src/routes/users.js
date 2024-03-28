@@ -23,6 +23,10 @@ router.get('/profile', authMiddleware ,controller.profile);
 router.get("/edit/:id", authMiddleware, controller.edit);
 router.put("/edit/:id", upload3.single('image'), controller.update);
 
+//EDIT PASSWORD
+router.get("/editPass/:id", authMiddleware, controller.editPass);
+router.put("/editPass/:id", validateMiddleware.editPass, controller.changePassword)
+
 //LOGOUT
 router.get('/logout', controller.logout);
 

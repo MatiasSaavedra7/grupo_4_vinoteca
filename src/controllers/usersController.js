@@ -140,6 +140,31 @@ const usersController = {
 			res.redirect("/");
 		}
 	},
+	editPass: async (req, res) => {
+		res.render("users/editPass", {
+			user: await usersService.getBy(req.params.id),
+		});
+	},
+	changePassword: async (req, res) => {
+		try {
+			// //Llamamos al service de actualizacion.
+			// let user = await usersService.changePass(
+			// 	req.params.id,
+			// 	req.body
+			// );
+			console.log(req.body)
+			// //Borramos la contraseña
+			// user.password = null;
+			// //Actualizamos los datos del usuario logeado
+			// req.session.userLogged = user;
+			// //Redireccionamos una vez actualizado.
+			// res.redirect("/users/profile");
+		} catch (error) {
+			console.error('\x1b[31m%s\x1b[0m', "ERROR: " + error.message);
+			res.redirect("/");
+		}
+	},
+
 	logout: (req, res) => {
 		res.clearCookie("userEmail");
 		req.session.destroy();
