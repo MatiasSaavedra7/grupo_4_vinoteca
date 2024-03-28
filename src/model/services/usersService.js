@@ -107,16 +107,10 @@ const usersService = {
       //  //verificamos la contraseña.
       if (userFind) {
         if (bcryptjs.compareSync(data.password, userFind.password)){
-          return userFind;
-        } else {
-      //     //En caso de que la contraseña sea incorrecta rechazamos una promesa con un error.
-          return Promise.reject(new Error("Las credenciales no coinciden"));
-        }
-      }
-      // // Creamos un nuevo usuario con los datos actualizados
+          // // Creamos un nuevo usuario con los datos actualizados
           await db.User.update(
             new UserPass(
-              { password: data.newpassword }
+             userFind, data.newpassword
             ),
             {
               where: {
@@ -124,7 +118,13 @@ const usersService = {
               },
             }
           );
-          return user;
+          return await this.getBy(id);
+        } else {
+      //     //En caso de que la contraseña sea incorrecta rechazamos una promesa con un error.
+          return Promise.reject(new Error("Las credenciales no coinciden"));
+        }
+      }
+          
     }catch (e) {
       console.log(e);
     }
@@ -151,8 +151,14 @@ function UserEdit(data,image) {
   this.lastName = data.lastName;
   this.image =  image;
 }
-function UserPass(data){
-  this.password= bcryptjs.hashSync(data.newpassword, 10);
+function UserPass(data, password){
+  this.firstName = data.firstName;
+  this.lastName = data.lastName;
+  this.email = data.email;
+  this.password= bcryptjs.hashSync(password, 10);
+  this.image = data.image;
+  this.rol_id = 2;
+
 }
 
 module.exports = usersService;
