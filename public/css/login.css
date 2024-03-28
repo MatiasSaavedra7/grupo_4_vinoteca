@@ -81,6 +81,7 @@ body {
 
 .icon-eye {
     margin-right: 5px;
+    cursor: pointer;
 }
 
 .campo-container div input {

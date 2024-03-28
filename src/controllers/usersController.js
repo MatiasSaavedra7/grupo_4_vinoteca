@@ -43,6 +43,11 @@ const usersController = {
 			//Creamos al nuevo usuario
 			let newUser = await usersService.add(req.body, img);
 
+			//
+			newUser.password = null;
+
+			req.session.userLogged = newUser;
+
 			//Redireccionamos al home
 			res.redirect("/users/login");
 		} catch (error) {
