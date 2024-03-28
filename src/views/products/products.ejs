@@ -62,23 +62,24 @@
 				<!-- FIN DE BOTON PARA AGREGAR UN PRODUCTO NUEVO -->
 				
 				
-				<ul class="paginate"> 
+				<ul class="paginate" data-total-pages="<%= totalPages %>"> 
 					<li>
-						<a class="page-number"> < </a>
+						<a href="/products/all/0" class="page-number previous"> < </a>
 					</li>
 					<% for( let i = 0; i < totalPages; i++ ) { %>
 						<li>
 							<div class="page-number">
-								<a href="/products/<%= path %>/<%= i %>"><%= i + 1 %></a>
+								<a href="/products/<%= path %>/<%= i %>"><%= i %></a>
 							</div>
 						</li>
 					<% } %>
 					<li>
-						<a class="page-number"> > </a>
+						<a href="/products/all/0" class="page-number next"> > </a>
 					</li>
 				</ul>
 			</main>
 			<%- include('../partials/footer.ejs') %>
 	</body>
 
+	<script src="/js/buttonsPreNex.js"></script>
 </html>
