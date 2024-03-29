@@ -8,31 +8,23 @@
 
       <main id="main-editPass">
         <section>
-          <form action="/users/editPass/<%= user.id %>?_method=put" method="post" id="formulario">
+          <form action="/users/editPass/<%=user %>?_method=PUT" method="post" id="formulario">
             <legend>CAMBIA TU CONTRASEÑA</legend>
 
               <div class="div-form">
                 <label for="password">CONTRASEÑA ACTUAL</label>
-                <input type="text" name="password" id="password"/>
-                <img src="" alt="" />
+                <input type="text" name="password" id="password" value="<%=locals.old && locals.old.password?  locals.old.password : "" %>"/>
                 <span class="feedback"><%= locals.errors && errors.password ? errors.password.msg : "" %></span>
-                <small></small>
               </div>
 
               <div class="div-form">
                 <label for="pass">CONTRASEÑA NUEVA</label>
-                <input type="text" name="newpassword" id="pass"/>
-                <img src="" alt="" />
-                <span class="feedback"><%= locals.errors && errors.password ? errors.password.msg : "" %></span>
-                <small></small>
+                <input type="text" name="newpassword" id="pass" value="<%=locals.old && locals.old.newpassword?  locals.old.newpassword : ""%>"/>
               </div>
   
               <div class="div-form">
                 <label for="reppass">CONFIRMAR CONTRASEÑA</label>
-                <input type="text" name="confirmpassword" id="reppass"/>
-                <img src="" alt="" />
-                <span class="feedback"><%= locals.errors && errors.confirmpassword ? errors.confirmpassword.msg : "" %></span>
-                <small></small>
+                <input type="text" name="confirmpassword" id="reppass" value="<%=locals.old && locals.old.confirmpassword?  locals.old.confirmpassword : ""%>"/>
               </div>
             
             <button type="submit" id="button-form">MODIFICAR DATOS</button>

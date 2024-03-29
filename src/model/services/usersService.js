@@ -102,31 +102,33 @@ const usersService = {
   },
 
   changePass: async function (id, data) {
-    try{
+    try {
+      //Buscamos al usuario a traves de su id.
       let userFind = await db.User.findByPk(id);
-      //  //verificamos la contraseña.
+
+      //Verificamos si la contraseña es correcta.
       if (userFind) {
-        if (bcryptjs.compareSync(data.password, userFind.password)){
-          // // Creamos un nuevo usuario con los datos actualizados
+        if (bcryptjs.compareSync(data.password, userFind.password)) {
+
+          //Creamos un nuevo usuario con los datos actualizados
           await db.User.update(
-            new UserPass(
-             userFind, data.newpassword
-            ),
+            new UserPass(userFind, data.newpassword),
             {
               where: {
                 id: id,
               },
             }
           );
+
           return await this.getBy(id);
         } else {
-      //     //En caso de que la contraseña sea incorrecta rechazamos una promesa con un error.
-          return Promise.reject(new Error("Las credenciales no coinciden"));
+          //En caso de que la contraseña sea incorrecta rechazamos una promesa con un error.
+         throw new Error("La contraseña ingresada es incorrecta");
         }
       }
-          
-    }catch (e) {
-      console.log(e);
+
+    } catch (e) {
+      throw e;
     }
   },
   deleteBy: async (id) => {
@@ -146,16 +148,16 @@ function User(data, image) {
   this.image = image;
   this.rol_id = 2;
 }
-function UserEdit(data,image) {
+function UserEdit(data, image) {
   this.firstName = data.firstName;
   this.lastName = data.lastName;
-  this.image =  image;
+  this.image = image;
 }
-function UserPass(data, password){
+function UserPass(data, password) {
   this.firstName = data.firstName;
   this.lastName = data.lastName;
   this.email = data.email;
-  this.password= bcryptjs.hashSync(password, 10);
+  this.password = bcryptjs.hashSync(password, 10);
   this.image = data.image;
   this.rol_id = 2;
 

@@ -43,14 +43,17 @@ const validate = {
     ],
     editPass: [
             body('password')
-                .notEmpty().withMessage('Debes ingresar una contraseña').bail()
-                .withMessage('La contraseña debe tener un mínimo de 6 caracteres.'),
+                .notEmpty().withMessage('Debes ingresar tu contraseña actual').bail()
+                .isLength({min: 6}).withMessage('La contraseña debe tener un mínimo de 6 caracteres.'),
+            body('newpassword')
+                .notEmpty().withMessage('Debes ingresar tu nueva contraseña').bail()
+                .isLength({min: 6}).withMessage('La contraseña debe tener un mínimo de 6 caracteres.'),
             body('confirmpassword')
                 .notEmpty().withMessage('Debes completar este campo').bail()
                 .custom((value, { req }) => {
-                    let { confirmpassword, password } = req.body;
+                    let { confirmpassword, newpassword } = req.body;
     
-                    if (confirmpassword !== password) {
+                    if (confirmpassword !== newpassword) {
                         throw new Error("Las contraseñas no coinciden")
                     }
     

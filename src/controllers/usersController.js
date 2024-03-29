@@ -1,6 +1,7 @@
 const { validationResult } = require("express-validator");
 const usersService = require("../model/services/usersService");
 const cloudinary = require("../model/services/apiServices/cloudinaryService");
+const { log } = require("console");
 
 const usersController = {
 	register: (req, res) => {
@@ -142,26 +143,38 @@ const usersController = {
 	},
 	editPass: async (req, res) => {
 		res.render("users/editPass", {
-			user: await usersService.getBy(req.params.id),
+			user: req.params.id,
 		});
 	},
 	changePassword: async (req, res) => {
 		try {
-			// //Llamamos al service de actualizacion.
+			//Asignamos a errors los resultados de las validaciones.
+			const errors = validationResult(req);
+
+			//Verificamos si errors no esta vacia (o sea hay errores)
+			if (!errors.isEmpty()) {
+				//Retornamos a la vista login los errores.
+				return res.render(`users/editPass`, { errors: errors.mapped(), user: req.params.id, old: req.body });
+			}
+
+			//Llamamos al service para actualizar la contraseña.
 			let user = await usersService.changePass(
 				req.params.id,
 				req.body
 			);
-			console.log(req.body)
-			// //Borramos la contraseña
-			user.password = null;
-			//Actualizamos los datos del usuario logeado
-			req.session.userLogged = user;
-			//Redireccionamos una vez actualizado.
+
 			res.redirect("/users/profile");
 		} catch (error) {
 			console.error('\x1b[31m%s\x1b[0m', "ERROR: " + error.message);
-			res.redirect("/");
+			return res.render("users/editPass", {
+				errors: {
+					password: {
+						msg: error.message,
+					},
+				},
+				old: req.body,
+				user: req.params.id
+			});
 		}
 	},
 
