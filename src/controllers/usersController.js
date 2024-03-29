@@ -151,6 +151,8 @@ const usersController = {
 			//Asignamos a errors los resultados de las validaciones.
 			const errors = validationResult(req);
 
+			console.log(errors);
+
 			//Verificamos si errors no esta vacia (o sea hay errores)
 			if (!errors.isEmpty()) {
 				//Retornamos a la vista login los errores.

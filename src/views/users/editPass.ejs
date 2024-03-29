@@ -20,11 +20,13 @@
               <div class="div-form">
                 <label for="pass">CONTRASEÑA NUEVA</label>
                 <input type="text" name="newpassword" id="pass" value="<%=locals.old && locals.old.newpassword?  locals.old.newpassword : ""%>"/>
+                <span class="feedback"><%= locals.errors && errors.newpassword ? errors.newpassword.msg : "" %></span>
               </div>
   
               <div class="div-form">
                 <label for="reppass">CONFIRMAR CONTRASEÑA</label>
                 <input type="text" name="confirmpassword" id="reppass" value="<%=locals.old && locals.old.confirmpassword?  locals.old.confirmpassword : ""%>"/>
+                <span class="feedback"><%= locals.errors && errors.confirmpassword ? errors.confirmpassword.msg : "" %></span>
               </div>
             
             <button type="submit" id="button-form">MODIFICAR DATOS</button>
