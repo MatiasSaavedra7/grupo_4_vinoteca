@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs', { title: "Editar Contraseña", css: "editPass.css" }) %>
+
+  <body>
+    <%- include('../partials/header.ejs') %>
+
+      <main id="main-editPass">
+        <section>
+          <form action="/users/editPass/<%=user %>?_method=PUT" method="post" id="formulario">
+            <legend>CAMBIA TU CONTRASEÑA</legend>
+
+              <div class="div-form">
+                <label for="password">CONTRASEÑA ACTUAL</label>
+                <input type="text" name="password" id="password" value="<%=locals.old && locals.old.password?  locals.old.password : "" %>"/>
+                <span class="feedback"><%= locals.errors && errors.password ? errors.password.msg : "" %></span>
+              </div>
+
+              <div class="div-form">
+                <label for="pass">CONTRASEÑA NUEVA</label>
+                <input type="text" name="newpassword" id="pass" value="<%=locals.old && locals.old.newpassword?  locals.old.newpassword : ""%>"/>
+                <span class="feedback"><%= locals.errors && errors.newpassword ? errors.newpassword.msg : "" %></span>
+              </div>
+  
+              <div class="div-form">
+                <label for="reppass">CONFIRMAR CONTRASEÑA</label>
+                <input type="text" name="confirmpassword" id="reppass" value="<%=locals.old && locals.old.confirmpassword?  locals.old.confirmpassword : ""%>"/>
+                <span class="feedback"><%= locals.errors && errors.confirmpassword ? errors.confirmpassword.msg : "" %></span>
+              </div>
+            
+            <button type="submit" id="button-form">MODIFICAR DATOS</button>
+          </form>
+        </section>
+        
+      </main>
+
+      <%- include('../partials/footer.ejs') %>
+  </body>
+
+</html>

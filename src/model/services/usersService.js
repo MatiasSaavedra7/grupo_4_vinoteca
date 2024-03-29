@@ -100,6 +100,37 @@ const usersService = {
       console.log(e);
     }
   },
+
+  changePass: async function (id, data) {
+    try {
+      //Buscamos al usuario a traves de su id.
+      let userFind = await db.User.findByPk(id);
+
+      //Verificamos si la contraseña es correcta.
+      if (userFind) {
+        if (bcryptjs.compareSync(data.password, userFind.password)) {
+
+          //Creamos un nuevo usuario con los datos actualizados
+          await db.User.update(
+            new UserPass(userFind, data.newpassword),
+            {
+              where: {
+                id: id,
+              },
+            }
+          );
+
+          return await this.getBy(id);
+        } else {
+          //En caso de que la contraseña sea incorrecta rechazamos una promesa con un error.
+         throw new Error("La contraseña ingresada es incorrecta");
+        }
+      }
+
+    } catch (e) {
+      throw e;
+    }
+  },
   deleteBy: async (id) => {
     try {
       return await db.User.destroy({ where: { id: id } });
@@ -117,10 +148,19 @@ function User(data, image) {
   this.image = image;
   this.rol_id = 2;
 }
-function UserEdit(data,image) {
+function UserEdit(data, image) {
   this.firstName = data.firstName;
   this.lastName = data.lastName;
-  this.image =  image;
+  this.image = image;
+}
+function UserPass(data, password) {
+  this.firstName = data.firstName;
+  this.lastName = data.lastName;
+  this.email = data.email;
+  this.password = bcryptjs.hashSync(password, 10);
+  this.image = data.image;
+  this.rol_id = 2;
+
 }
 
 module.exports = usersService;

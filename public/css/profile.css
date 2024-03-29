@@ -53,7 +53,8 @@ legend {
   margin-bottom: 10px;
 }
 
-.edit-user {
+.edit-user,
+.edit-pass {
   float: right !important;
   text-decoration: none;
   color: black;
@@ -66,7 +67,8 @@ legend {
 }
 
 .btn,
-.edit-user {
+.edit-user,
+.edit-pass {
   margin-top: 8px;
   font-size: 14px;
   padding: 8px 4px;
