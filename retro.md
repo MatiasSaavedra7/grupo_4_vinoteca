@@ -119,3 +119,25 @@ No encontramos nada que debamos hacer menos.
 No encontramos algo que debamos dejar de hacer durante este sprint.
 
 El balance general del trabajo realizado durante el sprint 5 por parte del equipo de Venner es muy bueno. Debiendo implementar algunas metodologias de trabajo para mejorar aún más la organización y productividad. 
+
+## Retrospectiva: Sprint 6
+
+Realizamos una reunión para el análisis retrospectivo del Sprint 6, utilizando la dinámica de estrella de mar y llegamos a las siguientes conclusiones:
+
++ **Comenzar a hacer:** 
+En este punto no encontramos algo que debamos comenzar a hacer.
+
++ **Hacer más:**
+Asegurarnos de tener actualizado el proyecto antes de subir cualquier cambio, para evitar conflictos y perdidas del trabajo realizado por otro compañero. Evitando horas de trabajo para recuperar los cambios perdidos.
+
++ **Continuar haciendo:**
+Continuar con el uso de flujo de ramas para trabajar de una manera mucho más organizada.
+Continuar utilizando el tablero de trabajo, seguir realizando la distribución de las tareas entre los miembros del equipo, mantener la buena comunicación del equipo, la resolución de conflictos, la predisposición de ayudarnos y pedir ayuda cuando sea necesario. Mantener la frecuencia de las reuniones. 
+
++ **Hacer menos:**
+No encontramos nada que debamos hacer menos.
+
++ **Dejar hacer:**
+No encontramos algo que debamos dejar de hacer durante este sprint.
+
+Si bien este Sprint nos costó mucho más realizarlo pudimos hacerlo sin mayores inconvenientes, recurriendo a la documentación en los casos necesarios. En general el equipo se mantiene trabajando bien, a un buen ritmo y de manera colaborativa entre todos, aun mas en los casos de conflictos para poder solucionarlos de la mejor manera y en el menor tiempo posible, lo que ayuda al progreso del trabajo grupal. 
