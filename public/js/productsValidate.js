@@ -23,7 +23,7 @@ window.addEventListener("load", function() {
         }
   
         // Validación del campo "precio"
-        if (isNaN(price.value) || parseFloat(price.value) <= 0) {
+        if (isNaN(price.value) || parseFloat(price.value) <= 0 || price.value.length === 0) {
             errors = true;
             document.querySelector("#priceError").textContent = "El campo precio debe tener un valor válido.";
             price.classList.remove("inputCuadro");
@@ -35,9 +35,9 @@ window.addEventListener("load", function() {
         }
   
         // Validación del campo "descuento"
-        if (isNaN(discount.value)) {
+        if (isNaN(discount.value) || discount.value.length === 0) {
             errors = true;
-            document.querySelector("#discountError").textContent = "Debes completar este campo.";
+            document.querySelector("#discountError").textContent = "El campo descuento debe tener un valor válido.";
             discount.classList.remove("inputCuadro");
             discount.classList.add("errorInput");
         } else {
@@ -47,7 +47,8 @@ window.addEventListener("load", function() {
         }
   
         // Validación del campo "stock"
-        if (isNaN(stock.value) || parseInt(stock.value) <= 0) {
+        console.log(stock.value);
+        if (isNaN(stock.value) || parseInt(stock.value) <= 0 || stock.value.length === 0) {
             errors = true;
             document.querySelector("#stockError").textContent = "El campo stock debe ser mayor a 0.";
             stock.classList.remove("inputCuadro");

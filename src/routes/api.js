@@ -10,7 +10,7 @@ router.get("/users", apiUserController.getAll);
 router.get("/users/:id", apiUserController.getById);
 
 //Trae a todos los productos.
-router.get("/products", apiProductController.getAllV2);
+router.get("/products", apiProductController.getAll);
 
 //Trae a un producto en específico a traves del id.
 router.get("/products/:id", apiProductController.getById);

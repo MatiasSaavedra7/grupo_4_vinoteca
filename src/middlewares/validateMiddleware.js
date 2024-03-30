@@ -60,6 +60,18 @@ const validate = {
                     return true;
                 })
         
+    ],
+    product: [
+            body('name')
+                .notEmpty().withMessage('Debes completar con el nombre del producto').bail(),
+            body('price')
+                .notEmpty().withMessage('Debes completar con el precio del producto').bail(),
+            body('discount')
+                .notEmpty().withMessage('Debes completar con el descuento del producto').bail(),
+            body('stock')
+                .notEmpty().withMessage('Debes completar con el stock del producto').bail(),
+            body('description')
+                .notEmpty().withMessage('Debes completar con la descripción del producto').bail(),
     ]
 
 }

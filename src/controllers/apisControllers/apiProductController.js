@@ -1,17 +1,20 @@
 const apiProductService = require("../../model/services/apiServices/apiProductService");
 
 module.exports = {
-    getAllV2: async (req, res) => {
+    getAll: async (req, res) => {
+        //Capturo el número de página de la URL.
         let page = req.query.page ? Number(req.query.page) : 0;
+        //Defino la cantidad de productos a mostrar por página.
         let limit = 10;
+        //Calculo el offset
         let offset = limit * page;
 
+        //Consultas a la base de datos.
         let products = await apiProductService.getAll(limit, offset, req.get('host'));
         let countByGrapes = await apiProductService.countByGrape();
         let countByCountries = await apiProductService.countByCountry();
 
-        console.log(countByGrapes.include);
-
+        //Respuesta en formato JSON.
         return res.json({
             meta: {
                 status: 200,
@@ -29,20 +32,6 @@ module.exports = {
             products: products.rows,
         });
     },
-
-    // getAll: async (req, res) => {
-    //     let products = await apiProductService.getAll()
-    //     let countByCategory = await apiProductService.countByGrape();
-
-    //     return res.json({
-    //         meta: {
-    //             status: 200,
-    //             count: products.count,
-    //             countByCategory: countByCategory
-    //         },
-    //         products: products.rows,
-    //     })
-    // },
 
     getById: async (req, res) => {
         let product = await apiProductService.getById(req.params.id);

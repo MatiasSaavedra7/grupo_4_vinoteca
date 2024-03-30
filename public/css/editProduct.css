@@ -83,6 +83,12 @@ main {
 	width: 100%;
 }
 
+.feedback {
+    color: rgb(239, 70, 70);
+    font-weight: bolder;
+    padding-top: 5px;
+}
+
 @media (min-width: 768px) {
 
 }

@@ -1,81 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head.ejs', {title: 'Editar Productos' , css: 'editProduct.css' }) %>
+  <%- include('../partials/head.ejs', {title: 'Editar Productos' , css:
+  'editProduct.css' }) %>
 
   <body>
     <%- include('../partials/header.ejs') %>
 
-      <main>
-        <div class="edit-product">
-          <h1>EDITAR INFORMACION</h1>
-          <form id="formProducts" action="/products/edit/<%= product.id %>?_method=put" method="POST" enctype="multipart/form-data">
-            <div class="edit-product-field">
-              <label for="name">NOMBRE: </label>
-              <input class="inputCuadro" type="text" name="name" id="name" required value="<%= product.name %>" />
-              <span class="errorText" id="nameError"></span>
-            </div>
+    <main>
+      <div class="edit-product">
+        <h1>EDITAR INFORMACION</h1>
+        <form
+          id="formProducts"
+          action="/products/edit/<%= product.id %>?_method=put"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <div class="edit-product-field">
+            <label for="name">NOMBRE: </label>
+            <input
+              class="inputCuadro"
+              type="text"
+              name="name"
+              id="name"
+              value="<%= locals.errors && locals.errors.name? "" : (locals.old && locals.old.name? locals.old.name : product.name) %>"
+            />
+            <span class="feedback"><%= locals.errors && errors.name ? errors.name.msg : "" %></span>
+            <span class="errorText" id="nameError"></span>
+          </div>
 
-            <div class="edit-product-field">
-              <label for="grapes_id">VARIEDAD: </label>
-              <select name="grapes_id" id="">
-                <% grapes.forEach(grape=> { %>
-                  <option value=<%=grape.id%>
-                    <%= product.grapes_id===grape.id? 'selected' : " " %> ><%= grape.name %>
-                  </option>
-                  <% }) %>
-              </select>
-            </div>
+          <div class="edit-product-field">
+            <label for="grapes_id">VARIEDAD: </label>
+            <select name="grapes_id" id="">
+              <% grapes.forEach(grape=> { %>
+              <option value="<%=grape.id%>""
+                <%= product.grapes_id===grape.id? 'selected' : " " %> ><%=grape.name %>
+              </option>
+              <% }) %>
+            </select>
+          </div>
 
-            <div class="edit-product-field">
-              <label for="country_id">ORIGEN: </label>
-              <select name="country_id" id="">
-                <% country.forEach(country=> { %>
-                  <option value=<%=country.id%>
-                    <%= product.country_id===country.id? 'selected' : " " %> ><%= country.name %>
-                  </option>
-                  <% }) %>
-              </select>
-            </div>
+          <div class="edit-product-field">
+            <label for="country_id">ORIGEN: </label>
+            <select name="country_id" id="">
+              <% country.forEach(country=> { %>
+              <option value="<%=country.id%>"
+                <%= product.country_id===country.id? 'selected' : " " %> ><%=country.name %>
+              </option>
+              <% }) %>
+            </select>
+          </div>
 
-            <div class="edit-product-field">
-              <label for="description">DESCRIPCION: </label>
-              <input class="inputCuadro" type="text" name="description" id="description" required value="<%=product.description%>" />
-              <span class="errorText" id="descriptionError"></span>
-            </div>
+          <div class="edit-product-field">
+            <label for="price">PRECIO (ARS): </label>
+            <input
+              class="inputCuadro"
+              type="number"
+              name="price"
+              id="price"
+              placeholder="$"
+              value="<%= locals.errors && locals.errors.price? "" : (locals.old && locals.old.price? locals.old.price : product.price) %>"
+            />
+            <span class="feedback"><%= locals.errors && errors.price ? errors.price.msg : "" %></span>
+            <span class="errorText" id="priceError"></span>
+          </div>
 
-            <div class="edit-product-field">
-              <label for="price">PRECIO (ARS): </label>
-              <input class="inputCuadro" type="number" name="price" id="price" placeholder="$" required value="<%=product.price%>" />
-              <span class="errorText" id="priceError"></span>
-            </div>
+          <div class="edit-product-field">
+            <label for="discount">DESCUENTO: </label>
+            <input
+              class="inputCuadro"
+              type="number"
+              name="discount"
+              id="discount"
+              value="<%= locals.errors && locals.errors.discount? "" : (locals.old && locals.old.discount? locals.old.discount : product.discount) %>"
+            />
+            <span class="feedback"><%= locals.errors && errors.discount ? errors.discount.msg : "" %></span>
+            <span class="errorText" id="discountError"></span>
+          </div>
 
-            <div class="edit-product-field">
-              <label for="discount">DESCUENTO: </label>
-              <input class="inputCuadro" type="number" name="discount" id="discount" required value="<%=product.discount%>" />
-              <span class="errorText" id="discountError"></span>
-            </div>
+          <div class="edit-product-field">
+            <label for="stock">STOCK </label>
+            <input
+              class="inputCuadro"
+              type="number"
+              name="stock"
+              id="stock"
+              value="<%= locals.errors && locals.errors.stock? "" : (locals.old && locals.old.stock? locals.old.stock : product.stock) %>"
+            />
+            <span class="feedback"><%= locals.errors && errors.stock ? errors.stock.msg : "" %></span>
+            <span class="errorText" id="stockError"></span>
+          </div>
 
-            <div class="edit-product-field">
-              <label for="stock">STOCK </label>
-              <input class="inputCuadro" type="number" name="stock" id="stock" required value="<%=product.stock%>" />
-              <span class="errorText" id="stockError"></span>
-            </div>
+          <div class="edit-product-field">
+            <label for="image">IMAGEN: </label>
+            <input
+              class="inputCuadro"
+              type="file"
+              name="image"
+              id="image"
+              accept="image/png, image/jpeg"
+              multiple
+            />
+          </div>
 
-            <div class="edit-product-field">
-              <label for="image">IMAGEN: </label>
-              <input class="inputCuadro" type="file" name="image" id="image" accept="image/png, image/jpeg" multiple />
-            </div>
+          <div class="edit-product-field">
+            <label for="description">DESCRIPCION: </label>
+            <input
+              class="inputCuadro"
+              type="text"
+              name="description"
+              id="description"
+              value="<%= locals.errors && locals.errors.description? "" : (locals.old && locals.old.description? locals.old.description : product.description) %>"
+            />
+            <span class="feedback"><%= locals.errors && errors.description ? errors.description.msg : "" %></span>
+            <span class="errorText" id="descriptionError"></span>
+          </div>
 
-            <div class="buttons">
-              <button type="submit" class="edit">GUARDAR CAMBIOS</button>
-            </div>
-          </form>
-        </div>
-      </main>
+          <div class="buttons">
+            <button type="submit" class="edit">GUARDAR CAMBIOS</button>
+          </div>
+        </form>
+      </div>
+    </main>
 
-      <%- include('../partials/footer.ejs') %>
+    <%- include('../partials/footer.ejs') %>
   </body>
 
   <script src="/js/productsValidate.js"></script>
-
 </html>

@@ -4,6 +4,7 @@ const router = Router();
 const { upload3 } = require("../middlewares/multer");
 const adminMiddleware = require('../middlewares/adminMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const validateMiddleware = require('../middlewares/validateMiddleware');
 
 // GET PRODUCTS
 router.get('/all/:page?', controller.products);
@@ -18,12 +19,12 @@ router.get('/detail/:id', controller.detail);
 // ADD PRODUCTS
 router.get('/add', authMiddleware, adminMiddleware, controller.add);
 
-router.post('/add', adminMiddleware, upload3.single('image'), controller.create);
+router.post('/add', adminMiddleware, upload3.single('image'), validateMiddleware.product, controller.create);
 
 //EDIT PRODUCTS
 router.get('/edit/:id', authMiddleware, adminMiddleware, controller.edit);
 
-router.put('/edit/:id', authMiddleware, adminMiddleware, upload3.single('image'), controller.update);
+router.put('/edit/:id', authMiddleware, adminMiddleware, upload3.single('image'), validateMiddleware.product, controller.update);
 
 // DELETE PRODUCT
 router.get('/delete/:id', authMiddleware, adminMiddleware, controller.delete)
