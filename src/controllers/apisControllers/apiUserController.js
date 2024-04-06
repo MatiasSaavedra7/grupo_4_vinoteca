@@ -6,7 +6,8 @@ module.exports = {
         let limit = 10;
         let offset = limit * page;
 
-        let users = await apiUserService.getAll(limit, offset,req.get('host'))
+        let users = await apiUserService.getAll(limit, offset,req.get('host'));
+        let lastUser = await apiUserService.getLastUser();
 
         return res.json({
             meta: {
@@ -16,6 +17,7 @@ module.exports = {
                 previous: page > 0 ? `http://${req.get('host')}/api/users/?page=${page - 1}` : null,
             },
             users: users.rows,
+            lastUser: lastUser,
         })
     },
 

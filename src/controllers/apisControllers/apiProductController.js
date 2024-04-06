@@ -13,6 +13,7 @@ module.exports = {
         let products = await apiProductService.getAll(limit, offset, req.get('host'));
         let countByGrapes = await apiProductService.countByGrape();
         let countByCountries = await apiProductService.countByCountry();
+        let lastProduct = await apiProductService.getLastProduct();
 
         //Respuesta en formato JSON.
         return res.json({
@@ -30,6 +31,7 @@ module.exports = {
                 previous: page > 0 ? `http://${req.get('host')}/api/products/?page=${page - 1}` : null,
             },
             products: products.rows,
+            lastProduct: lastProduct
         });
     },
 
@@ -43,4 +45,15 @@ module.exports = {
             product: product,
         });
     },
+
+    getLastProduct: async function () {
+        try {
+            return await db.User.findAll({
+                order: [['id', 'DESC']], // Ordena por ID en orden descendente
+                limit: 1, // Limita a 1 resultado (el último producto)
+              });
+        } catch (error) {
+            return [];
+        }
+    }
 };

@@ -35,4 +35,15 @@ module.exports = {
         }
     },
 
+    getLastUser: async function () {
+        try {
+            return await db.User.findAll({
+                order: [['id', 'DESC']], // Ordena por ID en orden descendente
+                limit: 1, // Limita a 1 resultado (el último producto)
+              });
+        } catch (error) {
+            return [];
+        }
+    }
+
 };
