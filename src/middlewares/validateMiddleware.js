@@ -65,13 +65,14 @@ const validate = {
             body('name')
                 .notEmpty().withMessage('Debes completar con el nombre del producto').bail(),
             body('price')
-                .notEmpty().withMessage('Debes completar con el precio del producto').bail(),
+                .notEmpty().withMessage('Debes completar con el precio del producto').isFloat({ min: 1 }).withMessage('Ingrese un precio valido').bail(),
             body('discount')
-                .notEmpty().withMessage('Debes completar con el descuento del producto').bail(),
+                .isFloat({ min: 0, max: 100 }).withMessage("Debe ingresar un valor entre 0 y 100").bail(),
             body('stock')
-                .notEmpty().withMessage('Debes completar con el stock del producto').bail(),
+                .notEmpty().withMessage('Debes completar con el stock del producto').isFloat({ min: 1 }).withMessage('El stock debe ser mayor a 1').bail(),
             body('description')
-                .notEmpty().withMessage('Debes completar con la descripción del producto').bail(),
+                .notEmpty().withMessage('Debes completar con la descripción del producto')
+                .isLength({min: 20}).withMessage("La descripción debe tener un mínimo de 20 caracteres").bail(),
     ]
 
 }

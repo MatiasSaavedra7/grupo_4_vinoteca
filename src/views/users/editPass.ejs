@@ -13,19 +13,19 @@
 
               <div class="div-form">
                 <label for="password">CONTRASEÑA ACTUAL</label>
-                <input type="text" name="password" id="password" value="<%=locals.old && locals.old.password?  locals.old.password : "" %>"/>
+                <input type="password" name="password" id="password" value="<%=locals.old && locals.old.password?  locals.old.password : "" %>"/>
                 <span class="feedback"><%= locals.errors && errors.password ? errors.password.msg : "" %></span>
               </div>
 
               <div class="div-form">
                 <label for="pass">CONTRASEÑA NUEVA</label>
-                <input type="text" name="newpassword" id="pass" value="<%=locals.old && locals.old.newpassword?  locals.old.newpassword : ""%>"/>
+                <input type="password" name="newpassword" id="pass" value="<%=locals.old && locals.old.newpassword?  locals.old.newpassword : ""%>"/>
                 <span class="feedback"><%= locals.errors && errors.newpassword ? errors.newpassword.msg : "" %></span>
               </div>
   
               <div class="div-form">
                 <label for="reppass">CONFIRMAR CONTRASEÑA</label>
-                <input type="text" name="confirmpassword" id="reppass" value="<%=locals.old && locals.old.confirmpassword?  locals.old.confirmpassword : ""%>"/>
+                <input type="password" name="confirmpassword" id="reppass" value="<%=locals.old && locals.old.confirmpassword?  locals.old.confirmpassword : ""%>"/>
                 <span class="feedback"><%= locals.errors && errors.confirmpassword ? errors.confirmpassword.msg : "" %></span>
               </div>
             
