@@ -29,6 +29,7 @@ module.exports = {
         try {
             return await db.User.findByPk(id, {
                 attributes: ['id', 'firstName', 'lastName', 'email', 'image', 'rol_id'], // Especificamos las columnas requeridas
+                include: ["roles"]
             });
         } catch (error) {
             return [];
@@ -40,6 +41,7 @@ module.exports = {
             return await db.User.findAll({
                 order: [['id', 'DESC']], // Ordena por ID en orden descendente
                 limit: 1, // Limita a 1 resultado (el último producto)
+                include: ["roles"],
               });
         } catch (error) {
             return [];

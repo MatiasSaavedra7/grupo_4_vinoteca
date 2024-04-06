@@ -78,6 +78,7 @@ module.exports = {
             return await db.Product.findAll({
                 order: [['id', 'DESC']], // Ordena por ID en orden descendente
                 limit: 1, // Limita a 1 resultado (el último producto)
+                include: ["countries", "grapes"],
               });
         } catch (error) {
             return [];
