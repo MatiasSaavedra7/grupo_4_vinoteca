@@ -6,7 +6,7 @@ module.exports = {
     getAll: async function (limit, offset, host) {
         try {
             return await db.User.findAndCountAll({
-                attributes: ['id', 'firstName', 'lastName', 'email', [db.Sequelize.literal(`CONCAT('http://${host}/api/users/', id)`), 'detail']],
+                attributes: ['id', 'firstName', 'lastName', 'email', 'rol_id', [db.Sequelize.literal(`CONCAT('http://${host}/api/users/', id)`), 'detail']],
                 limit: limit,
                 offset: offset
             });
