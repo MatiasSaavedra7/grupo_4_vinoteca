@@ -163,3 +163,9 @@ No confiarnos con el tiempo y organizarnos de mejor manera para no dejar todo el
 No dejar tareas pendientes, sobre todo si las mismas son obligatorias para la entrega del sprint.
 
 En este sprint ha habido poca comunicación y organización en el tiempo de trabajo, dejando tareas pendientes sin concluir. Por lo tanto, creemos que son aspectos  muy importantes a tener en cuenta para que no nos vuelva a ocurrir y llegar a cumplir con los objetivos en el próximo y ultimo sprint.
+
+## Linea de Tiempo 
+
+https://miro.com/app/board/uXjVKX7xY7Y=/?share_link_id=37949668580
+
+Este link lleva a la página Miro donde se realizó una línea de tiempo sobre los 8 Sprints de nuestro proyecto. Cada sprint representa un período de desarrollo y entrega de funcionalidades clave. La línea de tiempo proporciona una visión general de las cosas positivas y negativas que sucedieron a lo largo del ciclo de vida del proyecto.
