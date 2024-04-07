@@ -141,3 +141,25 @@ No encontramos nada que debamos hacer menos.
 No encontramos algo que debamos dejar de hacer durante este sprint.
 
 Si bien este Sprint nos costó mucho más realizarlo pudimos hacerlo sin mayores inconvenientes, recurriendo a la documentación en los casos necesarios. En general el equipo se mantiene trabajando bien, a un buen ritmo y de manera colaborativa entre todos, aun mas en los casos de conflictos para poder solucionarlos de la mejor manera y en el menor tiempo posible, lo que ayuda al progreso del trabajo grupal. 
+
+## Retrospectiva: Sprint 7
+
+Como ya se hizo habitual durante el desarrollo de los diferentes sprint, realizamos una reunión para el análisis retrospectivo del Sprint 7, utilizando la dinámica de estrella de mar.
+
++ **Comenzar a hacer:** 
+En este punto no encontramos algo que debamos comenzar a hacer.
+
++ **Hacer más:**
+Comunicarnos más para el próximo sprint para organizarnos mejor con las tareas y el tiempo para realizarlas para poder concluirlas antes de la entrega.
+
++ **Continuar haciendo:**
+Sostener la metodología de trabajo aplicando gitflow y con el correcto uso del tablero de trabajo para la división de tareas y organización de estas y del trabajo realizado por cada integrante. 
+
++ **Hacer menos:**
+No encontramos nada que debamos hacer menos.
+
++ **Dejar hacer:**
+No confiarnos con el tiempo y organizarnos de mejor manera para no dejar todo el trabajo para ultimo momento. 
+No dejar tareas pendientes, sobre todo si las mismas son obligatorias para la entrega del sprint.
+
+En este sprint ha habido poca comunicación y organización en el tiempo de trabajo, dejando tareas pendientes sin concluir. Por lo tanto, creemos que son aspectos  muy importantes a tener en cuenta para que no nos vuelva a ocurrir y llegar a cumplir con los objetivos en el próximo y ultimo sprint.
