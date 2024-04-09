@@ -45,6 +45,14 @@ To run this project, you will need to add the following environment variables to
 
 `DB_PORT`
 
+in addition you will need these variables for cloudinary storage
+
+`CLOUDINARY_NAME=dq2jw6jnn`
+
+`CLOUDINARY_API_KEY=738929249144694`
+
+`CLOUDINARY_API_SECRET=UO00uy-YiCSVAC0TF7B0GgJNUNI`
+
 ## Navigate as Client!
 
 Email: cliente@venner.com

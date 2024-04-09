@@ -40,7 +40,7 @@ module.exports = {
         try {
             return await db.User.findAll({
                 order: [['id', 'DESC']], // Ordena por ID en orden descendente
-                limit: 1, // Limita a 1 resultado (el último producto)
+                limit: 1, // Limita a 1 resultado (el último usuario)
                 include: ["roles"],
               });
         } catch (error) {
